@@ -25,12 +25,7 @@ export default function About() {
       </section>
 
       <section style={{ paddingTop: 0 }}>
-        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 420px) 1fr', gap: 'clamp(36px,6vw,80px)', alignItems: 'start' }} data-collapse>
-          <Reveal soak>
-            <div className="portrait" style={{ aspectRatio: '4/5' }}>
-              <img src="/img/jada-palm.jpg" alt="Jada Kouba" style={{ objectPosition: 'center 12%' }} />
-            </div>
-          </Reveal>
+        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr minmax(280px, 420px)', gap: 'clamp(36px,6vw,80px)', alignItems: 'start' }} data-collapse>
           <div>
             <Reveal><h2 className="d2">Hello, my name is Jada</h2></Reveal>
             <Reveal as="p" className="measure">
@@ -65,6 +60,11 @@ export default function About() {
               </p>
             </Reveal>
           </div>
+          <Reveal soak>
+            <div className="cutout-card">
+              <img src="/img/jada-hero.png" alt="Jada Kouba" loading="lazy" />
+            </div>
+          </Reveal>
         </div>
       </section>
 

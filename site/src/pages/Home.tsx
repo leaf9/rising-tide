@@ -45,15 +45,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ MEET JADA — early, as asked ============ */}
-      <section>
-        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: 'minmax(260px, 360px) 1fr', gap: 'clamp(36px,6vw,80px)', alignItems: 'center' }} data-collapse>
-          <Reveal soak>
-            <div className="portrait" style={{ aspectRatio: '874/900' }}>
-              <img src="/img/jada-porch.jpg" alt="Jada Kouba seated in her office" style={{ objectPosition: 'center 20%' }} loading="lazy" />
-            </div>
+      {/* ============ MEET JADA — bigger, overlapping the hero seam ============ */}
+      <section className="meet">
+        <div className="wrap meet-grid" data-collapse>
+          <Reveal soak className="meet-photo">
+            <img src="/img/jada-porch.jpg" alt="Jada Kouba seated in her office" fetchPriority="high" />
           </Reveal>
-          <div>
+          <div className="meet-copy">
             <Reveal><div className="kicker">Meet Jada</div></Reveal>
             <Reveal as="h2" className="d2">Twenty years of walking alongside people — <em>you don&rsquo;t have to walk alone.</em></Reveal>
             <Reveal as="p" className="measure">

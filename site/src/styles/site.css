@@ -128,7 +128,7 @@ p+p{margin-top:14px}
 .trust{color:var(--rt-ink);text-shadow:0 0 8px rgba(255,255,255,.9),0 0 3px rgba(255,255,255,.9)}
 .trust b{font-weight:700}
 .hero-solo{position:relative;z-index:1;min-height:640px;display:flex;align-items:center}
-.hero-solo .hero-copy{padding:calc(96px + clamp(2rem,4vw,3.5rem)) 0 clamp(4.5rem,9vw,7rem)}
+.hero-solo .hero-copy{padding:calc(96px + clamp(2rem,4vw,3.5rem)) 0 clamp(7rem,13vw,11.5rem)}
 .hero-solo .sub{max-width:54ch}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;align-items:end;min-height:620px}
 .hero-copy{padding:clamp(2.5rem,5vw,4.5rem) 0 clamp(3rem,6vw,5rem)}
@@ -193,6 +193,26 @@ p+p{margin-top:14px}
 .tcard{background:#fff;border:1px solid var(--rt-hairline);border-radius:var(--rt-r-card);padding:30px 28px}
 .tcard .tq{font-family:var(--rt-display);font-style:italic;font-size:19px;line-height:1.55;color:var(--rt-pine)}
 .tcard .ta{margin-top:16px;font-size:var(--rt-micro);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rt-sea)}
+
+/* ============ meet jada — brush-cut frame overlapping the hero ============ */
+.meet{padding-top:0}
+.meet-grid{display:grid;grid-template-columns:minmax(300px,450px) 1fr;gap:clamp(36px,6vw,80px);align-items:start}
+.meet-photo{position:relative;z-index:5;margin-top:calc(-1 * clamp(72px,11vw,158px))}
+.meet-photo img{width:100%;aspect-ratio:874/980;object-fit:cover;object-position:center 16%;
+     border-radius:8px 48px 8px 48px;border:6px solid #fff;
+     box-shadow:0 26px 64px -26px rgba(0,20,20,.5)}
+.meet-copy{padding-top:clamp(2.5rem,5vw,4rem)}
+@media(max-width:900px){
+  .meet-photo{max-width:340px;margin:calc(-1 * clamp(48px,14vw,80px)) auto 0}
+  .meet-copy{padding-top:.5rem;text-align:left}
+}
+
+/* ============ about — cutout in a brush-cut card ============ */
+.cutout-card{position:relative;aspect-ratio:4/5;border-radius:8px 48px 8px 48px;overflow:hidden;
+     background:linear-gradient(165deg,color-mix(in srgb,var(--rt-seaglass) 62%,white) 0%,color-mix(in srgb,var(--rt-sand) 72%,white) 76%,var(--rt-sand) 100%);
+     display:flex;align-items:flex-end;justify-content:center}
+.cutout-card img{height:94%;width:auto;max-width:none;object-fit:contain;
+     filter:drop-shadow(0 14px 28px rgba(0,49,48,.28))}
 
 /* ============ portraits ============ */
 .portrait{position:relative;border-radius:46% 54% 48% 52%/52% 46% 54% 48%;overflow:hidden;
