@@ -45,8 +45,8 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.82em;background:var(--r
 .btn{display:inline-block;font-family:var(--rt-body);font-weight:700;font-size:14px;letter-spacing:.06em;
      padding:15px 30px;border-radius:var(--rt-r-btn);text-decoration:none;cursor:pointer;border:0;
      transition:background var(--rt-micro-t) var(--rt-ease),color var(--rt-micro-t) var(--rt-ease)}
-.btn-fill{background:var(--rt-pine);color:#f2faf8}
-.btn-fill:hover{background:#0b4a46}
+.btn-fill{background:var(--rt-cta);color:#fff}
+.btn-fill:hover{background:var(--rt-cta-deep)}
 .btn-ghost{color:var(--rt-pine);border:1px solid var(--rt-pine);background:transparent}
 .btn-ghost:hover{background:rgba(0,49,48,.06)}
 .pill{display:inline-block;font-size:13px;font-weight:600;padding:8px 16px;border-radius:var(--rt-r-pill);
@@ -120,13 +120,14 @@ pre.recipe{background:var(--rt-shell-deep);border:1px solid var(--rt-hairline);b
 <section class="g">
   <div class="kicker">01 · Palette</div>
   <h2 class="gt">Colors have roles, not just values</h2>
-  <p class="lede">Three families: <strong>grounds</strong> the page lives on, <strong>ink</strong> that speaks, and <strong>washes</strong> that feel. Washes are decorative only — they may never sit under body text. Pine is the only filled-button color sitewide.</p>
+  <p class="lede">Three families: <strong>grounds</strong> the page lives on, <strong>ink</strong> that speaks, and <strong>washes</strong> that feel. Washes are decorative only — they may never sit under body text. Aqua (#0E7F82) is the only filled-button color sitewide (v1.2); Pine is ink and headlines.</p>
   <div class="swgrid">
     <div class="sw"><div class="chip" style="background:var(--rt-shell)"></div><h4>Shell</h4><p class="tok">--rt-shell #FDFCF8</p><p>Page ground. The airy white every wash breathes on.</p></div>
     <div class="sw"><div class="chip" style="background:var(--rt-shell-deep)"></div><h4>Shell Deep</h4><p class="tok">--rt-shell-deep #F6F3EA</p><p>Alternate section bands, form fields.</p></div>
     <div class="sw"><div class="chip" style="background:var(--rt-sand)"></div><h4>Sand</h4><p class="tok">--rt-sand #EAD9BD</p><p>Warm grounding — footer approach, earthy accents, portrait backdrops.</p></div>
-    <div class="sw"><div class="chip" style="background:var(--rt-pine)"></div><h4>Pine</h4><p class="tok">--rt-pine #003130</p><p>Brand ink, measured from the logo. Headlines + the only filled CTA. 15.9:1 on Shell.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-pine)"></div><h4>Pine</h4><p class="tok">--rt-pine #003130</p><p>Brand ink, measured from the logo. Headlines and text. 15.9:1 on Shell.</p></div>
     <div class="sw"><div class="chip" style="background:var(--rt-ink)"></div><h4>Ink</h4><p class="tok">--rt-ink #22423E</p><p>Body text — pine, breathed on. 10.7:1 on Shell.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-cta)"></div><h4>Aqua CTA</h4><p class="tok">--rt-cta #0E7F82</p><p>The only filled-button color — vivid aqua, 4.8:1 with white text. v1.2.</p></div>
     <div class="sw"><div class="chip" style="background:var(--rt-sea)"></div><h4>Sea</h4><p class="tok">--rt-sea #2E6159</p><p>Working accent: kickers, links, labels, icons. 5.9:1 on Shell — AA at every size used.</p></div>
     <div class="sw"><div class="chip" style="background:var(--rt-aqua)"></div><h4>Aqua wash</h4><p class="tok">--rt-aqua #8FCFC6</p><p>Primary wash + painted underlines. Decorative only.</p></div>
     <div class="sw"><div class="chip" style="background:var(--rt-sky)"></div><h4>Sky wash</h4><p class="tok">--rt-sky #AED4E4</p><p>Companion wash inside wave bands. Decorative only.</p></div>
@@ -160,7 +161,7 @@ pre.recipe{background:var(--rt-shell-deep);border:1px solid var(--rt-hairline);b
     <button class="btn btn-ghost">Pricing &amp; FAQs</button>
     <span class="pill hot">Anxiety</span><span class="pill">Grief</span><span class="pill">+ 11 more</span>
   </div>
-  <p class="note" style="margin-top:16px">"Request a Free Consult" is the only CTA phrase on the site, and Pine fill is its only dress. Ghost buttons handle every secondary action.</p>
+  <p class="note" style="margin-top:16px">"Request a Free Consult" is the only CTA phrase on the site, and Aqua fill is its only dress. Ghost buttons handle every secondary action.</p>
 </section>
 
 <!-- ================= WASHES ================= -->

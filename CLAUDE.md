@@ -46,7 +46,20 @@ One CTA phrase sitewide.
   - Hero = `assets/waves/wave-aerial-turquoise.jpg` · mid band = `heart-in-sand-foam.jpg`
   - Live Fillout embed renders in the consult section; dev tweaks bar present (strip
     before anything client-facing).
-- ⬜ Phase 6 — site build in `site/` (Vite app; reads `process.env.PORT`)
+- 🔶 Phase 6 — **full site built** in `site/` (Vite + React 19 + TS + Tailwind v4 +
+  react-router 7 — Lovable-portable; dev server reads `process.env.PORT`). Pages: Home
+  (reduced per Ben) · /about/ · /services/ · /resources/ (Pricing & FAQs, 10 FAQs incl.
+  "Do I need to be a Christian?") · /contact/ (live Fillout embed + 988 note). Old slugs
+  preserved; /intake → /contact (router + netlify.toml 301). Awaiting Ben/Jada review →
+  Netlify draft on request.
+  - **Phase 5 r3 revisions baked in (Ben, Aug 27):** aqua CTA `--rt-cta #0E7F82`
+    (tokens v1.2) · wave photo moved INTO the hero with subtle white fades · Jada
+    front-and-center in hero (`assets/jada/hero-cutout.png`, Higgsfield bg-removal) ·
+    watercolor mixed into alternating sections (wc-sweep under quote/FAQ headers,
+    wc-layered along CTA bands) · page-wide paper-grain texture · footer = wave photo
+    rising from white into the bottom-right corner, crisis note on white card.
+  - `site/src/styles/site.css` carries a build copy of the token block — keep in sync
+    with `styleguide/tokens.css`.
 
 ## Hard rules
 

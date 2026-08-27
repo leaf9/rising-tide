@@ -1,0 +1,128 @@
+import { Reveal, usePageMeta } from '../lib'
+import CtaBand from '../components/CtaBand'
+
+const faqs = [
+  {
+    q: 'How long is a typical counseling session?',
+    a: 'Counseling sessions last 55 minutes, which also accounts for scheduling at the end of the session.',
+  },
+  {
+    q: 'What should I expect during my first counseling session?',
+    a: 'The first session is an opportunity to build rapport — exploring your background, family history, what brings you in, and your goals for therapy. The best predictor of success in counseling is a strong, collaborative relationship, so the early focus is on building trust, understanding you more deeply, and identifying the strategies that fit your goals. It can feel intimidating to open up at first — that&rsquo;s normal, and we go at your pace.',
+  },
+  {
+    q: 'Will the things I say in session remain private?',
+    a: 'Everything discussed in session remains private and confidential. The only limits to confidentiality are if a client is a danger to themselves or others, or if abuse is suspected.',
+  },
+  {
+    q: 'How often will I need counseling?',
+    a: 'Session frequency is personalized — decided together, considering your symptoms, goals, and progress over time. Sessions may be more frequent at first and become less so as you progress. You&rsquo;re never obligated to commit to a specific frequency.',
+  },
+  {
+    q: 'How do I know if counseling will work for me?',
+    a: 'Counseling isn&rsquo;t about a &ldquo;quick fix&rdquo; — it&rsquo;s about creating a safe space where you can explore what&rsquo;s weighing on you, gain clarity, and develop tools that actually fit your life. For many people, just having someone truly listen without judgment is the first step toward healing.',
+  },
+  {
+    q: 'How much does counseling cost?',
+    a: 'Individual counseling sessions are $135.00 and couples counseling sessions are $165.00. Fees are due at the time of service. You may submit your session invoice (superbill) to your insurance company for reimbursement — though I can&rsquo;t guarantee what your plan will cover.',
+  },
+  {
+    q: 'Is it normal to feel nervous about starting counseling?',
+    a: 'Yes — completely normal. Many people feel a mix of anticipation and anxiety when reaching out for help. You might wonder what to expect, whether you&rsquo;ll open up easily, or if counseling will really help. These feelings don&rsquo;t mean you&rsquo;re not ready — they&rsquo;re a sign you&rsquo;re stepping into something new and meaningful.',
+  },
+  {
+    q: 'What do I talk about in counseling?',
+    a: 'Anything that feels important to you. Some people start with a specific struggle; others just know they want life to feel better but aren&rsquo;t sure where to begin. There&rsquo;s no wrong topic in counseling. If it matters to you, it matters to me.',
+  },
+  {
+    q: 'How should I prepare for my first session?',
+    a: 'You don&rsquo;t need to do anything special to prepare — just showing up is already a big step! If you&rsquo;d like, you can spend a little time reflecting beforehand, or bring a notebook to jot down insights and tools you find helpful along the way.',
+  },
+  {
+    q: 'Do I need to be a Christian to work with you?',
+    a: 'Absolutely not. While I offer Christian counseling for those who desire it, it is never a requirement to become a client — I value working with people from many different backgrounds. My only request is that you come with a willingness to heal, learn, and grow. My hope is that through therapy, you&rsquo;ll develop the tools and confidence you need to move forward and reach your personal goals.',
+  },
+]
+
+export default function Resources() {
+  usePageMeta(
+    'Pricing & FAQs — Rising Tide Counseling',
+    'Transparent counseling fees — $135 individual, $165 couples, superbills provided — and answers to common questions about starting online therapy with Jada Kouba.',
+  )
+  return (
+    <>
+      <section className="page-hero">
+        <div className="wrap">
+          <Reveal><img className="squig" src="/img/squiggle.png" alt="" /></Reveal>
+          <Reveal><div className="kicker">Resources</div></Reveal>
+          <Reveal as="h1" className="d1" delay={80}>Pricing &amp; <em>FAQs</em></Reveal>
+        </div>
+      </section>
+
+      <section style={{ paddingTop: 0 }}>
+        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(36px,6vw,90px)', alignItems: 'start' }} data-collapse>
+          <div>
+            <Reveal><div className="kicker">Simple, transparent fees</div></Reveal>
+            <Reveal as="h2" className="d2" delay={60}>Self-pay, stated plainly — <em>superbills provided.</em></Reveal>
+            <Reveal as="p" className="measure">
+              I believe my time is best spent where it matters most — working directly with you. For this
+              reason, I don&rsquo;t work directly with insurance companies; the billing process takes
+              valuable time away from client care.
+            </Reveal>
+            <Reveal as="p" className="measure" delay={60}>
+              If you wish to use your insurance benefits, I&rsquo;m happy to provide a superbill (an
+              itemized receipt of services) that you can submit to your insurance provider for potential
+              reimbursement. Reimbursement isn&rsquo;t guaranteed and depends on your plan — but many of
+              my clients successfully receive it.
+            </Reveal>
+            <Reveal as="p" className="measure fine" delay={120}>
+              Payment is due at the time of service. For your convenience, you may keep a card securely
+              on file for automatic payment, or log in to your account anytime to pay your bill online.
+            </Reveal>
+          </div>
+          <Reveal soak>
+            <div className="fee-table">
+              <div className="fee-row">
+                <div className="what">Individual counseling<small>60-minute virtual session</small></div>
+                <div className="amt">$135</div>
+              </div>
+              <div className="fee-row">
+                <div className="what">Couples counseling<small>60-minute virtual session</small></div>
+                <div className="amt">$165</div>
+              </div>
+              <div className="fee-row">
+                <div className="what">First consult<small>Get acquainted, ask anything</small></div>
+                <div className="amt free">Free</div>
+              </div>
+            </div>
+            <p className="fine" style={{ marginTop: 14 }}>
+              Sessions run 55 minutes, with time reserved for scheduling at the end.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="tintband wcband wc-top" id="faqs">
+        <img className="wc-art" src="/img/wc-sweep.jpg" alt="" aria-hidden="true" loading="lazy" />
+        <div className="wrap">
+          <Reveal><div className="kicker" style={{ textAlign: 'center' }}>Commonly asked questions</div></Reveal>
+          <Reveal as="h2" className="d2" delay={60}>
+            <span style={{ display: 'block', textAlign: 'center' }}>It&rsquo;s normal to wonder <em>how this works</em></span>
+          </Reveal>
+          <Reveal delay={120}>
+            <div className="faq" style={{ maxWidth: 760, margin: '30px auto 0' }}>
+              {faqs.map((f) => (
+                <details key={f.q}>
+                  <summary>{f.q}</summary>
+                  <div className="a" dangerouslySetInnerHTML={{ __html: f.a }} />
+                </details>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <CtaBand />
+    </>
+  )
+}

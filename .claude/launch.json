@@ -2,6 +2,13 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "site", "run", "dev"],
+      "autoPort": true,
+      "port": 5173
+    },
+    {
       "name": "design-artifacts",
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "4179", "--bind", "127.0.0.1"],
