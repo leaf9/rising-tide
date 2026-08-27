@@ -75,8 +75,11 @@ One CTA phrase sitewide.
 - No generated imagery until a concept is chosen; flat CSS/SVG stand-ins at correct
   aspect ratios until Phase 5.
 - **Ben makes gate decisions** (concept picks, scope calls) — stop and ask.
-- **Local only until Ben says push.** No Netlify deploys yet; no GitHub repo yet (Ben
-  must confirm repo name/visibility — target `leaf9/rising-tide`).
+- **Netlify (live since Aug 27, 2026):** project `rising-tide-counseling`, site ID
+  `cfaa9374-082a-4494-95bd-0626f3b1742c`, linked from repo root (`.netlify/` gitignored).
+  Draft rounds: `npx -y netlify-cli deploy --build` (free, noindex — verify 200 before
+  sharing; SSO gate already cleared). Production (`--prod`, 15 credits) only at launch.
+  No GitHub repo yet (Ben must confirm repo name/visibility — target `leaf9/rising-tide`).
 - Crisis note (988) near every contact/consult form. No PHI in any form.
 - US English everywhere (see global CLAUDE.md).
 - Old-site URLs to preserve/301 at launch: `/about/`, `/services/`, `/resources/`,
