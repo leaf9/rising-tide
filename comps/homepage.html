@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rising Tide Counseling — Homepage Comp («Watermark» r1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Mulish:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+@import url('../styleguide/tokens.css');
+
+/* ============ base ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--rt-shell);color:var(--rt-ink);font-family:var(--rt-body);font-weight:300;font-size:var(--rt-b1);line-height:1.7;
+     --tw-space:1; --tw-type:1; --tw-wash:1; --tw-dur:1; --tw-dist:12px}
+img{max-width:100%;display:block}
+a{color:var(--rt-sea)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+section{padding:calc(var(--rt-section) * var(--tw-space)) 0}
+.kicker{font-size:var(--rt-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--rt-sea)}
+h1.d1{font-family:var(--rt-display);font-weight:300;font-size:calc(var(--rt-d1) * var(--tw-type));line-height:1.1;color:var(--rt-pine)}
+h2.d2{font-family:var(--rt-display);font-weight:400;font-size:calc(var(--rt-d2) * var(--tw-type));line-height:1.22;color:var(--rt-pine);margin:10px 0 18px}
+h1 em,h2 em{font-style:italic;font-weight:400}
+.measure{max-width:var(--rt-measure)}
+.btn{display:inline-block;font-family:var(--rt-body);font-weight:700;font-size:14px;letter-spacing:.06em;
+     padding:15px 30px;border-radius:var(--rt-r-btn);text-decoration:none;cursor:pointer;border:0;
+     transition:background var(--rt-micro-t) var(--rt-ease)}
+.btn-fill{background:var(--rt-pine);color:#f2faf8}
+.btn-fill:hover{background:#0b4a46}
+.btn-ghost{color:var(--rt-pine);border:1px solid var(--rt-pine);background:transparent}
+.btn-ghost:hover{background:rgba(0,49,48,.06)}
+.painted{position:relative;display:inline-block;white-space:nowrap}
+.painted::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-3px;height:9px;
+     background:linear-gradient(90deg,transparent,var(--rt-aqua) 12%,var(--rt-aqua) 88%,transparent);
+     opacity:calc(.55 * var(--tw-wash));border-radius:50% 40% 60% 45%/70% 55% 65% 50%;filter:blur(.4px)}
+
+/* ============ reveal motion ============ */
+.rv{opacity:0;transform:translateY(var(--tw-dist));transition:opacity calc(var(--rt-rise)*var(--tw-dur)) var(--rt-ease),transform calc(var(--rt-rise)*var(--tw-dur)) var(--rt-ease)}
+.rv.in{opacity:1;transform:none}
+.soak{opacity:0;filter:blur(6px);transition:opacity calc(var(--rt-soak)*var(--tw-dur)) var(--rt-ease),filter calc(var(--rt-soak)*var(--tw-dur)) var(--rt-ease)}
+.soak.in{opacity:1;filter:blur(0)}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rv,.soak{transform:none;filter:none;transition:opacity 250ms linear}
+}
+
+/* ============ nav ============ */
+header.nav{padding:22px 0}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-in img{height:52px;width:auto}
+.nav-links{display:flex;align-items:center;gap:clamp(16px,2.6vw,34px)}
+.nav-links a{font-size:14.5px;font-weight:600;color:var(--rt-ink);text-decoration:none;letter-spacing:.02em}
+.nav-links a:hover{color:var(--rt-sea)}
+.nav-links a.btn-fill{color:#f2faf8}
+.nav-links a.btn-fill:hover{color:#f2faf8}
+.nav-links .btn{padding:12px 22px;font-size:13px}
+@media(max-width:860px){.nav-links a:not(.btn){display:none}}
+
+/* ============ hero ============ */
+.hero{position:relative;padding:calc(clamp(3rem,7vw,5.5rem) * var(--tw-space)) 0 0;text-align:center;overflow:hidden}
+.hero .sub{font-size:17.5px;max-width:54ch;margin:26px auto 34px}
+.hero .trust{margin:26px 0 0;font-size:13px;color:var(--rt-ink-60);letter-spacing:.04em}
+.hero .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.hero .trust b{color:var(--rt-ink);font-weight:600}
+.hero-band{position:relative;margin-top:clamp(3rem,6vw,4.5rem);height:clamp(90px,12vw,150px)}
+.hero-band>*{position:absolute;inset:0;width:100%;height:100%}
+.hero-band img{object-fit:cover;object-position:center 38%}
+
+/* ============ value cards ============ */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+@media(max-width:880px){.cards3{grid-template-columns:1fr}}
+.vcard{background:color-mix(in srgb,var(--rt-seaglass) 34%,white);border-radius:var(--rt-r-card);padding:32px 30px}
+.vcard h3{font-family:var(--rt-display);font-weight:500;font-size:var(--rt-d3);color:var(--rt-pine);margin-bottom:10px}
+.vcard p{font-size:var(--rt-b2)}
+.vcard .mark{width:44px;height:26px;margin-bottom:18px}
+
+/* ============ about ============ */
+.about{background:var(--rt-shell)}
+.about-grid{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:clamp(36px,6vw,80px);align-items:center}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.portrait{position:relative;border-radius:46% 54% 48% 52%/52% 46% 54% 48%;overflow:hidden;aspect-ratio:874/900;
+     background:linear-gradient(160deg,color-mix(in srgb,var(--rt-sand) 55%,white),var(--rt-sand))}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.about p{max-width:54ch;margin-bottom:14px}
+.about .sig{font-family:var(--rt-display);font-style:italic;font-size:22px;color:var(--rt-pine);margin-top:18px}
+
+/* ============ quote band ============ */
+.quoteband{text-align:center;background:linear-gradient(180deg,var(--rt-shell),color-mix(in srgb,var(--rt-seaglass) calc(26% * var(--tw-wash)),var(--rt-shell)) 60%,var(--rt-shell))}
+.quoteband blockquote{font-family:var(--rt-display);font-style:italic;font-weight:400;font-size:var(--rt-quote);line-height:1.45;color:var(--rt-pine);max-width:34ch;margin:0 auto}
+.quoteband .attr{margin-top:20px}
+
+/* ============ services ============ */
+.services{background:var(--rt-shell)}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:38px}
+@media(max-width:880px){.svc-grid{grid-template-columns:1fr}}
+.svc{background:#fff;border:1px solid var(--rt-hairline);border-radius:var(--rt-r-card);padding:32px 30px;
+     transition:transform var(--rt-micro-t) var(--rt-ease),box-shadow var(--rt-micro-t) var(--rt-ease)}
+.svc:hover{transform:translateY(-3px);box-shadow:0 18px 44px -26px rgba(0,49,48,.35)}
+.svc h3{font-family:var(--rt-display);font-weight:500;font-size:var(--rt-d3);color:var(--rt-pine);margin-bottom:8px}
+.svc p{font-size:var(--rt-b2);max-width:52ch}
+.pillrow{margin-top:34px;display:flex;flex-wrap:wrap;gap:0 6px}
+.pill{display:inline-block;font-size:13px;font-weight:600;padding:8px 16px;border-radius:var(--rt-r-pill);
+     background:#fff;border:1px solid var(--rt-hairline);color:var(--rt-ink);margin:0 6px 10px 0;text-decoration:none;
+     transition:transform var(--rt-micro-t) var(--rt-ease),background var(--rt-micro-t)}
+.pill:hover{transform:translateY(-2px);background:var(--rt-seaglass)}
+.pill.more{background:transparent;border-style:dashed;color:var(--rt-sea)}
+
+/* ============ wave photo band ============ */
+.photoband{padding:0;position:relative;height:clamp(260px,38vw,440px);overflow:hidden}
+.photoband img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) brightness(1.04)}
+.photoband .credit{position:absolute;right:14px;bottom:10px;font-size:10.5px;letter-spacing:.08em;color:rgba(255,255,255,.75);text-transform:uppercase}
+
+/* ============ pricing ============ */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:start}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}}
+.fee-table{border-top:1px solid var(--rt-pine)}
+.fee-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:22px 2px;border-bottom:1px solid var(--rt-hairline)}
+.fee-row .what{font-size:16.5px}
+.fee-row .what small{display:block;font-size:12.5px;color:var(--rt-ink-60);margin-top:3px}
+.fee-row .amt{font-family:var(--rt-display);font-size:32px;font-weight:400;color:var(--rt-pine);white-space:nowrap}
+.fee-row .amt.free{color:var(--rt-sea)}
+.pricing p.fine{font-size:14px;color:var(--rt-ink-60);margin-top:16px;max-width:46ch}
+
+/* ============ testimonials ============ */
+.tst{background:color-mix(in srgb,var(--rt-shell-deep) 70%,white)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+@media(max-width:960px){.tgrid{grid-template-columns:1fr;max-width:560px}}
+.tcard{background:#fff;border:1px solid var(--rt-hairline);border-radius:var(--rt-r-card);padding:30px 28px}
+.tcard .tq{font-family:var(--rt-display);font-style:italic;font-size:19px;line-height:1.55;color:var(--rt-pine)}
+.tcard .ta{margin-top:16px;font-size:var(--rt-micro);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rt-sea)}
+
+/* ============ faq mini ============ */
+.faq{max-width:760px;margin:38px auto 0}
+.faq details{border-bottom:1px solid var(--rt-hairline)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;
+     padding:22px 2px;font-family:var(--rt-display);font-weight:500;font-size:20px;color:var(--rt-pine)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--rt-body);font-weight:300;font-size:26px;color:var(--rt-sea);transition:transform var(--rt-micro-t)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 2px 24px;max-width:60ch;font-size:var(--rt-b2)}
+.faq-more{text-align:center;margin-top:30px}
+
+/* ============ consult ============ */
+.consult{background:linear-gradient(180deg,var(--rt-shell),color-mix(in srgb,var(--rt-seaglass) calc(30% * var(--tw-wash)),var(--rt-shell)))}
+.consult-grid{display:grid;grid-template-columns:minmax(320px,.9fr) 1.1fr;gap:clamp(36px,5vw,70px);align-items:start}
+@media(max-width:940px){.consult-grid{grid-template-columns:1fr}}
+.consult .lead{max-width:44ch;margin-bottom:22px}
+.crisis{display:flex;gap:12px;align-items:flex-start;background:color-mix(in srgb,var(--rt-sand) 34%,white);
+     border-radius:var(--rt-r-card);padding:16px 18px;font-size:13.5px;line-height:1.6;max-width:440px}
+.crisis b{font-weight:700;color:var(--rt-pine)}
+.fillout-shell{background:#fff;border:1px solid var(--rt-hairline);border-radius:var(--rt-r-card);padding:14px;min-height:530px}
+
+/* ============ footer ============ */
+footer{background:linear-gradient(180deg,var(--rt-shell) 0%,color-mix(in srgb,var(--rt-sand) 55%,var(--rt-shell)) 100%);padding:0 0 34px;margin-top:20px}
+.foot-rule{height:30px;margin-bottom:40px}
+.foot-rule svg{display:block;margin:0 auto;width:220px;height:30px}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px;align-items:flex-start}
+.foot-grid img{height:56px;width:auto}
+.foot-col{font-size:14px}
+.foot-col a{display:block;color:var(--rt-ink);text-decoration:none;padding:4px 0;font-weight:600}
+.foot-col a:hover{color:var(--rt-sea)}
+.foot-note{margin-top:38px;padding-top:22px;border-top:1px solid var(--rt-hairline);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:12.5px;color:var(--rt-ink-60)}
+
+/* ============ mobile sticky CTA (Sea Glass donation) ============ */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:8;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+     background:color-mix(in srgb,var(--rt-shell) 92%,transparent);backdrop-filter:blur(10px);border-top:1px solid var(--rt-hairline)}
+.sticky-cta .btn{display:block;text-align:center}
+@media(max-width:720px){.sticky-cta{display:block}body{padding-bottom:76px}}
+
+/* ============ tweaks bar (DEV ONLY — strip before client-facing) ============ */
+#tw-toggle{position:fixed;left:18px;bottom:18px;z-index:99;width:44px;height:44px;border-radius:50%;border:1px solid var(--rt-hairline);
+     background:#fff;color:var(--rt-pine);font-size:19px;cursor:pointer;box-shadow:0 8px 24px -10px rgba(0,49,48,.4)}
+#tw{position:fixed;left:18px;bottom:74px;z-index:99;width:280px;background:#fff;border:1px solid var(--rt-hairline);border-radius:12px;
+     padding:18px;box-shadow:0 18px 50px -18px rgba(0,49,48,.45);display:none;font-size:12px}
+#tw.open{display:block}
+#tw h5{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rt-sea);margin-bottom:12px}
+#tw label{display:flex;justify-content:space-between;margin:10px 0 2px;color:var(--rt-ink)}
+#tw input[type=range]{width:100%;accent-color:var(--rt-sea)}
+#tw textarea{width:100%;height:70px;font-family:ui-monospace,Menlo,monospace;font-size:10px;margin-top:10px;border:1px solid var(--rt-hairline);border-radius:6px;padding:6px}
+#tw .row{display:flex;gap:8px;margin-top:10px}
+#tw .row button{flex:1;font-size:11px;padding:7px;border-radius:6px;border:1px solid var(--rt-hairline);background:var(--rt-shell-deep);cursor:pointer}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav wrap">
+  <div class="nav-in">
+    <a href="#top"><img src="../logo.png" alt="Rising Tide Counseling Services"></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing &amp; FAQs</a>
+      <a href="#consult" class="btn btn-fill">Request a Free Consult</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="kicker rv">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div>
+    <h1 class="d1 rv" style="max-width:19ch;margin:18px auto 0;transition-delay:90ms">Clinical counseling from a <em>Biblical worldview</em></h1>
+    <p class="sub rv" style="transition-delay:180ms">Looking for a faith-based counselor to help you navigate life's challenges? I offer professional therapy that weaves clinical expertise with God's truth and grace — a safe, unhurried space to process, heal, and rise.</p>
+    <div class="rv cta-row" style="transition-delay:270ms">
+      <a class="btn btn-fill" href="#consult">Request a Free Consult</a>
+      <a class="btn btn-ghost" href="#pricing">Pricing &amp; FAQs</a>
+    </div>
+    <p class="trust rv" style="transition-delay:360ms"><b>20+ years</b> in mental health &nbsp;·&nbsp; <b>Virtual</b> sessions &nbsp;·&nbsp; <b>Self-pay</b>, superbills provided</p>
+  </div>
+  <!-- WATERCOLOR SLOT A · hero seam band · ~12:1 full-bleed · Higgsfield Recipe A -->
+  <div class="hero-band soak" id="slot-hero-band">
+    <svg preserveAspectRatio="none" viewBox="0 0 1200 130" aria-hidden="true">
+      <defs><filter id="wc1" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="3" seed="7" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="42"/><feGaussianBlur stdDeviation="1.1"/>
+      </filter></defs>
+      <path d="M0,66 C220,40 420,84 640,64 C860,44 1020,76 1200,56 L1200,130 L0,130 Z" fill="#cfe8e2" opacity=".8" filter="url(#wc1)"/>
+      <path d="M0,80 C260,60 480,96 720,78 C930,62 1060,88 1200,74 L1200,130 L0,130 Z" fill="#8fcfc6" opacity=".65" filter="url(#wc1)"/>
+      <path d="M0,96 C300,82 560,106 820,92 C1010,82 1110,100 1200,90 L1200,130 L0,130 Z" fill="#aed4e4" opacity=".5" filter="url(#wc1)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ================= HOW I HELP ================= -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv">How I help</div>
+    <h2 class="d2 rv" style="max-width:24ch">Every client is unique — <em>so is the plan we build.</em></h2>
+    <p class="measure rv">I take an integrative, holistic approach: together we'll define your goals for healing and growth, then create a plan that works for your life.</p>
+    <div class="cards3">
+      <div class="vcard rv"><svg class="mark" viewBox="0 0 44 26"><path d="M2,16 C10,8 16,20 24,13 C32,6 38,16 42,11" fill="none" stroke="#8fcfc6" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Client-centered</h3><p>Anxiety, depression, relational struggles — we start with your story, not a template, and shape therapy around it.</p></div>
+      <div class="vcard rv" style="transition-delay:90ms"><svg class="mark" viewBox="0 0 44 26"><path d="M2,18 C12,10 18,22 26,15 C34,8 40,18 42,13" fill="none" stroke="#aed4e4" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Goal-focused</h3><p>For people motivated to learn, grow, and heal through faith-based therapy — with progress you can actually name.</p></div>
+      <div class="vcard rv" style="transition-delay:180ms"><svg class="mark" viewBox="0 0 44 26"><path d="M2,14 C10,22 18,6 26,14 C34,22 40,8 42,14" fill="none" stroke="#cfe8e2" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Education-based</h3><p>Understand yourself more deeply, so you can tackle whatever life throws at you — skills that outlast our sessions.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="portrait rv"><img src="../assets/jada/porch-seated-square.jpg" alt="Jada Kouba, licensed clinical mental health counselor"></div>
+    <div>
+      <div class="kicker rv">About Jada</div>
+      <h2 class="d2 rv">Twenty years of walking alongside people — <em>you don't have to walk alone.</em></h2>
+      <p class="rv">I'm Jada Kouba, a dually licensed counselor (LCMHC, LCPC) serving clients in Florida and Maine. My heart is to help you not only manage your mental health, but experience real transformation through <span class="painted">God's truth and grace</span>.</p>
+      <p class="rv">Clients describe me as compassionate, supportive, and committed to creating a safe space for healing — whether you're walking through grief, wrestling with anxiety, or rebuilding after a difficult relationship.</p>
+      <p class="sig rv">— Jada</p>
+      <div class="rv" style="margin-top:24px"><a class="btn btn-ghost" href="#">More about Jada</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE ================= -->
+<section class="quoteband">
+  <div class="wrap">
+    <blockquote class="rv">"True healing begins when we give ourselves space to process, reflect, and <span class="painted">invite God into the journey</span>."</blockquote>
+    <div class="attr kicker rv">The heart of this practice</div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="kicker rv">Counseling services</div>
+    <h2 class="d2 rv" style="max-width:26ch">Evidence-based approaches, woven with <em>Biblical truth and grace</em></h2>
+    <div class="svc-grid">
+      <div class="svc rv"><h3>Individual counseling</h3><p>One-on-one therapy in a safe, confidential space — exploring your thoughts, feelings, and experiences, and building a way forward.</p></div>
+      <div class="svc rv" style="transition-delay:90ms"><h3>Couples counseling</h3><p>A structured, supportive place for partners to work through conflict, rebuild trust, and grow closer — in marriage and beyond.</p></div>
+      <div class="svc rv" style="transition-delay:180ms"><h3>Christian counseling &amp; discipleship</h3><p>Therapy grounded in Biblical truth — bringing faith and clinical care together for emotional, mental, and spiritual challenges.</p></div>
+      <div class="svc rv" style="transition-delay:270ms"><h3>Parental support</h3><p>Practical tools and steady guidance for the hardest job there is — strengthening your family's bonds while you raise healthy kids.</p></div>
+    </div>
+    <div class="pillrow rv">
+      <a class="pill" href="#">Anxiety</a><a class="pill" href="#">Depression</a><a class="pill" href="#">Grief &amp; loss</a>
+      <a class="pill" href="#">Narcissistic abuse recovery</a><a class="pill" href="#">Adult ADHD</a><a class="pill" href="#">OCD</a>
+      <a class="pill" href="#">Self-esteem</a><a class="pill" href="#">Co-dependency</a><a class="pill" href="#">Life transitions</a>
+      <a class="pill" href="#">Women's issues</a><a class="pill more" href="#">+ 6 more areas</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WAVE PHOTO BAND · real library shot Jada loves ================= -->
+<div class="photoband soak">
+  <img src="../assets/waves/wave-aerial-turquoise.jpg" alt="">
+</div>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing" class="pricing">
+  <div class="wrap pricing-grid">
+    <div>
+      <div class="kicker rv">Simple, transparent fees</div>
+      <h2 class="d2 rv">Self-pay, stated plainly — <em>superbills provided.</em></h2>
+      <p class="measure rv">I don't bill insurance directly — that time belongs to client care. If you'd like to use your benefits, I'll provide a superbill you can submit for reimbursement; many clients receive it. Payment is due at the time of service.</p>
+    </div>
+    <div class="rv">
+      <div class="fee-table">
+        <div class="fee-row"><div class="what">Individual counseling<small>60-minute virtual session</small></div><div class="amt">$135</div></div>
+        <div class="fee-row"><div class="what">Couples counseling<small>60-minute virtual session</small></div><div class="amt">$165</div></div>
+        <div class="fee-row"><div class="what">First consult<small>Get acquainted, ask anything</small></div><div class="amt free">Free</div></div>
+      </div>
+      <p class="fine">Sessions run 55 minutes, with time reserved for scheduling at the end. Keep a card securely on file, or pay online anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="tst">
+  <div class="wrap">
+    <div class="kicker rv" style="text-align:center">Words from clients</div>
+    <h2 class="d2 rv" style="text-align:center;max-width:22ch;margin-left:auto;margin-right:auto">What healing has looked like</h2>
+    <div class="tgrid">
+      <div class="tcard rv"><p class="tq">"I came to counseling feeling broken after my divorce. Jada walked beside me with wisdom, empathy, and a Christ-centered perspective. Today, I'm rediscovering joy and purpose."</p><p class="ta">— M.C.</p></div>
+      <div class="tcard rv" style="transition-delay:90ms"><p class="tq">"I came in overwhelmed with anxiety. Jada listened without judgment and gave me strategies that actually work."</p><p class="ta">— B.I.</p></div>
+      <div class="tcard rv" style="transition-delay:180ms"><p class="tq">"Jada gently helped me untangle lies I'd believed for years and replace them with God's truth about who I am. I feel lighter and freer than ever."</p><p class="ta">— E.N.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ MINI ================= -->
+<section>
+  <div class="wrap">
+    <div class="kicker rv" style="text-align:center">Common questions</div>
+    <h2 class="d2 rv" style="text-align:center;max-width:24ch;margin-left:auto;margin-right:auto">It's normal to wonder <em>how this works</em></h2>
+    <div class="faq rv">
+      <details><summary>Is it normal to feel nervous about starting counseling?</summary><div class="a">Yes — completely. Most people feel a mix of anticipation and anxiety when reaching out. Those feelings don't mean you're not ready; they're a sign you're stepping into something new and meaningful.</div></details>
+      <details><summary>What should I expect in the first session?</summary><div class="a">The first session is about getting to know each other — your story, what's bringing you in, and what you hope changes. There's no pressure to open up faster than feels right; trust comes first.</div></details>
+      <details><summary>What do I talk about in counseling?</summary><div class="a">Anything that feels important to you. Some people arrive with a specific struggle; others just know life should feel better. There's no wrong topic — if it matters to you, it matters to me.</div></details>
+    </div>
+    <div class="faq-more rv"><a class="btn btn-ghost" href="#">All questions answered</a></div>
+  </div>
+</section>
+
+<!-- ================= CONSULT ================= -->
+<section class="consult" id="consult">
+  <div class="wrap consult-grid">
+    <div>
+      <div class="kicker rv">Take your next step</div>
+      <h2 class="d2 rv">Reach out today — <em>the first conversation is free.</em></h2>
+      <p class="lead rv">Tell me a little about what's going on and what you're looking for. I'll respond personally to set up your free consult — no obligation, no pressure.</p>
+      <div class="crisis rv"><div>🕊️</div><div><b>In crisis right now?</b> This form isn't monitored around the clock. If you're in danger or thinking about harming yourself, call or text <b>988</b> (Suicide &amp; Crisis Lifeline) — someone is there 24/7.</div></div>
+    </div>
+    <div class="fillout-shell rv">
+      <div style="width:100%;height:500px" data-fillout-id="21y4Av7pnmus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <!-- WATERCOLOR SLOT B · footer wave rule · Higgsfield Recipe B -->
+  <div class="foot-rule soak" id="slot-foot-rule">
+    <svg viewBox="0 0 220 30" aria-hidden="true"><path d="M4,18 C30,8 52,24 78,16 C104,8 126,22 152,15 C174,9 196,20 216,13" fill="none" stroke="#8fcfc6" stroke-width="2.6" stroke-linecap="round" opacity=".75"/></svg>
+  </div>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><img src="../logo.png" alt="Rising Tide Counseling Services"><p style="font-size:13.5px;color:var(--rt-ink-60);margin-top:14px;max-width:34ch">Online Christian counseling with Jada Kouba, LCMHC · LCPC — serving Florida and Maine.</p></div>
+      <div class="foot-col"><a href="#about">About</a><a href="#services">Services</a><a href="#pricing">Pricing &amp; FAQs</a><a href="#consult">Request a Free Consult</a></div>
+      <div class="foot-col" style="max-width:300px;font-size:13px;color:var(--rt-ink-60)">If you or someone you love is in crisis, call or text <b style="color:var(--rt-ink)">988</b> — the Suicide &amp; Crisis Lifeline is available 24/7.</div>
+    </div>
+    <div class="foot-note"><span>© 2026 Rising Tide Counseling</span><span>Jada Kouba, LCMHC (FL) · LCPC (ME)</span></div>
+  </div>
+</footer>
+
+<!-- mobile sticky CTA -->
+<div class="sticky-cta"><a class="btn btn-fill" href="#consult">Request a Free Consult</a></div>
+
+<!-- ============ TWEAKS BAR — DEV ONLY, strip before client-facing ============ -->
+<button id="tw-toggle" title="Design tweaks">⚙</button>
+<div id="tw">
+  <h5>Watermark · live tweaks</h5>
+  <label>Heading scale <span id="v-type">1.00</span></label><input type="range" id="t-type" min=".9" max="1.15" step=".01" value="1">
+  <label>Section spacing <span id="v-space">1.00</span></label><input type="range" id="t-space" min=".8" max="1.3" step=".01" value="1">
+  <label>Wash strength <span id="v-wash">1.00</span></label><input type="range" id="t-wash" min=".4" max="1.2" step=".01" value="1">
+  <label>Motion duration <span id="v-dur">1.00</span></label><input type="range" id="t-dur" min=".5" max="1.6" step=".01" value="1">
+  <label>Motion distance <span id="v-dist">12px</span></label><input type="range" id="t-dist" min="0" max="24" step="1" value="12">
+  <textarea id="tw-out" readonly></textarea>
+  <div class="row"><button id="tw-copy">Copy CSS</button><button id="tw-reset">Reset</button></div>
+</div>
+
+<script>
+/* ---------- reveal motion ---------- */
+(function(){
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv,.soak').forEach(el => io.observe(el));
+  addEventListener('load', () => document.querySelectorAll('.hero .rv,.hero .soak').forEach(el => el.classList.add('in')));
+  if(reduced) document.querySelectorAll('.rv,.soak').forEach(el => el.classList.add('in'));
+})();
+
+/* ---------- tweaks bar (dev only) ---------- */
+(function(){
+  const KEY='rt-tweaks', $=id=>document.getElementById(id), B=document.body;
+  const defs={type:1,space:1,wash:1,dur:1,dist:12};
+  let st={...defs}; try{ st={...defs, ...JSON.parse(localStorage.getItem(KEY)||'{}')} }catch(e){}
+  function apply(){
+    B.style.setProperty('--tw-type',st.type); B.style.setProperty('--tw-space',st.space);
+    B.style.setProperty('--tw-wash',st.wash); B.style.setProperty('--tw-dur',st.dur);
+    B.style.setProperty('--tw-dist',st.dist+'px');
+    $('v-type').textContent=(+st.type).toFixed(2); $('v-space').textContent=(+st.space).toFixed(2);
+    $('v-wash').textContent=(+st.wash).toFixed(2); $('v-dur').textContent=(+st.dur).toFixed(2);
+    $('v-dist').textContent=st.dist+'px';
+    $('t-type').value=st.type; $('t-space').value=st.space; $('t-wash').value=st.wash; $('t-dur').value=st.dur; $('t-dist').value=st.dist;
+    $('tw-out').value=`/* commit back into tokens.css */\n--tw-type:${st.type};\n--tw-space:${st.space};\n--tw-wash:${st.wash};\n--tw-dur:${st.dur};\n--tw-dist:${st.dist}px;`;
+    try{ localStorage.setItem(KEY, JSON.stringify(st)) }catch(e){}
+  }
+  ['type','space','wash','dur','dist'].forEach(k=>$('t-'+k).addEventListener('input',e=>{st[k]=+e.target.value;apply()}));
+  $('tw-toggle').onclick=()=>$('tw').classList.toggle('open');
+  $('tw-copy').onclick=()=>navigator.clipboard.writeText($('tw-out').value);
+  $('tw-reset').onclick=()=>{st={...defs};apply()};
+  apply();
+})();
+</script>
+<script src="https://server.fillout.com/embed/v1/"></script>
+</body>
+</html>

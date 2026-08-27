@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rising Tide — Hero Wave Band Picker</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Mulish:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+@import url('../styleguide/tokens.css');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0e2624;color:#e8f2ef;font-family:var(--rt-body);font-weight:300}
+header{padding:30px 4vw 6px}
+h1{font-weight:300;font-size:26px}
+h1 b{font-weight:700}
+header p{color:#9dbcb5;font-size:13.5px;margin-top:6px;max-width:80ch}
+.cand{margin:26px 4vw 40px}
+.cand h2{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.cand .why{font-size:12.5px;color:#9dbcb5;margin-bottom:12px}
+.mock{background:var(--rt-shell);border-radius:10px;overflow:hidden;box-shadow:0 16px 44px -18px rgba(0,0,0,.5)}
+.mock .hero{text-align:center;padding:56px 6vw 0}
+.mock .hero img.logo{height:44px;margin:0 auto 20px}
+.mock .kicker{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rt-sea)}
+.mock h3{font-family:var(--rt-display);font-weight:300;font-size:clamp(26px,3.4vw,44px);line-height:1.1;color:var(--rt-pine);max-width:20ch;margin:10px auto 14px}
+.mock h3 em{font-style:italic;font-weight:400}
+.mock .btnrow{margin-bottom:8px}
+.mock .btn{display:inline-block;font-weight:700;font-size:11.5px;letter-spacing:.05em;padding:11px 20px;border-radius:var(--rt-r-btn);background:var(--rt-pine);color:#f2faf8;text-decoration:none}
+.mock .band{display:block;width:100%;height:clamp(80px,11vw,140px);object-fit:cover;margin-top:34px}
+.mock .below{background:var(--rt-shell);padding:26px 6vw 34px;color:var(--rt-ink);font-size:13px;max-width:none}
+.accents{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 4vw 60px}
+@media(max-width:800px){.accents{grid-template-columns:1fr}}
+.acc{background:var(--rt-shell);border-radius:10px;padding:30px;text-align:center;color:var(--rt-ink)}
+.acc h2{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rt-pine);margin-bottom:14px}
+.acc img{height:54px;margin:0 auto;object-fit:contain}
+.acc p{font-size:12px;color:rgba(34,66,62,.65);margin-top:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Hero wave band — <b>pick one</b></h1>
+  <p>Four Higgsfield candidates (Recraft V4.1, palette-locked to the wash tokens), each shown in the real hero context at the strip crop that would ship. The band sits at the hero's bottom seam; content scrolls over shell white below it. Accents at the bottom are for the footer rule + painted details.</p>
+</header>
+
+<div class="cand">
+  <h2>Band 1 · «Layered»</h2>
+  <p class="why">Interlocking wave shapes, fullest texture — the most "painted" of the four; risks busy behind nothing, rewards richness.</p>
+  <div class="mock">
+    <div class="hero">
+      <img class="logo" src="../logo.png" alt="">
+      <div class="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div>
+      <h3>Clinical counseling from a <em>Biblical worldview</em></h3>
+      <div class="btnrow"><span class="btn">Request a Free Consult</span></div>
+      <img class="band" src="../assets/art/candidates/band-1-layered-strip.png" alt="Watercolor band candidate 1">
+    </div>
+    <div class="below">↓ next section begins on clean shell…</div>
+  </div>
+</div>
+
+<div class="cand">
+  <h2>Band 2 · «Single Sweep» — Leaf9 pick</h2>
+  <p class="why">One quiet double-stroke swell. The airiest and calmest — closest to the brief's "airy, clean," and it never competes with the headline.</p>
+  <div class="mock">
+    <div class="hero">
+      <img class="logo" src="../logo.png" alt="">
+      <div class="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div>
+      <h3>Clinical counseling from a <em>Biblical worldview</em></h3>
+      <div class="btnrow"><span class="btn">Request a Free Consult</span></div>
+      <img class="band" src="../assets/art/candidates/band-2-single-sweep-strip.png" alt="Watercolor band candidate 2">
+    </div>
+    <div class="below">↓ next section begins on clean shell…</div>
+  </div>
+</div>
+
+<div class="cand">
+  <h2>Band 3 · «Foam Edge»</h2>
+  <p class="why">Lacy foam texture and the deepest greens — the most dramatic and "real tide" of the four; the strongest brand moment, the least quiet.</p>
+  <div class="mock">
+    <div class="hero">
+      <img class="logo" src="../logo.png" alt="">
+      <div class="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div>
+      <h3>Clinical counseling from a <em>Biblical worldview</em></h3>
+      <div class="btnrow"><span class="btn">Request a Free Consult</span></div>
+      <img class="band" src="../assets/art/candidates/band-3-foam-edge-strip.png" alt="Watercolor band candidate 3">
+    </div>
+    <div class="below">↓ next section begins on clean shell…</div>
+  </div>
+</div>
+
+<div class="cand">
+  <h2>Band 4 · «Tide Lines»</h2>
+  <p class="why">Three staggered wave strokes — rhythmic and a little playful; reads most like the logo's own flourish repeated.</p>
+  <div class="mock">
+    <div class="hero">
+      <img class="logo" src="../logo.png" alt="">
+      <div class="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div>
+      <h3>Clinical counseling from a <em>Biblical worldview</em></h3>
+      <div class="btnrow"><span class="btn">Request a Free Consult</span></div>
+      <img class="band" src="../assets/art/candidates/band-4-tide-lines-strip.png" alt="Watercolor band candidate 4">
+    </div>
+    <div class="below">↓ next section begins on clean shell…</div>
+  </div>
+</div>
+
+<div class="accents">
+  <div class="acc">
+    <h2>Accent 5 · solid stroke</h2>
+    <img src="../assets/art/candidates/accent-5-stroke.png" alt="">
+    <p>For painted underlines / section dividers (tinted per use)</p>
+  </div>
+  <div class="acc">
+    <h2>Accent 6 · wave squiggle</h2>
+    <img src="../assets/art/candidates/accent-6-squiggle.png" alt="">
+    <p>For the footer rule + small signature marks</p>
+  </div>
+</div>
+</body>
+</html>
