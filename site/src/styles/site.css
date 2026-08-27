@@ -98,8 +98,8 @@ p+p{margin-top:14px}
   body::after{display:none}
 }
 
-/* ============ nav ============ */
-.nav{padding:20px 0;position:relative;z-index:20}
+/* ============ nav — transparent, overlaps the hero ============ */
+.nav{padding:22px 0;position:absolute;top:0;left:0;right:0;z-index:80;background:transparent}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-in img{height:52px;width:auto}
 .nav-links{display:flex;align-items:center;gap:clamp(16px,2.6vw,34px)}
@@ -107,17 +107,17 @@ p+p{margin-top:14px}
 .nav-links a:hover{color:var(--rt-sea)}
 .nav-links a.active{color:var(--rt-sea)}
 .nav-links a.btn-fill{color:#fff;padding:12px 22px;font-size:13px}
-.nav-burger{display:none;background:none;border:1px solid var(--rt-hairline);border-radius:8px;
-     width:42px;height:42px;cursor:pointer;color:var(--rt-pine);font-size:18px;line-height:1}
+.nav-burger{display:none;background:none;border:0;width:48px;height:48px;cursor:pointer;
+     color:var(--rt-pine);font-size:28px;line-height:1}
 @media(max-width:860px){
   .nav-links{display:none}
   .nav-burger{display:block}
 }
-.nav-drawer{position:fixed;inset:0;z-index:70;background:rgba(255,255,255,.98);display:flex;flex-direction:column;
+.nav-drawer{position:fixed;inset:0;z-index:90;background:#fff;display:flex;flex-direction:column;
      align-items:center;justify-content:center;gap:8px}
 .nav-drawer a{font-family:var(--rt-display);font-size:30px;font-weight:400;color:var(--rt-pine);text-decoration:none;padding:10px}
 .nav-drawer a.btn-fill{font-family:var(--rt-body);font-size:14px;margin-top:18px;color:#fff}
-.nav-drawer .close{position:absolute;top:24px;right:24px;background:none;border:0;font-size:30px;color:var(--rt-pine);cursor:pointer}
+.nav-drawer .close{position:absolute;top:18px;right:20px;background:none;border:0;font-size:46px;color:var(--rt-pine);cursor:pointer;line-height:1;padding:8px}
 
 /* ============ hero (home) ============ */
 .hero{position:relative;padding:0;overflow:hidden;background:var(--rt-shell)}
@@ -127,8 +127,8 @@ p+p{margin-top:14px}
      background:linear-gradient(160deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.86) 30%,rgba(255,255,255,.6) 58%,rgba(255,255,255,.2) 84%,rgba(255,255,255,.06) 100%)}
 .trust{color:var(--rt-ink);text-shadow:0 0 8px rgba(255,255,255,.9),0 0 3px rgba(255,255,255,.9)}
 .trust b{font-weight:700}
-.hero-solo{position:relative;z-index:1;min-height:580px;display:flex;align-items:center}
-.hero-solo .hero-copy{padding:clamp(3rem,6vw,5rem) 0 clamp(4.5rem,9vw,7rem)}
+.hero-solo{position:relative;z-index:1;min-height:640px;display:flex;align-items:center}
+.hero-solo .hero-copy{padding:calc(96px + clamp(2rem,4vw,3.5rem)) 0 clamp(4.5rem,9vw,7rem)}
 .hero-solo .sub{max-width:54ch}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;align-items:end;min-height:620px}
 .hero-copy{padding:clamp(2.5rem,5vw,4.5rem) 0 clamp(3rem,6vw,5rem)}
@@ -236,7 +236,7 @@ p+p{margin-top:14px}
      background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.8) 40%,rgba(255,255,255,.25) 68%,rgba(255,255,255,0) 88%)}
 .foot-crisis{background:rgba(255,255,255,.74);backdrop-filter:blur(3px);border-radius:var(--rt-r-card);padding:14px 16px}
 .footer-in{position:relative;z-index:1;padding:56px 0 30px}
-.foot-rule{display:block;margin:0 auto 40px;height:34px;width:auto;mix-blend-mode:multiply}
+.squig-center{display:block;margin:0 auto 18px;height:32px;width:auto;mix-blend-mode:multiply}
 .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px;align-items:flex-start}
 .foot-grid img.foot-logo{height:56px;width:auto}
 .foot-brand p{font-size:13.5px;color:var(--rt-ink);margin-top:14px;max-width:34ch}
@@ -257,12 +257,44 @@ p+p{margin-top:14px}
 .sticky-cta .btn{display:block;text-align:center}
 @media(max-width:720px){.sticky-cta{display:block}body{padding-bottom:76px}}
 
+/* ============ dark hero variant (Facebook-cover style) ============ */
+.hero-dark{background:#0b2b29}
+.hero-dark .hero-bg img{filter:saturate(.92) brightness(.98)}
+.hero-dark .hero-bg::after{background:
+     linear-gradient(90deg,rgba(6,32,30,.62) 0%,rgba(6,32,30,.44) 45%,rgba(6,32,30,.28) 100%),
+     linear-gradient(180deg,rgba(6,32,30,.5) 0%,rgba(6,32,30,.18) 40%,rgba(6,32,30,.34) 100%)}
+.hero-dark .kicker{color:var(--rt-aqua)}
+.hero-dark .d1,.hero-dark .d1 em{color:#fff}
+.hero-dark .sub{color:rgba(255,255,255,.94)}
+.hero-dark .trust{color:rgba(255,255,255,.88);text-shadow:0 1px 10px rgba(6,32,30,.6)}
+.hero-dark .trust b{color:#fff}
+.hero-dark .btn-fill{box-shadow:0 10px 28px -8px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.22)}
+.hero-dark .btn-ghost{color:#fff;border-color:rgba(255,255,255,.85);background:rgba(255,255,255,.08)}
+.hero-dark .btn-ghost:hover{background:rgba(255,255,255,.18)}
+
+/* ============ light nav variant (over the dark hero) ============ */
+.nav-light .nav-links a{color:#fff}
+.nav-light .nav-links a:hover,.nav-light .nav-links a.active{color:var(--rt-aqua)}
+.nav-light .nav-links a.btn-fill{color:#fff}
+.nav-light .nav-burger{color:#fff}
+.nav-light .fb-link{color:#fff}
+.nav-light .fb-link:hover{color:var(--rt-aqua)}
+
+/* ============ facebook icon ============ */
+.fb-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+     color:var(--rt-pine);transition:color var(--rt-micro-t),transform var(--rt-micro-t)}
+.fb-link:hover{color:var(--rt-cta);transform:translateY(-1px)}
+.fb-link svg{width:22px;height:22px}
+.fb-foot{margin-top:12px;margin-left:-6px}
+.fb-drawer{margin-top:14px}
+.fb-drawer svg{width:30px;height:30px}
+
 /* inline two-column grids collapse on small screens */
 @media(max-width:900px){
   [data-collapse]{grid-template-columns:1fr !important}
 }
 
 /* ============ page hero (inner pages) ============ */
-.page-hero{padding-top:clamp(2.5rem,5vw,4rem);padding-bottom:clamp(2rem,4vw,3rem)}
+.page-hero{padding-top:calc(96px + clamp(1.5rem,3.5vw,3rem));padding-bottom:clamp(2rem,4vw,3rem)}
 .page-hero .d1{max-width:22ch}
 .squig{height:26px;width:auto;mix-blend-mode:multiply;margin-bottom:18px}

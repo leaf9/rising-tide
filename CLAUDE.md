@@ -60,6 +60,13 @@ One CTA phrase sitewide.
     rising from white into the bottom-right corner, crisis note on white card.
   - `site/src/styles/site.css` carries a build copy of the token block — keep in sync
     with `styleguide/tokens.css`.
+  - **Hero (r5, Ben Aug 27):** dark Facebook-cover style — wave photo + dark teal
+    overlay, white type, white logo (`/img/logo-white.png`), light nav variant.
+    `HERO_VARIANT` in `site/src/config.ts` flips back to the light hero instantly.
+    Nav is transparent + absolute over the hero; squiggle lives above "Take your next
+    step" (CtaBand), not the footer. Facebook: link in nav + footer + drawer
+    (https://www.facebook.com/risingtidechristiancounseling, `FACEBOOK_URL` in config).
+    Mobile: borderless 28px hamburger, 46px close, no CTA in drawer (sticky bar covers).
 
 ## Hard rules
 

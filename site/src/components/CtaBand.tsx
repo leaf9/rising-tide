@@ -11,6 +11,7 @@ export default function CtaBand({
   return (
     <section className="tintband">
       <div className="wrap" style={{ textAlign: 'center' }}>
+        <Reveal soak><img className="squig-center" src="/img/squiggle.png" alt="" /></Reveal>
         <Reveal><div className="kicker">Take your next step</div></Reveal>
         <Reveal as="h2" className="d2" delay={60}>{heading}</Reveal>
         <Reveal as="p" delay={120}>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Reveal, usePageMeta } from '../lib'
 import CtaBand from '../components/CtaBand'
+import { HERO_VARIANT } from '../config'
 
 export default function Home() {
   usePageMeta(
@@ -9,8 +10,8 @@ export default function Home() {
   )
   return (
     <>
-      {/* ============ HERO — Jada front and center over the wave ============ */}
-      <section className="hero">
+      {/* ============ HERO — dark cover style (HERO_VARIANT in config.ts flips back to light) ============ */}
+      <section className={`hero ${HERO_VARIANT === 'dark' ? 'hero-dark' : ''}`}>
         <div className="hero-bg" aria-hidden="true">
           <img src="/img/wave-aerial.jpg" alt="" fetchPriority="high" />
         </div>

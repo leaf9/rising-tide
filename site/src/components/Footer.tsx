@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import FacebookIcon from './FacebookIcon'
 
 export default function Footer() {
   return (
@@ -7,11 +8,11 @@ export default function Footer() {
         <img src="/img/wave-aerial.jpg" alt="" loading="lazy" />
       </div>
       <div className="footer-in wrap">
-        <img className="foot-rule" src="/img/squiggle.png" alt="" />
         <div className="foot-grid">
           <div className="foot-brand">
             <img className="foot-logo" src="/img/logo.png" alt="Rising Tide Counseling Services" />
             <p>Online Christian counseling with Jada Kouba, LCMHC · LCPC — serving Florida and Maine.</p>
+            <FacebookIcon className="fb-foot" />
           </div>
           <nav className="foot-col" aria-label="Footer">
             <Link to="/about/">About</Link>
