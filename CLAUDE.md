@@ -81,6 +81,10 @@ One CTA phrase sitewide.
   sharing; SSO gate already cleared). Production (`--prod`, 15 credits) only at launch.
   No GitHub repo yet (Ben must confirm repo name/visibility — target `leaf9/rising-tide`).
 - Crisis note (988) near every contact/consult form. No PHI in any form.
+- **Voice (Jada, Aug 27, 2026): never devalue.** No "the first conversation is free" /
+  "no obligation, no pressure" hooks — she is a sought-after therapist; closing copy
+  writes from fit and readiness ("when you're ready, I'm here"). "Free" appears only as
+  fact: the CTA phrase "Request a Free Consult" and the pricing-table consult row.
 - US English everywhere (see global CLAUDE.md).
 - Old-site URLs to preserve/301 at launch: `/about/`, `/services/`, `/resources/`,
   `/contact/` (drop `/intake/`).

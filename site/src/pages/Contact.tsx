@@ -20,13 +20,13 @@ export default function Contact() {
         <div className="wrap" style={{ display: 'grid', gridTemplateColumns: 'minmax(300px,.9fr) 1.1fr', gap: 'clamp(36px,5vw,70px)', alignItems: 'start' }} data-collapse>
           <div>
             <Reveal as="p" className="measure">
-              Tell me a little about what&rsquo;s going on and what you&rsquo;re looking for. I&rsquo;ll
-              respond personally to set up your <span className="painted">free consult</span> — no
-              obligation, no pressure.
+              Tell me a little about what&rsquo;s going on and what you&rsquo;re looking for.{' '}
+              <span className="painted">I&rsquo;ll respond personally</span>, and we&rsquo;ll talk
+              through whether we&rsquo;re the right fit for the work ahead.
             </Reveal>
             <Reveal as="p" className="measure fine" delay={60}>
               Sessions are held online for residents of Florida and Maine. If you&rsquo;re not sure
-              whether counseling is right for you, the free consult is exactly for that conversation.
+              whether counseling is right for you, the consult is exactly for that conversation.
             </Reveal>
             <Reveal delay={120}>
               <div className="crisis" style={{ marginTop: 22 }}>

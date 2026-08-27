@@ -91,7 +91,7 @@ export default function Resources() {
                 <div className="amt">$165</div>
               </div>
               <div className="fee-row">
-                <div className="what">First consult<small>Get acquainted, ask anything</small></div>
+                <div className="what">First consult<small>See whether we&rsquo;re the right fit</small></div>
                 <div className="amt free">Free</div>
               </div>
             </div>
