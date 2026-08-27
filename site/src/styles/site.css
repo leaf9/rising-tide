@@ -198,16 +198,14 @@ p+p{margin-top:14px}
 .tcard .ta{margin-top:16px;font-size:var(--rt-micro);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rt-sea)}
 
 /* ============ meet jada — brush-cut frame overlapping the hero ============ */
-.meet{padding-top:0}
-.meet-grid{display:grid;grid-template-columns:minmax(300px,450px) 1fr;gap:clamp(36px,6vw,80px);align-items:start}
-.meet-photo{position:relative;z-index:5;margin-top:calc(-1 * clamp(72px,11vw,158px))}
+.meet{padding-top:clamp(3rem,6vw,4.5rem)}
+.meet-grid{display:grid;grid-template-columns:minmax(300px,450px) 1fr;gap:clamp(36px,6vw,80px);align-items:center}
+.meet-photo{position:relative}
 .meet-photo img{width:100%;aspect-ratio:874/980;object-fit:cover;object-position:center 16%;
      border-radius:8px 48px 8px 48px;border:6px solid #fff;
      box-shadow:0 26px 64px -26px rgba(0,20,20,.5)}
-.meet-copy{padding-top:clamp(2.5rem,5vw,4rem)}
 @media(max-width:900px){
-  .meet-photo{max-width:340px;margin:calc(-1 * clamp(48px,14vw,80px)) auto 0}
-  .meet-copy{padding-top:.5rem;text-align:left}
+  .meet-photo{max-width:340px;margin:0 auto}
 }
 
 /* ============ about — cutout in a brush-cut card ============ */
@@ -258,7 +256,7 @@ p+p{margin-top:14px}
 .footer-wave::after{content:"";position:absolute;inset:0;
      background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.8) 40%,rgba(255,255,255,.25) 68%,rgba(255,255,255,0) 88%)}
 .foot-crisis{background:rgba(255,255,255,.74);backdrop-filter:blur(3px);border-radius:var(--rt-r-card);padding:14px 16px}
-.footer-in{position:relative;z-index:1;padding:56px 0 30px}
+.footer-in{position:relative;z-index:1;padding-top:56px;padding-bottom:30px}
 .squig-center{display:block;margin:0 auto 18px;height:32px;width:auto;mix-blend-mode:multiply}
 .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px;align-items:flex-start}
 .foot-grid img.foot-logo{height:56px;width:auto}
@@ -287,6 +285,7 @@ p+p{margin-top:14px}
 .hero-dark{background:#0b2b29}
 .hero-dark .hero-bg img{filter:saturate(.92) brightness(.98)}
 .hero-dark .hero-bg::after{background:
+     linear-gradient(180deg,rgba(255,255,255,0) 72%,rgba(255,255,255,.55) 88%,#fff 97%,#fff 100%),
      linear-gradient(90deg,rgba(6,32,30,.62) 0%,rgba(6,32,30,.44) 45%,rgba(6,32,30,.28) 100%),
      linear-gradient(180deg,rgba(6,32,30,.5) 0%,rgba(6,32,30,.18) 40%,rgba(6,32,30,.34) 100%)}
 .hero-dark .kicker{color:var(--rt-aqua)}
