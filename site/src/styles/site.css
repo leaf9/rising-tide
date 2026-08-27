@@ -112,8 +112,9 @@ p+p{margin-top:14px}
      color:var(--rt-pine);font-size:48px;line-height:1;padding:0}
 @media(max-width:860px){
   .nav-links{display:none}
-  .nav-mobile-actions{display:flex;align-items:center;gap:10px}
-  .fb-mobile svg{width:26px;height:26px}
+  .nav-mobile-actions{display:flex;align-items:center;gap:12px}
+  .fb-mobile{width:48px;height:48px}
+  .fb-mobile svg{width:34px;height:34px}
 }
 .nav-drawer{position:fixed;inset:0;z-index:90;background:#fff;display:flex;flex-direction:column;
      align-items:center;justify-content:center;gap:8px}
