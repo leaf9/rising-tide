@@ -9,12 +9,11 @@ export default function CtaBand({
   copy?: string
 }) {
   return (
-    <section className="tintband wcband">
-      <img className="wc-art wc-low" src="/img/wc-layered.jpg" alt="" aria-hidden="true" loading="lazy" />
+    <section className="tintband">
       <div className="wrap" style={{ textAlign: 'center' }}>
         <Reveal><div className="kicker">Take your next step</div></Reveal>
         <Reveal as="h2" className="d2" delay={60}>{heading}</Reveal>
-        <Reveal as="p" delay={120} className="measure" >
+        <Reveal as="p" delay={120}>
           <span style={{ display: 'inline-block', maxWidth: '46ch' }}>{copy}</span>
         </Reveal>
         <Reveal delay={180}>

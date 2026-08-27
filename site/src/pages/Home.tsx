@@ -14,11 +14,13 @@ export default function Home() {
         <div className="hero-bg" aria-hidden="true">
           <img src="/img/wave-aerial.jpg" alt="" fetchPriority="high" />
         </div>
-        <div className="wrap hero-grid">
+        <div className="wrap hero-solo">
           <div className="hero-copy">
             <Reveal><div className="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div></Reveal>
             <Reveal as="h1" className="d1" delay={90}>
-              Clinical counseling from a <em>Biblical worldview</em>
+              <span style={{ display: 'inline-block', maxWidth: '26ch' }}>
+                Clinical counseling from a <em>Biblical worldview</em>
+              </span>
             </Reveal>
             <Reveal as="p" className="sub" delay={180}>
               Looking for a faith-based counselor to help you navigate life&rsquo;s challenges? I offer
@@ -35,9 +37,10 @@ export default function Home() {
               <b>20+ years</b> in mental health &nbsp;·&nbsp; <b>Virtual</b> sessions &nbsp;·&nbsp; <b>Self-pay</b>, superbills provided
             </Reveal>
           </div>
+          {/* Jada hero cutout — hidden for now per Ben (Aug 27); asset stays at /img/jada-hero.png.
           <Reveal soak className="hero-jada">
             <img src="/img/jada-hero.png" alt="Jada Kouba, licensed clinical mental health counselor" />
-          </Reveal>
+          </Reveal> */}
         </div>
       </section>
 
@@ -115,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* ============ SERVICES OVERVIEW ============ */}
-      <section className="coolband">
+      <section className="coolband coolband-fade">
         <div className="wrap">
           <Reveal><div className="kicker">Counseling services</div></Reveal>
           <Reveal as="h2" className="d2" delay={60}>Evidence-based approaches, woven with <em>Biblical truth and grace</em></Reveal>
@@ -140,8 +143,8 @@ export default function Home() {
       </section>
 
       {/* ============ WAVE PHOTO BREATH ============ */}
-      <div className="photoband">
-        <img src="/img/heart-sand.jpg" alt="" style={{ objectPosition: 'center 62%' }} loading="lazy" />
+      <div className="photoband" style={{ height: 'clamp(320px, 46vw, 560px)' }}>
+        <img src="/img/heart-sand.jpg" alt="" style={{ objectPosition: 'center 72%' }} loading="lazy" />
       </div>
 
       {/* ============ TESTIMONIALS ============ */}
