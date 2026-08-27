@@ -1,4 +1,5 @@
-import { Routes, Route, Link, Navigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import { ScrollToTop } from './lib'
@@ -25,10 +26,35 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <div className="sticky-cta">
-        <Link className="btn btn-fill" to="/contact/">Request a Free Consult</Link>
-      </div>
+      <StickyCta />
     </>
+  )
+}
+
+/** Mobile consult bar — slides in after 30% of the page is scrolled; hidden on
+ *  the contact page, where the form itself is the destination. */
+function StickyCta() {
+  const { pathname } = useLocation()
+  const [show, setShow] = useState(false)
+  useEffect(() => {
+    const onScroll = () => {
+      const d = document.documentElement
+      const max = d.scrollHeight - window.innerHeight
+      setShow(max > 0 && window.scrollY / max >= 0.3)
+    }
+    onScroll()
+    addEventListener('scroll', onScroll, { passive: true })
+    addEventListener('resize', onScroll)
+    return () => {
+      removeEventListener('scroll', onScroll)
+      removeEventListener('resize', onScroll)
+    }
+  }, [pathname])
+  if (pathname.startsWith('/contact')) return null
+  return (
+    <div className={`sticky-cta ${show ? 'show' : ''}`}>
+      <Link className="btn btn-fill" to="/contact/">Request a Free Consult</Link>
+    </div>
   )
 }
 

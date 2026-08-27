@@ -27,7 +27,10 @@ export default function Nav() {
           <FacebookIcon />
           <Link to="/contact/" className="btn btn-fill">Request a Free Consult</Link>
         </nav>
-        <button className="nav-burger" aria-label="Open menu" onClick={() => setOpen(true)}>☰</button>
+        <div className="nav-mobile-actions">
+          <FacebookIcon className="fb-mobile" />
+          <button className="nav-burger" aria-label="Open menu" onClick={() => setOpen(true)}>☰</button>
+        </div>
       </div>
       {open && (
         <div className="nav-drawer" role="dialog" aria-label="Menu">
