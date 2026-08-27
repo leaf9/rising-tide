@@ -18,8 +18,9 @@
   --rt-sky:#aed4e4;
   --rt-seaglass:#cfe8e2;
 
-  --rt-cta:#0e7f82;
-  --rt-cta-deep:#0a686b;
+  --rt-cta:#8fcfc6;          /* Jada's pick — aqua wash as the button fill */
+  --rt-cta-deep:#79c0b6;     /* CTA hover */
+  --rt-cta-ink:var(--rt-pine); /* dark button text — 7.7:1 on the aqua */
   --rt-sea:#2e6159;
   --rt-error:#a3492c;
   --rt-success:#3b7451;
@@ -71,7 +72,7 @@ p+p{margin-top:14px}
 .btn{display:inline-block;font-family:var(--rt-body);font-weight:700;font-size:14px;letter-spacing:.06em;
      padding:15px 30px;border-radius:var(--rt-r-btn);text-decoration:none;cursor:pointer;border:0;
      transition:background var(--rt-micro-t) var(--rt-ease),transform var(--rt-micro-t) var(--rt-ease)}
-.btn-fill{background:var(--rt-cta);color:#fff}
+.btn-fill{background:var(--rt-cta);color:var(--rt-cta-ink)}
 .btn-fill:hover{background:var(--rt-cta-deep);transform:translateY(-1px)}
 .btn-ghost{color:var(--rt-pine);border:1px solid var(--rt-pine);background:rgba(255,255,255,.6)}
 .btn-ghost:hover{background:rgba(0,49,48,.06)}
@@ -106,7 +107,7 @@ p+p{margin-top:14px}
 .nav-links a{font-size:14.5px;font-weight:600;color:var(--rt-ink);text-decoration:none;letter-spacing:.02em}
 .nav-links a:hover{color:var(--rt-sea)}
 .nav-links a.active{color:var(--rt-sea)}
-.nav-links a.btn-fill{color:#fff;padding:12px 22px;font-size:13px}
+.nav-links a.btn-fill{color:var(--rt-cta-ink);padding:12px 22px;font-size:13px}
 .nav-mobile-actions{display:none}
 .nav-burger{background:none;border:0;width:60px;height:60px;cursor:pointer;
      color:var(--rt-pine);font-size:48px;line-height:1;padding:0}
@@ -119,7 +120,7 @@ p+p{margin-top:14px}
 .nav-drawer{position:fixed;inset:0;z-index:90;background:#fff;display:flex;flex-direction:column;
      align-items:center;justify-content:center;gap:8px}
 .nav-drawer a{font-family:var(--rt-display);font-size:30px;font-weight:400;color:var(--rt-pine);text-decoration:none;padding:10px}
-.nav-drawer a.btn-fill{font-family:var(--rt-body);font-size:14px;margin-top:18px;color:#fff}
+.nav-drawer a.btn-fill{font-family:var(--rt-body);font-size:14px;margin-top:18px;color:var(--rt-cta-ink)}
 .nav-drawer .close{position:absolute;top:8px;right:12px;background:none;border:0;font-size:84px;font-weight:300;color:var(--rt-pine);cursor:pointer;line-height:1;padding:8px}
 
 /* ============ hero (home) ============ */
@@ -233,7 +234,7 @@ p+p{margin-top:14px}
 .fee-row .what{font-size:16.5px}
 .fee-row .what small{display:block;font-size:12.5px;color:var(--rt-ink-60);margin-top:3px}
 .fee-row .amt{font-family:var(--rt-display);font-size:32px;font-weight:400;color:var(--rt-pine);white-space:nowrap}
-.fee-row .amt.free{color:var(--rt-cta)}
+.fee-row .amt.free{color:var(--rt-sea)}
 .fine{font-size:14px;color:var(--rt-ink-60)}
 
 /* ============ faq ============ */
@@ -241,7 +242,7 @@ p+p{margin-top:14px}
 .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;
      padding:22px 2px;font-family:var(--rt-display);font-weight:500;font-size:20px;color:var(--rt-pine)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--rt-body);font-weight:300;font-size:26px;color:var(--rt-cta);transition:transform var(--rt-micro-t)}
+.faq summary::after{content:"+";font-family:var(--rt-body);font-weight:300;font-size:26px;color:var(--rt-sea);transition:transform var(--rt-micro-t)}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq .a{padding:0 2px 24px;max-width:60ch;font-size:var(--rt-b2)}
 
@@ -269,7 +270,7 @@ p+p{margin-top:14px}
 .foot-grid img.foot-logo{height:56px;width:auto}
 .foot-brand p{font-size:13.5px;color:var(--rt-ink);margin-top:14px;max-width:34ch}
 .foot-col a{display:block;color:var(--rt-pine);text-decoration:none;padding:4px 0;font-weight:700;font-size:14px}
-.foot-col a:hover{color:var(--rt-cta-deep)}
+.foot-col a:hover{color:var(--rt-sea)}
 .foot-crisis{max-width:300px;font-size:13px;color:var(--rt-ink)}
 .foot-crisis b{color:var(--rt-pine)}
 .foot-note{margin-top:38px;padding-top:20px;border-top:1px solid var(--rt-hairline);display:flex;flex-wrap:wrap;gap:14px;
@@ -307,7 +308,7 @@ p+p{margin-top:14px}
 /* ============ light nav variant (over the dark hero) ============ */
 .nav-light .nav-links a{color:#fff}
 .nav-light .nav-links a:hover,.nav-light .nav-links a.active{color:var(--rt-aqua)}
-.nav-light .nav-links a.btn-fill{color:#fff}
+.nav-light .nav-links a.btn-fill{color:var(--rt-cta-ink)}
 .nav-light .nav-burger{color:#fff}
 .nav-light .fb-link{color:#fff}
 .nav-light .fb-link:hover{color:var(--rt-aqua)}
@@ -315,13 +316,13 @@ p+p{margin-top:14px}
 /* ============ facebook icon ============ */
 .fb-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
      color:var(--rt-pine);transition:color var(--rt-micro-t),transform var(--rt-micro-t)}
-.fb-link:hover{color:var(--rt-cta);transform:translateY(-1px)}
+.fb-link:hover{color:var(--rt-sea);transform:translateY(-1px)}
 .fb-link svg{width:22px;height:22px}
 .fb-foot{margin-top:12px;margin-left:-6px}
 .fb-drawer{margin-top:14px}
 .fb-drawer svg{width:30px;height:30px}
 .nav-drawer .fb-link{color:var(--rt-pine)}
-.nav-drawer .fb-link:hover{color:var(--rt-cta)}
+.nav-drawer .fb-link:hover{color:var(--rt-sea)}
 
 /* inline two-column grids collapse on small screens */
 @media(max-width:900px){
