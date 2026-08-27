@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wildflower Growth Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f9f6f0; --white:#fdfcf9; --ink:#403830; --ink-soft:#6d655a;
+  --hairline:rgba(64,56,48,.14);
+  --tide:#3f6491; --lavender:#6f5490; --marsh:#5c6e2e;
+  --display:"Newsreader",Georgia,serif;
+  --body:"Inter",-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;box-sizing:border-box}
+body{background:#e7e3da;font-family:var(--body);color:var(--ink);font-size:10.1pt;font-weight:360;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.sheet{width:8.5in;min-height:11in;margin:24px auto;background:var(--cream);box-shadow:0 12px 40px rgba(40,35,28,.18);padding:.55in .8in;position:relative;display:flex;flex-direction:column}
+@media print{
+  body{background:none}
+  .sheet{margin:0;box-shadow:none;page-break-after:always;width:8.5in;height:10.97in;min-height:0;overflow:hidden}
+  .sheet:last-child{page-break-after:auto}
+  @page{size:letter;margin:0}
+}
+.kick{font-size:8pt;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--tide)}
+h1{font-family:var(--display);font-weight:250;font-size:24.5pt;line-height:1.14;letter-spacing:.005em;text-wrap:balance}
+h2{font-family:var(--display);font-weight:300;font-size:16.5pt;line-height:1.2}
+p{max-width:100%}
+.masthead{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--hairline);margin-bottom:14px}
+.masthead .lock{display:flex;gap:10px;align-items:center}
+.masthead .lock img{width:40px;height:40px;border-radius:50%}
+.masthead .lock .stack{font-family:var(--display);font-size:9.5pt;letter-spacing:.2em;line-height:1.35}
+.masthead .meta{text-align:right;font-size:8pt;color:var(--ink-soft);line-height:1.5}
+
+.letter p{margin-bottom:9px;font-size:10.3pt}
+.letter .salut{font-family:var(--display);font-size:12pt;margin:12px 0 8px}
+.thesis{font-family:var(--display);font-size:13.5pt;font-weight:400;line-height:1.35;color:var(--lavender);margin:12px 0 11px}
+.proof{background:var(--white);border:1px solid var(--hairline);border-top:2px solid var(--tide);padding:13px 18px 11px;margin:12px 0 0}
+.proof h3{font-size:8pt;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-bottom:9px}
+.proof ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:7px 22px}
+.proof li{font-size:9.6pt;color:var(--ink-soft);padding-left:14px;position:relative;line-height:1.45}
+.proof li::before{content:"\00d7";position:absolute;left:0;color:#b0421f;font-weight:600}
+.mathrow{display:flex;gap:0;margin:12px 0 0;border:1px solid var(--hairline);background:var(--white)}
+.mathrow .cell{flex:1;padding:10px 15px;border-right:1px solid var(--hairline)}
+.mathrow .cell:last-child{border-right:none}
+.mathrow .num{font-family:var(--display);font-size:17pt;font-weight:300;color:var(--tide)}
+.mathrow .lab{font-size:8.2pt;color:var(--ink-soft);line-height:1.4;margin-top:2px}
+.band{position:absolute;left:0;right:0;bottom:0}
+.band img{width:100%;display:block}
+
+/* page 2 */
+.plan-intro{margin:4px 0 12px;color:var(--ink-soft);font-size:10.3pt;max-width:60ch}
+.stepdoc{border-top:1px solid var(--hairline)}
+.stepdoc .row{display:grid;grid-template-columns:30px 1.05fr 1fr;gap:16px;padding:9px 0;border-bottom:1px solid var(--hairline)}
+.stepdoc .n{font-family:var(--display);font-size:14pt;font-weight:300;color:var(--tide)}
+.stepdoc h3{font-family:var(--display);font-weight:400;font-size:12pt;margin-bottom:2px}
+.stepdoc .what{font-size:9.3pt;color:var(--ink-soft);line-height:1.45}
+.stepdoc .why{font-size:9.3pt;line-height:1.45;color:var(--ink);padding-top:17px}
+.stepdoc .why b{font-weight:600;color:var(--lavender)}
+.sys{margin-top:12px;font-size:9.8pt;color:var(--ink-soft);background:var(--white);border:1px solid var(--hairline);padding:11px 16px}
+.sys b{color:var(--ink);font-weight:600}
+
+/* page 3 */
+.outcome ul{list-style:none;margin:12px 0 0}
+.outcome li{padding:4.5px 0 4.5px 22px;position:relative;font-size:10pt;border-bottom:1px solid var(--hairline)}
+.outcome li::before{content:"\2713";position:absolute;left:2px;color:var(--marsh);font-weight:600}
+.pricewrap{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin:14px 0 0;align-items:stretch}
+.pricebox{background:var(--lavender);color:#fff;padding:18px 22px;display:flex;flex-direction:column;justify-content:center}
+.pricebox .plabel{font-size:8pt;letter-spacing:.22em;text-transform:uppercase;font-weight:600;opacity:.85}
+.pricebox .price{font-family:var(--display);font-size:28pt;font-weight:300;line-height:1.1;margin:4px 0 2px}
+.pricebox .psub{font-size:8.8pt;opacity:.9;line-height:1.45}
+.terms{background:var(--white);border:1px solid var(--hairline);padding:12px 16px;font-size:9pt;color:var(--ink-soft);line-height:1.45}
+.terms b{color:var(--ink);font-weight:600}
+.terms p{margin-bottom:6px}
+.next{margin-top:14px}
+.next ol{margin:7px 0 0 0;list-style:none;counter-reset:nx}
+.next li{counter-increment:nx;display:flex;gap:12px;padding:4px 0;font-size:10pt;align-items:baseline}
+.next li::before{content:counter(nx);font-family:var(--display);color:var(--tide);font-size:12.5pt;min-width:16px}
+.close{margin-top:10px;font-size:10.1pt}
+.close .sig{font-family:var(--display);font-size:13pt;margin-top:8px}
+.close .sigmeta{font-size:8.8pt;color:var(--ink-soft)}
+.foot-rule{margin-top:auto;padding-top:8px}
+.foot-rule img{width:100%;display:block}
+.pagenum{position:absolute;bottom:.35in;right:.85in;font-size:7.5pt;color:var(--ink-soft);letter-spacing:.1em}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="sheet">
+  <div class="masthead">
+    <div class="lock"><img src="../../assets/brand/wildflower-mark-256.png" alt=""><div class="stack">WILDFLOWER<br>COLLECTIVE</div></div>
+    <div class="meta">Prepared for Carolyn Button, LCSW-C<br>by Ben Kouba · Leaf9 · August 26, 2026</div>
+  </div>
+
+  <div class="letter">
+    <span class="kick">A growth plan for Wildflower Collective</span>
+    <h1 style="margin:10px 0 4px">Let's fill your practice from right here on the Shore.</h1>
+
+    <p class="salut">Carolyn,</p>
+    <p>In Colorado, the phone rang. Referrals came in, groups filled, and you never had to wonder where the next client would come from. Then you moved your life and your practice to the Shore, and things got quiet. When you are the one holding a practice, a team, and a family, that quiet gets loud. It is easy to start thinking the clients simply are not here.</p>
+    <p class="thesis">Here is what we found: you do not have a market problem. You have a visibility problem. And a visibility problem can be fixed.</p>
+    <p>We took a hard look at how a new client would find you today. The honest answer is that she almost can't. Your current website is working against you:</p>
+
+    <div class="proof">
+      <h3>What a new client runs into right now</h3>
+      <ul>
+        <li>The main button on your homepage leads to a dead page</li>
+        <li>Your contact form is a clunky embedded Google form that hides its submit button until you scroll</li>
+        <li>Google can barely read your site, so you don't show up in searches</li>
+        <li>Your photo fails to load for most visitors</li>
+        <li>No ads have ever reached the families around you</li>
+        <li>Your practice speaks as "I" while you have a team of three</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:16px">Meanwhile, the market you are worried about looks like this:</p>
+    <div class="mathrow">
+      <div class="cell"><div class="num">100,000+</div><div class="lab">people live within a 30 minute drive of your Easton office</div></div>
+      <div class="cell"><div class="num">1 in 5</div><div class="lab">adults faces a mental health challenge in any given year</div></div>
+      <div class="cell"><div class="num">~75</div><div class="lab">active clients is all it takes to keep you and your team full</div></div>
+    </div>
+    <p style="margin-top:14px">The people are here. They are searching late at night, scrolling on their phones, and asking friends for names. They just can't find you yet. This plan fixes that, once, and points every piece of your marketing at the same person: the worried parent on the Mid-Shore who needs exactly what you do.</p>
+    <p>One more thing before the plan. We attached a screenshot of the homepage design we have already been working on, and the email that came with this dossier includes a short video overview. We hope it gives you a taste of what is to come.</p>
+  </div>
+  <div class="pagenum">THE WILDFLOWER GROWTH PLAN · 1 OF 3</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="sheet">
+  <div class="masthead">
+    <div class="lock"><img src="../../assets/brand/wildflower-mark-256.png" alt=""><div class="stack">WILDFLOWER<br>COLLECTIVE</div></div>
+    <div class="meta">The plan</div>
+  </div>
+
+  <span class="kick">One project, five parts</span>
+  <h2 style="margin:8px 0 6px">Rebuild the whole path, from first glance to first session.</h2>
+  <p class="plan-intro">Each part depends on the one before it. Skipping a step is how marketing money gets wasted. Done together, they become one system that works while you are in session.</p>
+
+  <div class="stepdoc">
+    <div class="row">
+      <div class="n">1</div>
+      <div><h3>Get clear</h3><div class="what">A working session on your brand, your core values, and exactly who you serve best. We put your position in this market into plain words: the message, the person it is for, and why Wildflower over anyone else.</div></div>
+      <div class="why"><b>Why it matters:</b> every page, ad, and dollar that follows aims at one person. Without this, marketing sprays and prays.</div>
+    </div>
+    <div class="row">
+      <div class="n">2</div>
+      <div><h3>Get a home</h3><div class="what">A full redesign and build of meetwildflower.com on the direction we have already developed: your watercolor brand, your three therapists, honest fees, and one clear action on every page: request a free 15 minute consult.</div></div>
+      <div class="why"><b>Why it matters:</b> every lead ends up here. Right now the site loses them at the door. The new one is built to welcome and convert.</div>
+    </div>
+    <div class="row">
+      <div class="n">3</div>
+      <div><h3>Get wired</h3><div class="what">One-time setup of your ad infrastructure: a Meta business account, your Facebook and Instagram connected, and pixel tracking installed so we can see what every dollar does.</div></div>
+      <div class="why"><b>Why it matters:</b> running ads without tracking is spending blind. This wiring makes every future dollar accountable.</div>
+    </div>
+    <div class="row">
+      <div class="n">4</div>
+      <div><h3>Get seen</h3><div class="what">A Meta ad campaign built and published in your Ads Manager: five to ten custom ads, written and designed in your brand, targeted to about a 30 mile radius around your office, and fully compliant with Meta's rules for mental health advertising.</div></div>
+      <div class="why"><b>Why it matters:</b> the mom scrolling at 9pm is not searching yet. Ads reach her first, with a message that sounds like you.</div>
+    </div>
+    <div class="row" style="border-bottom:none">
+      <div class="n">5</div>
+      <div><h3>Get found</h3><div class="what">A one-time SEO treatment on the new site, setup and optimization of your Google Business Profile, and a tidy lead flow: every call and form lands in one place, so no inquiry slips away.</div></div>
+      <div class="why"><b>Why it matters:</b> when someone near Easton searches "therapist near me," the map result gets the call. Today that call goes to someone else.</div>
+    </div>
+  </div>
+
+  <div class="sys"><b>The point of doing it all at once:</b> clarity shapes the website, the website converts the ad clicks, the pixel proves what works, and Google catches everyone the ads warmed up. One system, pointed at your people.</div>
+  <div class="pagenum">THE WILDFLOWER GROWTH PLAN · 2 OF 3</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="sheet">
+  <div class="masthead">
+    <div class="lock"><img src="../../assets/brand/wildflower-mark-256.png" alt=""><div class="stack">WILDFLOWER<br>COLLECTIVE</div></div>
+    <div class="meta">Investment &amp; next steps</div>
+  </div>
+
+  <span class="kick">What changes</span>
+  <h2 style="margin:8px 0 2px">Ninety days from now</h2>
+  <div class="outcome">
+    <ul>
+      <li>A website that finally looks like your brand and turns visitors into consult requests</li>
+      <li>Your practice on the map, literally: showing up in local search and on Google Maps</li>
+      <li>Ads in your community's feed, reaching families within 30 miles of your office</li>
+      <li>Every inquiry flowing to one place, with tracking that shows what brought them in</li>
+      <li>A message you can repeat with confidence, because it is truly yours</li>
+    </ul>
+  </div>
+
+  <div class="pricewrap">
+    <div class="terms">
+      <p><b>One project. One price. Everything on page two.</b></p>
+      <p>Half is due to begin ($3,750) and half at launch. Most of this work completes in about six weeks.</p>
+      <p><b>Prefer to keep it simple?</b> Pay in full up front and the price is a flat $7,000. That saves you $500.</p>
+      <p><b>Not included:</b> your monthly ad budget, which goes straight to Meta, not to us. We suggest starting around $600 per month, and you can pause it anytime.</p>
+      <p style="color:var(--marsh)"><b>Say yes by August 31</b> and we will include your first 30 days of hands-on ads management, free. We watch the campaign daily and tune it as it learns.</p>
+      <p>This proposal is good through September 30, 2026.</p>
+    </div>
+    <div class="pricebox">
+      <div class="plabel">Your investment</div>
+      <div class="price">$7,500</div>
+      <div class="psub">Complete, one-time. No retainer, no contract beyond this project.</div>
+    </div>
+  </div>
+
+  <div class="next">
+    <span class="kick">Next steps</span>
+    <ol>
+      <li>Reply with a yes, or with the questions on your mind. Both are welcome.</li>
+      <li>We send a simple agreement and an invoice for the deposit.</li>
+      <li>We schedule your positioning session and get to work. You will see the new website taking shape within the first two weeks.</li>
+    </ol>
+  </div>
+
+  <div class="close">
+    <p>You spend your days helping people see that their hard season is not the whole story. This is us doing the same for your practice. The clients are out there. Let's make sure they can find you.</p>
+    <div class="sig">Ben Kouba</div>
+    <div class="sigmeta">Leaf9 · ben@leaf9.com</div>
+  </div>
+
+  <div class="foot-rule"><img src="../../assets/art/footer-rule-1600.jpg" alt=""></div>
+  <div class="pagenum" style="bottom:.30in">THE WILDFLOWER GROWTH PLAN · 3 OF 3</div>
+</div>
+
+</body>
+</html>

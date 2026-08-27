@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildflower Collective — Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   WILDFLOWER COLLECTIVE — DESIGN TOKENS (the contract)
+   Direction: «Easton Light» — selected by Ben, Aug 25, 2026
+   Every phase-5/6 page consumes these variables. No rogue values.
+   ============================================================ */
+:root{
+  /* Ground & ink */
+  --wf-cream:#f9f6f0;        /* page ground — cool-cast cream */
+  --wf-mist:#eef0ee;         /* alt band — morning haze */
+  --wf-white:#fdfcf9;        /* card surface */
+  --wf-ink:#403830;          /* headlines, body — the logo wordmark ink */
+  --wf-ink-soft:#716f66;     /* secondary text (4.7:1 on cream) */
+  --wf-hairline:rgba(64,56,48,.14);
+
+  /* Working hues — the logo's quietest axis */
+  --wf-tide:#3f6491;         /* links, kickers, focus ring (5.7:1) */
+  --wf-tide-soft:#8cb4d0;    /* decorative only — never text */
+  --wf-tide-tint:rgba(140,180,208,.12);
+  --wf-marsh:#5c6e2e;        /* confirmation / success (5.2:1) */
+  --wf-marsh-soft:#b0bd8f;   /* decorative only */
+  --wf-marsh-tint:rgba(176,189,143,.14);
+
+  /* Signal — the consult CTA (Ben, Aug 25 2026: not red) */
+  --wf-cta:#6f5490;          /* lavender-deep — primary CTA fills (5.7:1; white text 6.3:1) */
+  --wf-cta-hover:#5a4276;
+  --wf-poppy:#b0421f;        /* errors and destructive states ONLY (5.3:1) */
+
+  /* Signature hues — the ILLUSTRATION palette. These live inside
+     watercolor artwork (hero art, signature flowers, painted rules,
+     spot stems). Never UI chrome, never text. */
+  --wf-sig-pink:#dc78a0; --wf-sig-lavender:#b48cc8; --wf-sig-cornflower:#78a0c8;
+  --wf-sig-marigold:#f0dc64; --wf-sig-leaf:#a0b464; --wf-sig-poppy:#dc643c;
+
+  /* Type */
+  --wf-font-display:"Newsreader",Georgia,serif;
+  --wf-font-body:"Inter",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --wf-h1:clamp(40px,5.6vw,64px);
+  --wf-h2:clamp(30px,3.8vw,42px);
+  --wf-h3:clamp(21px,2.4vw,26px);
+  --wf-body:16.5px;
+  --wf-small:14px;
+  --wf-kicker:11px;
+
+  /* Space (8px base) & shape — editorial, near-square */
+  --wf-s1:8px; --wf-s2:16px; --wf-s3:24px; --wf-s4:40px; --wf-s5:72px; --wf-s6:120px;
+  --wf-radius:2px;
+
+  /* Motion — near-still */
+  --wf-dur-fast:200ms; --wf-dur:800ms;
+  --wf-ease:cubic-bezier(.4,0,.2,1);
+}
+/* ============================================================ */
+
+*{margin:0;box-sizing:border-box}
+body{background:var(--wf-cream);color:var(--wf-ink);font-family:var(--wf-font-body);font-size:var(--wf-body);line-height:1.68;font-weight:340}
+.wrap{max-width:1020px;margin:0 auto;padding:56px 32px 120px}
+header.guide{border-bottom:1px solid var(--wf-hairline);padding-bottom:24px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px}
+header.guide .brand{display:flex;gap:18px;align-items:center}
+header.guide img{width:84px;height:84px;border-radius:50%}
+header.guide h1{font-family:var(--wf-font-display);font-weight:300;font-size:34px;line-height:1.18;letter-spacing:.01em}
+header.guide h1 .dir{font-style:italic;color:var(--wf-tide)}
+header.guide .sub{color:var(--wf-ink-soft);font-size:13.5px;margin-top:6px}
+nav.toc{font-size:13px;color:var(--wf-ink-soft);display:flex;gap:16px;flex-wrap:wrap}
+nav.toc a{color:var(--wf-tide);text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+
+section{margin-top:76px}
+.kick{font-size:var(--wf-kicker);letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--wf-tide);margin-bottom:12px}
+section>h2{font-family:var(--wf-font-display);font-weight:300;font-size:var(--wf-h2);margin-bottom:10px;letter-spacing:.005em}
+section>p.intro{color:var(--wf-ink-soft);max-width:66ch;margin-bottom:28px}
+
+/* palette */
+.pal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pal .sw{border:1px solid var(--wf-hairline);background:#fff}
+.pal .chip{height:70px;display:flex;align-items:flex-end;padding:8px 10px}
+.pal .chip .aa{color:#fff;font-size:10.5px;font-weight:600;letter-spacing:.06em}
+.pal .chip .aa.dark{color:var(--wf-ink)}
+.pal .lab{padding:10px 12px;font-size:11.5px;color:var(--wf-ink-soft);line-height:1.5}
+.pal .lab b{color:var(--wf-ink);display:block;font-weight:600}
+.sig-row{display:flex;height:34px;margin-top:22px;border:1px solid var(--wf-hairline)}
+.sig-row div{flex:1}
+.sig-note{font-size:12.5px;color:var(--wf-ink-soft);margin-top:8px;font-style:italic}
+.roles{margin-top:26px;border:1px solid var(--wf-hairline);background:#fff}
+.roles .r{display:grid;grid-template-columns:190px 1fr;padding:14px 18px;border-bottom:1px solid var(--wf-hairline);font-size:14px;gap:12px}
+.roles .r:last-child{border-bottom:none}
+.roles .r b{font-weight:600}
+.roles .r span{color:var(--wf-ink-soft)}
+
+/* type */
+.type-spec{border:1px solid var(--wf-hairline);background:var(--wf-white);padding:44px}
+.type-spec .k{font-size:var(--wf-kicker);letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--wf-tide);margin-bottom:18px}
+.type-spec h3.h1{font-family:var(--wf-font-display);font-size:var(--wf-h1);font-weight:250;line-height:1.1;letter-spacing:.005em}
+.type-spec h4.h2{font-family:var(--wf-font-display);font-size:var(--wf-h2);font-weight:300;margin-top:30px}
+.type-spec h5.h3{font-family:var(--wf-font-display);font-size:var(--wf-h3);font-weight:400;margin-top:24px}
+.type-spec p.b{margin-top:18px;max-width:60ch}
+.type-spec p.s{margin-top:12px;font-size:var(--wf-small);color:var(--wf-ink-soft);max-width:60ch}
+.type-rules{margin-top:18px;font-size:14px;color:var(--wf-ink-soft);line-height:1.7;padding-left:18px}
+.type-rules li{margin-bottom:6px}
+.type-rules b{color:var(--wf-ink);font-weight:600}
+
+/* buttons & ui */
+.uirow{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.btn{font-family:var(--wf-font-body);font-weight:500;font-size:14px;letter-spacing:.02em;padding:13px 28px;border-radius:var(--wf-radius);border:none;cursor:pointer;transition:background var(--wf-dur-fast) var(--wf-ease),color var(--wf-dur-fast) var(--wf-ease)}
+.btn.primary{background:var(--wf-cta);color:#fff}
+.btn.primary:hover{background:var(--wf-cta-hover)}
+.btn.secondary{background:transparent;color:var(--wf-ink);border:1px solid var(--wf-ink)}
+.btn.secondary:hover{background:rgba(64,56,48,.05)}
+.btn.quiet{background:transparent;color:var(--wf-tide);text-decoration:underline;text-underline-offset:4px;padding:13px 6px}
+.card-demo{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tcard{background:var(--wf-white);border:1px solid var(--wf-hairline);overflow:hidden;transition:box-shadow var(--wf-dur-fast) var(--wf-ease)}
+.tcard:hover{box-shadow:0 6px 24px rgba(64,56,48,.07)}
+.tcard .photo{aspect-ratio:4/5;background:linear-gradient(180deg,#e3e8ea,#d3dbd6 70%,#c4cdb8);display:flex;align-items:center;justify-content:center;color:#6d6f66;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:center}
+.tcard .body{padding:18px 20px 22px;border-top:2px solid var(--wf-tide)}
+.tcard b{font-family:var(--wf-font-display);font-weight:400;font-size:20px;display:block}
+.tcard .cred{font-size:12.5px;color:var(--wf-ink-soft);margin-bottom:8px}
+.tcard p{font-size:14px;color:var(--wf-ink-soft)}
+.tcard a{font-size:13.5px;color:var(--wf-tide);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.logistics{border:1px solid var(--wf-hairline);background:#fff;max-width:560px;margin-top:26px}
+.logistics .lt{padding:14px 20px;border-bottom:1px solid var(--wf-hairline);font-family:var(--wf-font-display);font-size:19px;font-weight:400}
+.logistics .row{display:flex;justify-content:space-between;padding:13px 20px;border-bottom:1px solid var(--wf-hairline);font-size:14.5px}
+.logistics .row:last-child{border-bottom:none}
+.logistics .row b{font-weight:500}
+.logistics .row span{color:var(--wf-ink-soft)}
+.input-demo{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500}
+.field input{font-family:var(--wf-font-body);font-size:15px;padding:13px 16px;border-radius:var(--wf-radius);border:1px solid rgba(64,56,48,.3);background:#fff;color:var(--wf-ink);min-width:250px}
+.field input:focus{outline:2px solid var(--wf-tide);outline-offset:1px;border-color:transparent}
+.field .err{color:var(--wf-poppy);font-weight:400;font-size:12.5px}
+
+/* imagery */
+.img-rules{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.img-rules .cell{border:1px solid var(--wf-hairline);overflow:hidden;background:#fff}
+.img-rules .demo{aspect-ratio:16/7;display:flex;align-items:flex-end}
+.img-rules .demo.shore{background:linear-gradient(180deg,#dfe6ea 0%,#cfd9de 45%,#b9c4bb 70%,#a9b294 100%)}
+.img-rules .demo.shore .cap{color:#fff;text-shadow:0 1px 10px rgba(40,50,55,.3);padding:18px 22px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.img-rules .demo.portrait{background:linear-gradient(165deg,#ece7dd,#ddd8ca 60%,#cdc9b8);align-items:center;justify-content:center;color:#77746a;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.img-rules .lab{padding:13px 16px;font-size:13px;color:var(--wf-ink-soft)}
+.img-rules .lab b{color:var(--wf-ink);font-weight:600}
+.sig-demo{margin-top:18px;border:1px solid var(--wf-hairline);background:var(--wf-white);padding:34px 0 0}
+.sig-demo .painted{height:22px;display:flex;align-items:flex-end;gap:2%;padding:0 6%}
+.sig-demo .painted i{flex:1;border-radius:999px 999px 0 0;opacity:.85}
+.sig-demo .cap{font-size:12.5px;color:var(--wf-ink-soft);padding:12px 16px;border-top:1px solid var(--wf-hairline);margin-top:0;font-style:italic}
+.recipes{margin-top:22px;border:1px solid var(--wf-hairline);background:#fff}
+.recipes .rec{padding:16px 20px;border-bottom:1px solid var(--wf-hairline)}
+.recipes .rec:last-child{border-bottom:none}
+.recipes .rec b{font-size:14px;font-weight:600}
+.recipes .rec code{display:block;margin-top:8px;font-size:12.5px;line-height:1.6;color:var(--wf-ink-soft);background:var(--wf-cream);padding:10px 14px;font-family:ui-monospace,Menlo,monospace;white-space:pre-wrap}
+
+/* motion */
+.motion-demo{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.mbox{width:210px;height:110px;background:var(--wf-white);border:1px solid var(--wf-hairline);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--wf-ink-soft);cursor:pointer;transition:opacity var(--wf-dur) var(--wf-ease)}
+.mbox.hidden-state{opacity:0}
+.motion-rules{margin-top:18px;font-size:14px;color:var(--wf-ink-soft);line-height:1.7;padding-left:18px}
+.motion-rules li{margin-bottom:6px}
+.motion-rules b{color:var(--wf-ink);font-weight:600}
+
+/* voice */
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.voice .col{border:1px solid var(--wf-hairline);background:#fff;padding:24px}
+.voice h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.voice .do h4{color:var(--wf-marsh)}
+.voice .dont h4{color:var(--wf-poppy)}
+.voice li{font-size:14px;margin-bottom:10px;color:var(--wf-ink-soft);line-height:1.6}
+.voice li b{color:var(--wf-ink);font-weight:600}
+
+/* do/dont */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dd .cell{border:1px solid var(--wf-hairline);overflow:hidden;background:#fff}
+.dd .demo{padding:28px;min-height:130px;display:flex;align-items:center;justify-content:center;text-align:center;gap:10px;flex-wrap:wrap}
+.dd .lab{padding:11px 16px;font-size:13px;border-top:1px solid var(--wf-hairline);font-weight:600}
+.dd .lab.good{color:var(--wf-marsh)}
+.dd .lab.bad{color:var(--wf-poppy)}
+footer.guide{margin-top:100px;border-top:1px solid var(--wf-hairline);padding-top:20px;font-size:13px;color:var(--wf-ink-soft)}
+@media(max-width:820px){.pal,.card-demo,.img-rules,.voice,.dd{grid-template-columns:1fr}.type-spec{padding:28px}}
+@media (prefers-reduced-motion: reduce){
+  *{transition-duration:.01ms!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="guide">
+  <div class="brand">
+    <img src="../assets/brand/Wildflower-logo-new-CROP.png" alt="Wildflower Collective logo">
+    <div>
+      <h1>Wildflower Collective<br><span class="dir">Easton Light</span></h1>
+      <div class="sub">Living style guide · v2.1 · Leaf9 · August 25, 2026 · typography, color &amp; watercolor — no photography · tokens in <code>:root</code> are the contract</div>
+    </div>
+  </div>
+  <nav class="toc">
+    <a href="#color">Color</a><a href="#type">Type</a><a href="#ui">UI</a><a href="#imagery">Imagery</a><a href="#motion">Motion</a><a href="#voice">Voice</a><a href="#dodont">Do / Don't</a>
+  </nav>
+</header>
+
+<section id="color">
+  <div class="kick">01 · Color</div>
+  <h2>A cool page, a lavender signal</h2>
+  <p class="intro">The palette narrows the logo to its quietest axis — tidewater blue and marsh green on cool cream — and gives the consult button the meadow's lavender, deepened for contrast: calm, unmistakable, never alarming (Ben's call: no red CTAs). The full watercolor palette survives as <b>signature hues</b> inside artwork. All working colors are WCAG AA-verified on cream (ratios shown on each chip).</p>
+  <div class="pal">
+    <div class="sw"><div class="chip" style="background:var(--wf-cta)"><span class="aa">Aa 5.7</span></div><div class="lab"><b>Lavender deep · #6f5490</b>The consult CTA — the one filled button color. Hover #5a4276.</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wf-tide)"><span class="aa">Aa 5.7</span></div><div class="lab"><b>Tide · #3f6491</b>Links, kickers, focus rings, card rules — the working accent.</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wf-marsh)"><span class="aa">Aa 5.2</span></div><div class="lab"><b>Marsh · #5c6e2e</b>Success and confirmation states.</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wf-tide-soft)"><span class="aa dark">decorative</span></div><div class="lab"><b>Tide soft · #8cb4d0</b>Washes and large shapes only — never text.</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wf-marsh-soft)"><span class="aa dark">decorative</span></div><div class="lab"><b>Marsh soft · #b0bd8f</b>Washes and large shapes only — never text.</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wf-ink)"><span class="aa">Aa 10.7</span></div><div class="lab"><b>Ink · #403830</b>All reading text — the logo's own wordmark ink. Ink-soft #716f66 (4.7:1) for secondary.</div></div>
+  </div>
+  <div class="pal" style="grid-template-columns:repeat(4,1fr);margin-top:14px">
+    <div class="sw"><div class="chip" style="background:var(--wf-cream)"></div><div class="lab"><b>Cream · #f9f6f0</b>Page ground.</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wf-mist)"></div><div class="lab"><b>Mist · #eef0ee</b>Alternating bands — morning haze.</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wf-white);border-bottom:1px solid var(--wf-hairline)"></div><div class="lab"><b>White warm · #fdfcf9</b>Cards and panels.</div></div>
+    <div class="sw"><div class="chip" style="background:var(--wf-poppy)"><span class="aa" style="padding:8px 10px;display:inline-block">Aa 5.3</span></div><div class="lab"><b>Poppy · #b0421f</b>Errors and destructive states only — never a CTA.</div></div>
+  </div>
+  <div class="sig-row" aria-hidden="true">
+    <div style="background:var(--wf-sig-poppy)"></div><div style="background:var(--wf-sig-pink)"></div><div style="background:var(--wf-sig-lavender)"></div><div style="background:var(--wf-sig-cornflower)"></div><div style="background:var(--wf-sig-marigold)"></div><div style="background:var(--wf-sig-leaf)"></div>
+  </div>
+  <p class="sig-note">Signature hues — the logo's six watercolor colors, and the palette of every piece of generated artwork. They live inside illustrations only: never as UI chrome, never as text, never as flat section tints. The split is the system — quiet tide/marsh/poppy runs the interface, the full meadow blooms in the art.</p>
+  <div class="roles">
+    <div class="r"><b>Ground</b><span>Cream everywhere; mist for alternating sections; white-warm cards. No hue tints — quiet is the concept.</span></div>
+    <div class="r"><b>Ink</b><span>All reading text. Ink-soft for secondary. White text only on tide or poppy fills — never on artwork.</span></div>
+    <div class="r"><b>Accent</b><span>Tide works (links, rules, kickers); marsh confirms; soft variants decorate.</span></div>
+    <div class="r"><b>Signal</b><span>Lavender-deep = the consult CTA, the only filled button. Poppy is reserved for errors. If a page has two filled buttons in one view, one is wrong.</span></div>
+  </div>
+</section>
+
+<section id="type">
+  <div class="kick">02 · Typography</div>
+  <h2>Newsreader × Inter</h2>
+  <p class="intro">Newsreader at large optical sizes and light weights gives literary calm — trust through composure, not decoration. Inter carries body and UI without personality intruding. No italic color accents in headlines: the restraint <em>is</em> the style.</p>
+  <div class="type-spec">
+    <div class="k">Kicker · Inter 600 caps · .26em · 11px · tide</div>
+    <h3 class="h1">Steady ground for<br>uncertain seasons.</h3>
+    <h4 class="h2">H2 · Section voice, Newsreader 300</h4>
+    <h5 class="h3">H3 · Card and block titles, Newsreader 400</h5>
+    <p class="b">Body — Inter 340 at 16.5px/1.68, ink on cream, max measure 60ch. Comfortable for an anxious reader on a phone at 9pm: no justified text, nothing lighter than 340 below 18px, generous paragraph spacing.</p>
+    <p class="s">Small — 14px ink-soft for metadata, captions, credentials. Fees and logistics are set at body size in the menu table — transparency is a feature, not fine print.</p>
+  </div>
+  <ul class="type-rules">
+    <li><b>Scale:</b> H1 clamp(40–64px) · H2 clamp(30–42px) · H3 clamp(21–26px) · body 16.5px · small 14px · kicker 11px.</li>
+    <li><b>Weights:</b> Newsreader 250 (H1), 300 (H2), 400 (H3), optical sizing on; Inter 340/500/600 only.</li>
+    <li><b>Type and art never overlap:</b> headlines sit beside or above artwork on clean cream, never on top of it. The composition is editorial adjacency, magazine-style.</li>
+    <li><b>Wordmark lockup (Ben, Aug 25, 2026):</b> the simplified circular mark (<code>assets/brand/wildflower-mark.png</code> — three signature flowers: poppy, lavender, cornflower) at 40–46px, with "WILDFLOWER" stacked above "COLLECTIVE" to its right — Newsreader 400, ~14.5px, letterspaced .22em. The original full logo is for large-format and social use only; it does not scale below ~150px.</li>
+  </ul>
+</section>
+
+<section id="ui">
+  <div class="kick">03 · UI Components</div>
+  <h2>Sharp corners, quiet confidence</h2>
+  <p class="intro">Near-square 2px radius throughout — editorial, not app-like. Buttons are rectangles; the primary appears once per viewport-height and always says the same thing. Each therapist card carries her signature flower — a watercolor study from the logo's meadow (Carolyn: poppy · Amanda: lavender · Logan: cornflower) — and the fee table is set like a menu a good restaurant is proud of. The card's art slot accepts a portrait later with zero layout shift if the client ever wants one.</p>
+  <div class="uirow">
+    <button class="btn primary">Request a free consult</button>
+    <button class="btn secondary">Meet the therapists</button>
+    <button class="btn quiet">Fees &amp; insurance</button>
+  </div>
+  <div class="card-demo" style="margin:26px 0">
+    <div class="tcard"><div class="photo" style="background:linear-gradient(180deg,#fdfcf9 30%,rgba(220,100,60,.14))">Signature flower slot · 4:5<br>coral poppy · watercolor</div><div class="body"><b>Carolyn Button</b><div class="cred">LCSW-C · Founder</div><p>Divorce &amp; family transitions, teens and adults. Collaborative-divorce trained, IACP member.</p></div></div>
+    <div class="tcard"><div class="photo" style="background:linear-gradient(180deg,#fdfcf9 30%,rgba(180,140,200,.16))">Signature flower slot · 4:5<br>lavender · watercolor</div><div class="body"><b>Amanda Priestly</b><div class="cred">LGPC</div><p>Identity and life transitions through a warm, insight-oriented lens. Free 15-minute consult.</p></div></div>
+    <div class="tcard"><div class="photo" style="background:linear-gradient(180deg,#fdfcf9 30%,rgba(120,160,200,.16))">Signature flower slot · 4:5<br>cornflower · watercolor</div><div class="body"><b>Logan Blake</b><div class="cred">LGSW</div><p>Kids, teens, and adults feeling overwhelmed — practical DBT and CBT tools that hold up daily.</p></div></div>
+  </div>
+  <div class="logistics">
+    <div class="lt">Fees &amp; insurance</div>
+    <div class="row"><b>60-minute intake</b><span>$200</span></div>
+    <div class="row"><b>50-minute session</b><span>$175</span></div>
+    <div class="row"><b>Parent coaching</b><span>$200</span></div>
+    <div class="row"><b>CareFirst BCBS</b><span>In-network · Maryland individual therapy</span></div>
+    <div class="row"><b>Sliding scale</b><span>Available — ask us</span></div>
+  </div>
+  <div class="input-demo">
+    <label class="field">Your name<input type="text" placeholder="First name is fine"></label>
+    <label class="field">How can we reach you?<input type="text" placeholder="Email or phone"><span class="err">We'll need one of these to reply — either works.</span></label>
+  </div>
+</section>
+
+<section id="imagery">
+  <div class="kick">04 · Artwork &amp; texture</div>
+  <h2>The meadow, painted — no photography</h2>
+  <p class="intro">The site's entire art program is generated watercolor botanical illustration in the logo's own palette and brushwork — the brand's one visual asset, extended into a family. The discipline that keeps it editorial rather than crafty: artwork is <b>contained and studied</b> (botanical-plate composure, not riotous bouquets), painted at full saturation, always on clean cream, and type never sits on top of it. Texture comes from the paint itself — brush edges, pigment blooms, paper grain — never from CSS filters over content.</p>
+  <div class="img-rules">
+    <div class="cell">
+      <div class="demo" style="background:#fdfcf9;align-items:flex-end;justify-content:center;gap:1.2%;padding:0 8%">
+        <i style="flex:1;height:52%;background:var(--wf-sig-leaf);opacity:.75;border-radius:999px 999px 0 0"></i><i style="flex:1;height:80%;background:var(--wf-sig-lavender);opacity:.8;border-radius:999px 999px 0 0"></i><i style="flex:1.4;height:30%;background:transparent"></i><i style="flex:1;height:64%;background:var(--wf-sig-poppy);opacity:.8;border-radius:999px 999px 0 0"></i><i style="flex:1;height:44%;background:var(--wf-sig-marigold);opacity:.75;border-radius:999px 999px 0 0"></i><i style="flex:2;height:20%;background:transparent"></i><i style="flex:1;height:72%;background:var(--wf-sig-cornflower);opacity:.8;border-radius:999px 999px 0 0"></i><i style="flex:1;height:50%;background:var(--wf-sig-pink);opacity:.75;border-radius:999px 999px 0 0"></i>
+      </div>
+      <div class="lab"><b>Hero &amp; band art</b> — sparse meadow compositions, flowers rising from the bottom edge (the logo's own gesture), generous cream between stems. Wide formats (21:9, 24:5); flat stand-in shown at correct proportions.</div>
+    </div>
+    <div class="cell">
+      <div class="demo" style="background:#fdfcf9;align-items:center;justify-content:center;flex-direction:column;gap:8px">
+        <div style="width:34%;aspect-ratio:1;border-radius:0;background:radial-gradient(circle at 50% 42%,rgba(220,100,60,.5),rgba(220,100,60,.18) 55%,transparent 72%)"></div>
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#77746a">Signature flower · 1:1 study</span>
+      </div>
+      <div class="lab"><b>Signature flowers &amp; spots</b> — single-stem botanical studies: one per therapist (poppy · lavender · cornflower), plus small spot stems for section punctuation. Centered low, negative space above, like plates in a field guide.</div>
+    </div>
+  </div>
+  <div class="sig-demo">
+    <div class="painted" aria-hidden="true">
+      <i style="height:70%;background:var(--wf-sig-pink)"></i><i style="height:100%;background:var(--wf-sig-lavender)"></i><i style="height:55%;background:var(--wf-sig-marigold)"></i><i style="height:90%;background:var(--wf-sig-poppy)"></i><i style="height:65%;background:var(--wf-sig-cornflower)"></i><i style="height:80%;background:var(--wf-sig-leaf)"></i><i style="height:60%;background:var(--wf-sig-pink)"></i><i style="height:95%;background:var(--wf-sig-lavender)"></i><i style="height:50%;background:var(--wf-sig-marigold)"></i><i style="height:75%;background:var(--wf-sig-cornflower)"></i><i style="height:88%;background:var(--wf-sig-poppy)"></i><i style="height:58%;background:var(--wf-sig-leaf)"></i>
+    </div>
+    <p class="cap">The painted rule — a thin watercolor strip above the footer on every page. Flat stand-in shown; final art matches the logo's brushwork.</p>
+  </div>
+  <div class="recipes">
+    <div class="rec"><b>Rules of the art program</b>
+      <code>1. Palette locked to the six signature hues + olive stems on cream #f9f6f0 — no new colors
+2. Brushwork matches the logo: loose, visible strokes, pigment blooms, white paper breathing through
+3. Composed, not crowded — botanical-study restraint; every piece keeps ≥40% clean cream
+4. Art never runs behind text; deckled brush edges are the only permitted texture at boundaries
+5. Optional paper grain on cream grounds at ≤3% opacity, never over artwork or text
+6. All assets generated via Higgsfield in candidate batches — Ben picks before anything ships
+7. No generated people, hands, offices, or landscapes — florals and botanical elements only</code>
+    </div>
+    <div class="rec"><b>Higgsfield recipe — hero meadow (wide)</b>
+      <code>Sparse loose watercolor wildflower meadow on warm cream paper (#f9f6f0), a few graceful stems rising from the bottom edge with generous empty cream between them, palette exactly: coral poppy #dc643c, pink cosmos #dc78a0, lavender #b48cc8, cornflower #78a0c8, marigold #f0dc64, olive-green stems #a0b464; hand-painted, visible brush texture and pigment blooms, white paper breathing through, botanical-study restraint, no outlines, no text, ultra-wide banner, edges fading naturally into cream</code>
+    </div>
+    <div class="rec"><b>Higgsfield recipe — signature flower (per therapist)</b>
+      <code>Single [coral poppy / lavender spike / blue cornflower] stem study, loose watercolor on warm cream paper (#f9f6f0), same brushwork and palette as reference logo, botanical-plate composition centered low with generous negative space above, visible brush strokes and pigment blooms, 1:1, no text</code>
+    </div>
+    <div class="rec"><b>Higgsfield recipe — painted footer rule</b>
+      <code>Very thin horizontal strip of loose watercolor wildflowers on warm cream paper (#f9f6f0), small blooms rising from the bottom edge, palette exactly: coral poppy #dc643c, pink cosmos #dc78a0, lavender #b48cc8, cornflower #78a0c8, marigold #f0dc64, olive stems #a0b464; hand-painted, visible brush texture, matches reference logo brushwork, ultra-wide 24:1 banner, generous cream space above, no text</code>
+    </div>
+  </div>
+</section>
+
+<section id="motion">
+  <div class="kick">05 · Motion</div>
+  <h2>Near-still</h2>
+  <p class="intro">Movement is weather, not choreography: slow crossfades, nothing slides, nothing parallaxes. A page that holds still reads as a practice that holds steady. Click the box to feel the fade.</p>
+  <div class="motion-demo">
+    <div class="mbox" id="revealDemo">click to replay fade</div>
+  </div>
+  <ul class="motion-rules">
+    <li><b>Reveal:</b> opacity 0→1 only · 800ms · cubic-bezier(.4,0,.2,1) · stagger siblings 120ms. No translateY.</li>
+    <li><b>Hover (Ben, Aug 25, 2026):</b> buttons darken + lift 1px with a soft shadow, 200ms; quiet links deepen and thicken their underline; cards gain a soft shadow. No scaling, nothing larger than a 1px lift.</li>
+    <li><b>Never:</b> parallax, bounces, carousels, scroll-jacking, animated headlines.</li>
+    <li><b>prefers-reduced-motion:</b> everything instant — already wired into this page.</li>
+  </ul>
+</section>
+
+<section id="voice">
+  <div class="kick">06 · Voice &amp; UX copy</div>
+  <h2>Composed, local, plain</h2>
+  <p class="intro">The practice speaks as "we" (three therapists, one collective); each clinician keeps "I" on her own bio. The register is a steady neighbor who happens to be excellent at her job — write to the parent at 9pm and the teen reading over her shoulder, both at once.</p>
+  <div class="voice">
+    <div class="col do">
+      <h4>Do</h4>
+      <ul>
+        <li><b>"Request a free consult"</b> — the one CTA phrase, everywhere.</li>
+        <li><b>Name the place:</b> "in Easton," "on the Shore" — locality is trust.</li>
+        <li><b>Answer money questions plainly:</b> "Sessions are $175. We're in-network with CareFirst BCBS, and sliding scale is available."</li>
+        <li><b>Plain clinical translation:</b> "DBT — practical skills for big feelings."</li>
+        <li>Near every form: <b>"Not for emergencies — if you're in crisis, call or text 988."</b></li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>Don't</h4>
+      <ul>
+        <li>No "journey," "safe space," "holistic healing" boilerplate — every local competitor already says it.</li>
+        <li>No first-person "I" outside individual bios.</li>
+        <li>No urgency tricks or "limited spots!" — wrong category, wrong ethics.</li>
+        <li>No unexplained acronyms (DBT/CBT always get their plain-English shadow).</li>
+        <li>No collecting sensitive details in forms — name + contact + optional "what brings you here."</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="dodont">
+  <div class="kick">07 · Do / Don't</div>
+  <h2>The lines that keep it Easton Light</h2>
+  <div class="dd">
+    <div class="cell">
+      <div class="demo" style="background:#fdfcf9;gap:24px">
+        <span style="font-family:var(--wf-font-display);font-weight:250;font-size:26px;text-align:left">The paint stays<br>in its frame.</span>
+        <div style="width:120px;height:90px;display:flex;align-items:flex-end;gap:4px;border-bottom:1px solid var(--wf-hairline)"><i style="flex:1;height:70%;background:var(--wf-sig-poppy);opacity:.8;border-radius:999px 999px 0 0"></i><i style="flex:1;height:45%;background:var(--wf-sig-marigold);opacity:.75;border-radius:999px 999px 0 0"></i><i style="flex:1;height:85%;background:var(--wf-sig-lavender);opacity:.8;border-radius:999px 999px 0 0"></i></div>
+      </div>
+      <div class="lab good">DO — type beside contained artwork, both on clean cream; editorial adjacency.</div>
+    </div>
+    <div class="cell">
+      <div class="demo" style="background:linear-gradient(120deg,rgba(220,120,160,.3),rgba(120,160,200,.3),rgba(240,220,100,.35))"><span style="font-family:var(--wf-font-display);font-size:24px;color:#7a716a">Watercolor washes<br>behind everything</span></div>
+      <div class="lab bad">DON'T — no washes or faded florals behind text; if the meadow is everywhere, it's wallpaper.</div>
+    </div>
+    <div class="cell">
+      <div class="demo"><button class="btn primary">Request a free consult</button><button class="btn secondary">Meet the therapists</button></div>
+      <div class="lab good">DO — one lavender CTA per view; everything else outlined ink or tide underline.</div>
+    </div>
+    <div class="cell">
+      <div class="demo"><button class="btn" style="background:var(--wf-tide);color:#fff">Book now</button><button class="btn" style="background:var(--wf-marsh);color:#fff">Call us</button><button class="btn" style="background:var(--wf-poppy);color:#fff">Learn more</button></div>
+      <div class="lab bad">DON'T — no colored button zoo, and never a red button; the lavender's power is its loneliness.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="guide">
+  Wildflower Collective · style guide v2.2 · direction «Easton Light» (selected by Ben, Aug 25, 2026) — typography, color &amp; watercolor artwork; no photography; lavender-deep CTA (Ben: no red) · hero art: full meadow strip · tokens are the contract — pages that ship must consume <code>--wf-*</code> variables only. Next: homepage comp refinement.
+</footer>
+</div>
+<script>
+document.getElementById('revealDemo').addEventListener('click',function(){
+  this.classList.add('hidden-state');
+  void this.offsetWidth;
+  this.classList.remove('hidden-state');
+});
+</script>
+</body>
+</html>

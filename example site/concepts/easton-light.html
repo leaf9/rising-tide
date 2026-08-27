@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 2 — Easton Light</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f9f6f0; --mist:#eef0ee; --ink:#3a3833; --ink-soft:#716f66;
+  --hairline:rgba(58,56,51,.14);
+  --tide:#3f6491; --tide-soft:#8cb4d0; --marsh:#5c6e2e; --marsh-soft:#b0bd8f;
+  --poppy-deep:#b0421f;
+  --radius:2px;
+  --font-display:"Newsreader",Georgia,serif;
+  --font-body:"Inter",-apple-system,Helvetica,Arial,sans-serif;
+}
+*{margin:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:var(--font-body);line-height:1.65;font-weight:340}
+.tile{max-width:1060px;margin:0 auto;padding:48px 32px}
+.concept-label{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--hairline);padding-bottom:18px;margin-bottom:40px}
+.concept-label .kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--tide);font-weight:600;font-family:var(--font-body)}
+.concept-label h1{font-family:var(--font-display);font-weight:300;font-size:34px;letter-spacing:.01em}
+h2.section{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin:52px 0 18px}
+
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.sw{border:1px solid var(--hairline)}
+.sw .chip{height:74px}
+.sw .lab{padding:8px 10px;font-size:11px;color:var(--ink-soft);background:#fff}
+
+.spec h3{font-family:var(--font-display);font-size:54px;font-weight:250;line-height:1.12;letter-spacing:.005em}
+.spec .kick{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--tide);font-weight:600;margin-bottom:16px}
+.spec p.lede{font-size:18px;max-width:58ch;color:var(--ink-soft);margin-top:16px;font-weight:340}
+.spec .meta{font-size:12px;color:var(--ink-soft);margin-top:10px}
+
+.btnrow{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{font-family:var(--font-body);font-weight:500;font-size:14px;padding:13px 26px;border-radius:var(--radius);border:none;cursor:pointer;letter-spacing:.02em}
+.btn.primary{background:var(--poppy-deep);color:#fff}
+.btn.secondary{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn.quiet{background:transparent;color:var(--tide);border:none;text-decoration:underline;text-underline-offset:4px}
+
+.hero-sketch{border:1px solid var(--hairline);overflow:hidden;background:#fff}
+.hs-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 30px;border-bottom:1px solid var(--hairline)}
+.hs-nav .wordmark{display:flex;align-items:center;gap:10px}
+.hs-nav .wordmark img{height:38px;width:38px;border-radius:50%}
+.hs-nav .wordmark span{font-family:var(--font-display);font-size:16px;letter-spacing:.14em;font-weight:400}
+.hs-nav nav{display:flex;gap:24px;align-items:center;font-size:13px;color:var(--ink-soft)}
+.hs-nav .btn{padding:9px 18px;font-size:12.5px}
+.hs-photo-band{aspect-ratio:21/9;background:
+  linear-gradient(180deg, #dfe6ea 0%, #cfd9de 45%, #b9c4bb 70%, #a9b294 100%);
+  display:flex;align-items:flex-end;justify-content:flex-start;padding:0}
+.hs-photo-band .inner{padding:40px;color:#fff;text-shadow:0 1px 12px rgba(40,50,55,.25);max-width:640px}
+.hs-photo-band .kick{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;margin-bottom:12px;opacity:.92}
+.hs-photo-band h3{font-family:var(--font-display);font-size:42px;font-weight:250;line-height:1.12}
+.hs-sub{display:grid;grid-template-columns:1.2fr .8fr;gap:0;border-top:1px solid var(--hairline)}
+.hs-sub .left{padding:30px;font-size:15px;color:var(--ink-soft);max-width:60ch}
+.hs-sub .right{padding:30px;border-left:1px solid var(--hairline);display:flex;flex-direction:column;gap:12px;justify-content:center}
+.slot-note{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);position:relative;top:-6px}
+.logistics{border:1px solid var(--hairline);background:#fff}
+.logistics .row{display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--hairline);font-size:14px}
+.logistics .row:last-child{border-bottom:none}
+.logistics .row b{font-weight:500}
+.logistics .row span{color:var(--ink-soft)}
+.note{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic}
+@media(max-width:760px){.swatches{grid-template-columns:repeat(3,1fr)}.hs-sub{grid-template-columns:1fr}.hs-sub .right{border-left:none;border-top:1px solid var(--hairline)}.spec h3{font-size:36px}}
+</style>
+</head>
+<body>
+<div class="tile">
+  <div class="concept-label">
+    <div>
+      <div class="kicker">Concept 2 · Selected</div>
+      <h1>Easton Light</h1>
+    </div>
+    <div style="font-size:13px;color:var(--ink-soft)">Wildflower Collective · Leaf9 · Aug 2026</div>
+  </div>
+
+  <h2 class="section">Hero sketch — photographic band, flat stand-in</h2>
+  <div class="hero-sketch">
+    <div class="hs-nav">
+      <div class="wordmark"><img src="../assets/brand/Wildflower-logo-new-CROP.png" alt=""><span>WILDFLOWER COLLECTIVE</span></div>
+      <nav>
+        <span>Therapists</span><span>Services</span><span>Fees &amp; Insurance</span><span>FAQs</span>
+        <span style="color:var(--ink)">(410) 555-0100</span>
+        <button class="btn primary">Book a consult</button>
+      </nav>
+    </div>
+    <div class="hs-photo-band">
+      <div class="inner">
+        <div class="slot-note">Photo slot — dawn light, Eastern Shore marsh, 21:9</div>
+        <div class="kick">Easton, Maryland</div>
+        <h3>Steady ground for<br>uncertain seasons.</h3>
+      </div>
+    </div>
+    <div class="hs-sub">
+      <div class="left">
+        A collective of three therapists on the Eastern Shore — evidence-based counseling
+        for pre-teens, teens, and adults navigating anxiety, depression, and divorce.
+        In-network with CareFirst BCBS.
+      </div>
+      <div class="right">
+        <button class="btn primary">Request a free 15-minute consult</button>
+        <button class="btn quiet">Or call — we answer</button>
+      </div>
+    </div>
+  </div>
+  <p class="note">Watercolor appears only where the brand signs its name: the logo, the favicon, one painted rule above the footer. Everything else is real Shore light — no stock docks, ever.</p>
+
+  <h2 class="section">Palette — the logo's quietest axis</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:var(--cream)"></div><div class="lab">Cream · #f9f6f0</div></div>
+    <div class="sw"><div class="chip" style="background:var(--mist)"></div><div class="lab">Mist · #eef0ee</div></div>
+    <div class="sw"><div class="chip" style="background:var(--tide-soft)"></div><div class="lab">Tide soft · #8cb4d0</div></div>
+    <div class="sw"><div class="chip" style="background:var(--tide)"></div><div class="lab">Tide · #3f6491</div></div>
+    <div class="sw"><div class="chip" style="background:var(--marsh-soft)"></div><div class="lab">Marsh soft · #b0bd8f</div></div>
+    <div class="sw"><div class="chip" style="background:var(--poppy-deep)"></div><div class="lab">Poppy — CTA only</div></div>
+  </div>
+
+  <h2 class="section">Type — Newsreader × Inter</h2>
+  <div class="spec">
+    <div class="kick">Individual therapy · DBT &amp; CBT</div>
+    <h3>Care that knows<br>where you live.</h3>
+    <p class="lede">Weekly sessions in our Easton office or by telehealth — practical, evidence-based, and paced to you. Late-afternoon appointments Monday and Tuesday.</p>
+    <p class="meta">Display: Newsreader 250–300, large optical size · Body/UI: Inter 340/500 · Kickers: 11px caps, .26em tracking, tide blue</p>
+  </div>
+
+  <h2 class="section">Logistics set like a menu</h2>
+  <div class="logistics" style="max-width:520px">
+    <div class="row"><b>60-minute intake</b><span>$200</span></div>
+    <div class="row"><b>50-minute session</b><span>$175</span></div>
+    <div class="row"><b>Parent coaching</b><span>$200</span></div>
+    <div class="row"><b>CareFirst BCBS</b><span>In-network · MD individual therapy</span></div>
+    <div class="row"><b>Sliding scale</b><span>Available — ask us</span></div>
+  </div>
+
+  <h2 class="section">UI bits</h2>
+  <div class="btnrow">
+    <button class="btn primary">Request a consult</button>
+    <button class="btn secondary">Meet the therapists</button>
+    <button class="btn quiet">Insurance details</button>
+  </div>
+</div>
+</body>
+</html>

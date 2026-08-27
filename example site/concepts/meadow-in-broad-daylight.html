@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 1 — Meadow in Broad Daylight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Karla:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f8f4ec; --cream-deep:#f1ebdd; --ink:#403830; --ink-soft:#6b6157;
+  --hairline:rgba(64,56,48,.12);
+  --poppy:#dc643c; --poppy-deep:#b0421f;
+  --pink:#dc78a0;  --pink-deep:#a83a68;
+  --lavender:#b48cc8; --lavender-deep:#6f5490;
+  --cornflower:#78a0c8; --cornflower-deep:#3f6491;
+  --marigold:#f0dc64; --marigold-deep:#8a6d1a;
+  --leaf:#a0b464;  --leaf-deep:#5c6e2e;
+  --radius:14px;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-body:"Karla",-apple-system,Helvetica,Arial,sans-serif;
+}
+*{margin:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:var(--font-body);line-height:1.6}
+.tile{max-width:1060px;margin:0 auto;padding:48px 32px}
+.concept-label{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--hairline);padding-bottom:18px;margin-bottom:40px}
+.concept-label .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--poppy-deep);font-weight:700}
+.concept-label h1{font-family:var(--font-display);font-weight:400;font-size:34px}
+.concept-label h1 em{font-style:italic;color:var(--pink-deep)}
+h2.section{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;margin:52px 0 18px}
+
+/* swatches */
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.sw{border-radius:var(--radius);overflow:hidden;border:1px solid var(--hairline)}
+.sw .chip{height:74px}.sw .chip.deep{height:34px}
+.sw .lab{padding:8px 10px;font-size:11px;color:var(--ink-soft);background:#fff}
+.ground-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px}
+.ground-row .sw .chip{height:44px}
+
+/* type */
+.spec h3{font-family:var(--font-display);font-optical-sizing:auto;font-size:56px;font-weight:380;line-height:1.08;letter-spacing:-.01em}
+.spec h3 em{font-style:italic;color:var(--poppy-deep)}
+.spec .kick{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--leaf-deep);font-weight:700;margin-bottom:14px}
+.spec p.lede{font-size:19px;max-width:56ch;color:var(--ink-soft);margin-top:16px}
+.spec .meta{font-size:12px;color:var(--ink-soft);margin-top:10px}
+
+/* buttons */
+.btnrow{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{font-family:var(--font-body);font-weight:700;font-size:15px;padding:14px 26px;border-radius:999px;border:none;cursor:pointer}
+.btn.primary{background:var(--poppy-deep);color:#fff}
+.btn.secondary{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.quiet{background:transparent;color:var(--poppy-deep);border:none;text-decoration:underline;text-underline-offset:4px}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px}
+.tag.pink{background:rgba(220,120,160,.16);color:var(--pink-deep)}
+.tag.lav{background:rgba(180,140,200,.18);color:var(--lavender-deep)}
+.tag.corn{background:rgba(120,160,200,.18);color:var(--cornflower-deep)}
+.tag.leaf{background:rgba(160,180,100,.2);color:var(--leaf-deep)}
+
+/* hero sketch */
+.hero-sketch{border:1px solid var(--hairline);border-radius:var(--radius);overflow:hidden;background:#fff}
+.hs-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;border-bottom:1px solid var(--hairline)}
+.hs-nav .wordmark{display:flex;align-items:center;gap:10px}
+.hs-nav .wordmark img{height:40px;width:40px;border-radius:50%}
+.hs-nav .wordmark span{font-family:var(--font-display);font-size:17px;letter-spacing:.06em}
+.hs-nav nav{display:flex;gap:22px;align-items:center;font-size:14px;color:var(--ink-soft)}
+.hs-nav .navlink{cursor:pointer}
+.hs-nav .btn{padding:9px 18px;font-size:13px}
+.hs-body{position:relative;background:linear-gradient(180deg,#fffdf8 0%,var(--cream) 100%);padding:64px 28px 150px;text-align:left}
+.hs-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;max-width:920px;margin:0 auto;align-items:center}
+.hs-copy .kick{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--leaf-deep);font-weight:700;margin-bottom:14px}
+.hs-copy h3{font-family:var(--font-display);font-size:44px;font-weight:380;line-height:1.1;letter-spacing:-.01em}
+.hs-copy h3 em{font-style:italic;color:var(--poppy-deep)}
+.hs-copy p{font-size:16px;color:var(--ink-soft);margin:16px 0 24px;max-width:46ch}
+.hs-photo{aspect-ratio:4/5;border-radius:var(--radius);background:
+  linear-gradient(160deg, rgba(220,120,160,.35), rgba(120,160,200,.3) 55%, rgba(160,180,100,.35)),#e9e2d2;
+  display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:12px}
+.meadow-band{position:absolute;left:0;right:0;bottom:0;height:110px;display:flex;align-items:flex-end;overflow:hidden}
+.meadow-band .stem{flex:1;margin:0 1.5%;border-radius:999px 999px 0 0}
+.trust-strip{display:flex;gap:28px;justify-content:center;padding:18px;border-top:1px solid var(--hairline);font-size:12.5px;color:var(--ink-soft);background:#fff}
+.trust-strip b{color:var(--ink)}
+
+.note{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic}
+.walk{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.walk .zone{border-radius:var(--radius);padding:20px;font-size:13px}
+.walk .zone b{display:block;font-family:var(--font-display);font-size:17px;font-weight:500;margin-bottom:6px}
+@media(max-width:760px){.swatches{grid-template-columns:repeat(3,1fr)}.hs-grid{grid-template-columns:1fr}.walk{grid-template-columns:1fr}.spec h3{font-size:38px}}
+</style>
+</head>
+<body>
+<div class="tile">
+  <div class="concept-label">
+    <div>
+      <div class="kicker">Concept 1</div>
+      <h1>Meadow in <em>Broad Daylight</em></h1>
+    </div>
+    <div style="font-size:13px;color:var(--ink-soft)">Wildflower Collective · Leaf9 · Aug 2026</div>
+  </div>
+
+  <h2 class="section">Hero sketch — imagery as flat CSS stand-ins</h2>
+  <div class="hero-sketch">
+    <div class="hs-nav">
+      <div class="wordmark"><img src="../assets/brand/Wildflower-logo-new-CROP.png" alt=""><span>WILDFLOWER COLLECTIVE</span></div>
+      <nav>
+        <span class="navlink">Our Therapists</span><span class="navlink">Services</span><span class="navlink">Fees &amp; Insurance</span><span class="navlink">FAQs</span>
+        <span style="color:var(--ink)">☎ (410) 555-0100</span>
+        <button class="btn primary">Free 15-min consult</button>
+      </nav>
+    </div>
+    <div class="hs-body">
+      <div class="hs-grid">
+        <div class="hs-copy">
+          <div class="kick">Therapy in Easton, Maryland · In-person &amp; telehealth</div>
+          <h3>Room to <em>grow</em>, right here on the Shore.</h3>
+          <p>Wildflower Collective is a team of three therapists helping pre-teens, teens, and adults work through anxiety, depression, and divorce — with CareFirst BCBS accepted and appointments available now.</p>
+          <div class="btnrow">
+            <button class="btn primary">Request a free consult</button>
+            <button class="btn quiet">Meet our therapists</button>
+          </div>
+        </div>
+        <div class="hs-photo">Team photo slot<br>4:5 · warm grade on cream</div>
+      </div>
+      <div class="meadow-band" aria-hidden="true">
+        <div class="stem" style="height:64%;background:var(--pink)"></div>
+        <div class="stem" style="height:88%;background:var(--lavender)"></div>
+        <div class="stem" style="height:52%;background:var(--marigold)"></div>
+        <div class="stem" style="height:96%;background:var(--poppy)"></div>
+        <div class="stem" style="height:70%;background:var(--cornflower)"></div>
+        <div class="stem" style="height:58%;background:var(--leaf)"></div>
+        <div class="stem" style="height:84%;background:var(--pink)"></div>
+        <div class="stem" style="height:66%;background:var(--cornflower)"></div>
+        <div class="stem" style="height:92%;background:var(--lavender)"></div>
+        <div class="stem" style="height:56%;background:var(--marigold)"></div>
+        <div class="stem" style="height:78%;background:var(--leaf)"></div>
+        <div class="stem" style="height:62%;background:var(--poppy)"></div>
+      </div>
+    </div>
+    <div class="trust-strip">
+      <span><b>CareFirst BCBS</b> in-network</span>
+      <span><b>Ages 10+</b> pre-teens · teens · adults</span>
+      <span><b>IACP</b> collaborative divorce</span>
+      <span><b>Sliding scale</b> available</span>
+    </div>
+  </div>
+  <p class="note">The colored band is a flat stand-in for the watercolor meadow that grows along the hero's bottom edge — the logo's own composition, extended into the page. Painted at full saturation, contained, never faded to wallpaper.</p>
+
+  <h2 class="section">Palette — extracted from the logo, bloom + deep pairs</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:var(--poppy)"></div><div class="chip deep" style="background:var(--poppy-deep)"></div><div class="lab">Poppy · CTA<br>#dc643c / #b0421f</div></div>
+    <div class="sw"><div class="chip" style="background:var(--pink)"></div><div class="chip deep" style="background:var(--pink-deep)"></div><div class="lab">Meadow Pink<br>#dc78a0 / #a83a68</div></div>
+    <div class="sw"><div class="chip" style="background:var(--lavender)"></div><div class="chip deep" style="background:var(--lavender-deep)"></div><div class="lab">Lavender<br>#b48cc8 / #6f5490</div></div>
+    <div class="sw"><div class="chip" style="background:var(--cornflower)"></div><div class="chip deep" style="background:var(--cornflower-deep)"></div><div class="lab">Cornflower<br>#78a0c8 / #3f6491</div></div>
+    <div class="sw"><div class="chip" style="background:var(--marigold)"></div><div class="chip deep" style="background:var(--marigold-deep)"></div><div class="lab">Marigold<br>#f0dc64 / #8a6d1a</div></div>
+    <div class="sw"><div class="chip" style="background:var(--leaf)"></div><div class="chip deep" style="background:var(--leaf-deep)"></div><div class="lab">Leaf<br>#a0b464 / #5c6e2e</div></div>
+  </div>
+  <div class="ground-row">
+    <div class="sw"><div class="chip" style="background:var(--cream)"></div><div class="lab">Cream ground · #f8f4ec</div></div>
+    <div class="sw"><div class="chip" style="background:var(--cream-deep)"></div><div class="lab">Cream deep · #f1ebdd</div></div>
+    <div class="sw"><div class="chip" style="background:var(--ink)"></div><div class="lab">Ink · #403830</div></div>
+  </div>
+
+  <h2 class="section">Type — Fraunces × Karla</h2>
+  <div class="spec">
+    <div class="kick">DBT &amp; CBT for teens and adults</div>
+    <h3>Skills that hold up on a <em>Tuesday.</em></h3>
+    <p class="lede">Evidence-based therapy, taught like a practice, not a lecture — so the tools you learn in session still work in the school hallway and at the kitchen table.</p>
+    <p class="meta">Display: Fraunces 380–500, optical sizing on, italic accents in deep hues · Body/UI: Karla 400/700 · Kickers: 11–12px caps, .24em tracking, deep-hue color</p>
+  </div>
+
+  <h2 class="section">UI bits</h2>
+  <div class="btnrow" style="margin-bottom:18px">
+    <button class="btn primary">Request a free consult</button>
+    <button class="btn secondary">Fees &amp; insurance</button>
+    <button class="btn quiet">Read Carolyn's story</button>
+  </div>
+  <div class="btnrow">
+    <span class="tag pink">Anxiety</span><span class="tag lav">Teens</span><span class="tag corn">Divorce &amp; co-parenting</span><span class="tag leaf">DBT skills</span>
+  </div>
+
+  <h2 class="section">The garden walk — one hue tint per section</h2>
+  <div class="walk">
+    <div class="zone" style="background:rgba(220,120,160,.08)"><b style="color:var(--pink-deep)">Meet the therapists</b>Three faces, specialty tags, a signature flower each. "Not sure who fits? We'll match you."</div>
+    <div class="zone" style="background:rgba(120,160,200,.09)"><b style="color:var(--cornflower-deep)">Fees &amp; insurance</b>CareFirst in-network, $175 sessions, sliding scale — set plainly, like a well-laid table.</div>
+    <div class="zone" style="background:rgba(160,180,100,.10)"><b style="color:var(--leaf-deep)">How it works</b>Consult → match → weekly sessions. Three steps, one poppy button at the end.</div>
+  </div>
+</div>
+</body>
+</html>

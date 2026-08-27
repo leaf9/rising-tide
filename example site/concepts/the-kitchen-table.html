@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 3 — The Kitchen Table</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Nunito+Sans:opsz,wght@6..12,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ee; --ink:#403830; --ink-soft:#6d6357;
+  --border:rgba(64,56,48,.85);
+  --butter:#f3dc8a; --denim:#7fa3c4; --terracotta:#d9825f; --moss:#a8b47c; --blush:#e5a8bd;
+  --poppy-deep:#b0421f;
+  --radius:18px;
+  --font-display:"Bricolage Grotesque",-apple-system,Helvetica,sans-serif;
+  --font-body:"Nunito Sans",-apple-system,Helvetica,Arial,sans-serif;
+}
+*{margin:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);line-height:1.6}
+.tile{max-width:1060px;margin:0 auto;padding:48px 32px}
+.concept-label{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid var(--border);padding-bottom:18px;margin-bottom:40px}
+.concept-label .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--poppy-deep);font-weight:800}
+.concept-label h1{font-family:var(--font-display);font-weight:600;font-size:34px;letter-spacing:-.01em}
+h2.section{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;margin:52px 0 18px}
+
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.sw{border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.sw .chip{height:74px}
+.sw .lab{padding:8px 10px;font-size:11px;color:var(--ink-soft);background:#fff}
+
+.spec h3{font-family:var(--font-display);font-size:52px;font-weight:640;line-height:1.06;letter-spacing:-.02em}
+.spec .kick{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;margin-bottom:14px}
+.spec p.lede{font-size:18px;max-width:54ch;color:var(--ink-soft);margin-top:16px}
+.spec .meta{font-size:12px;color:var(--ink-soft);margin-top:10px}
+
+.btnrow{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{font-family:var(--font-display);font-weight:640;font-size:15px;padding:14px 26px;border-radius:999px;cursor:pointer;border:1.5px solid var(--border)}
+.btn.primary{background:var(--poppy-deep);border-color:var(--poppy-deep);color:#fff}
+.btn.secondary{background:#fff;color:var(--ink)}
+.btn.butter{background:var(--butter);color:var(--ink)}
+.tag{display:inline-block;font-size:12.5px;font-weight:800;padding:6px 14px;border-radius:999px;border:1.5px solid var(--border);background:#fff;transform:rotate(-1deg)}
+.tag:nth-child(even){transform:rotate(1.2deg)}
+.tag.butter{background:var(--butter)}.tag.denim{background:var(--denim);color:#fff}.tag.moss{background:var(--moss)}.tag.blush{background:var(--blush)}
+
+.hero-sketch{border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.hs-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 26px;border-bottom:1.5px solid var(--border)}
+.hs-nav .wordmark{display:flex;align-items:center;gap:10px}
+.hs-nav .wordmark img{height:40px;width:40px;border-radius:50%}
+.hs-nav .wordmark span{font-family:var(--font-display);font-weight:640;font-size:16px}
+.hs-nav nav{display:flex;gap:20px;align-items:center;font-size:14px;font-weight:700;color:var(--ink-soft)}
+.hs-nav .btn{padding:9px 18px;font-size:13px}
+.hs-body{padding:56px 28px;background:var(--paper);position:relative;overflow:hidden}
+.hs-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:900px;margin:0 auto;align-items:center}
+.hs-copy h3{font-family:var(--font-display);font-size:42px;font-weight:680;line-height:1.05;letter-spacing:-.02em}
+.hs-copy h3 .under{position:relative;white-space:nowrap}
+.hs-copy h3 .under::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:10px;background:var(--butter);z-index:-1;border-radius:4px;transform:rotate(-.6deg)}
+.hs-copy p{font-size:16px;color:var(--ink-soft);margin:16px 0 22px;max-width:44ch}
+.hs-cards{display:flex;flex-direction:column;gap:14px}
+.tcard{border:1.5px solid var(--border);border-radius:var(--radius);background:#fff;padding:16px 18px;display:flex;gap:14px;align-items:center}
+.tcard .face{width:54px;height:54px;border-radius:50%;flex-shrink:0;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);text-align:center}
+.tcard b{font-family:var(--font-display);font-weight:640;display:block;font-size:16px}
+.tcard span{font-size:13px;color:var(--ink-soft)}
+.doodle{position:absolute;font-size:64px;opacity:.5;transform:rotate(-8deg)}
+.note{font-size:12.5px;color:var(--ink-soft);margin-top:14px;font-style:italic}
+svg.stemline{position:absolute;bottom:-6px;right:20px;width:200px;opacity:.9}
+@media(max-width:760px){.swatches{grid-template-columns:repeat(3,1fr)}.hs-grid{grid-template-columns:1fr}.spec h3{font-size:36px}}
+</style>
+</head>
+<body>
+<div class="tile">
+  <div class="concept-label">
+    <div>
+      <div class="kicker">Concept 3</div>
+      <h1>The Kitchen Table</h1>
+    </div>
+    <div style="font-size:13px;color:var(--ink-soft)">Wildflower Collective · Leaf9 · Aug 2026</div>
+  </div>
+
+  <h2 class="section">Hero sketch — teen-proof warmth</h2>
+  <div class="hero-sketch">
+    <div class="hs-nav">
+      <div class="wordmark"><img src="../assets/brand/Wildflower-logo-new-CROP.png" alt=""><span>Wildflower Collective</span></div>
+      <nav>
+        <span>Therapists</span><span>What we help with</span><span>Cost &amp; insurance</span>
+        <button class="btn primary">Say hello</button>
+      </nav>
+    </div>
+    <div class="hs-body">
+      <div class="hs-grid">
+        <div class="hs-copy">
+          <h3>Talking helps.<br><span class="under">Even about that.</span></h3>
+          <p>We're three therapists in Easton, MD who work with kids, teens, and adults — school stress, anxiety, big family changes. First 15-minute call is free, and it's just a conversation.</p>
+          <div class="btnrow">
+            <button class="btn primary">Book the free call</button>
+            <button class="btn secondary">See if we take your insurance</button>
+          </div>
+        </div>
+        <div class="hs-cards">
+          <div class="tcard"><div class="face" style="background:var(--blush)">photo<br>slot</div><div><b>Carolyn</b><span>Divorce &amp; big transitions · LCSW-C</span></div></div>
+          <div class="tcard"><div class="face" style="background:var(--denim)">photo<br>slot</div><div><b>Amanda</b><span>Identity &amp; life shifts · LGPC</span></div></div>
+          <div class="tcard"><div class="face" style="background:var(--moss)">photo<br>slot</div><div><b>Logan</b><span>Kids, teens &amp; overwhelm · LGSW</span></div></div>
+        </div>
+      </div>
+      <svg class="stemline" viewBox="0 0 200 80" fill="none" stroke="#403830" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M20 80 C 24 50, 16 40, 22 18"/><circle cx="22" cy="14" r="5"/>
+        <path d="M60 80 C 62 55, 56 45, 60 28"/><circle cx="60" cy="23" r="4"/><path d="M60 45 q 12 -6 16 -14"/>
+        <path d="M110 80 C 114 48, 106 38, 112 12"/><circle cx="112" cy="8" r="6"/><path d="M110 50 q -12 -4 -16 -12"/>
+        <path d="M160 80 C 158 58, 166 48, 162 30"/><circle cx="162" cy="25" r="4"/>
+      </svg>
+    </div>
+  </div>
+  <p class="note">The ink stem-lines are the logo's skeleton without its paint — single-weight, hand-drawn, a little crooked on purpose. Photography is casual snapshots, never studio.</p>
+
+  <h2 class="section">Palette — the logo's hues, flattened to matte</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:var(--paper)"></div><div class="lab">Paper · #faf6ee</div></div>
+    <div class="sw"><div class="chip" style="background:var(--butter)"></div><div class="lab">Butter · #f3dc8a</div></div>
+    <div class="sw"><div class="chip" style="background:var(--denim)"></div><div class="lab">Denim · #7fa3c4</div></div>
+    <div class="sw"><div class="chip" style="background:var(--terracotta)"></div><div class="lab">Terracotta · #d9825f</div></div>
+    <div class="sw"><div class="chip" style="background:var(--moss)"></div><div class="lab">Moss · #a8b47c</div></div>
+    <div class="sw"><div class="chip" style="background:var(--blush)"></div><div class="lab">Blush · #e5a8bd</div></div>
+  </div>
+
+  <h2 class="section">Type — Bricolage Grotesque × Nunito Sans</h2>
+  <div class="spec">
+    <div class="kick">For parents &amp; teens</div>
+    <h3>Therapy that doesn't talk down to anyone.</h3>
+    <p class="lede">DBT and CBT are just structured ways to learn skills — noticing what you feel, riding it out, choosing what happens next. We teach them like a coach, not a textbook.</p>
+    <p class="meta">Display: Bricolage 640–700, sentence case · Body/UI: Nunito Sans 400/700/800 · Underline-highlights in butter behind key phrases</p>
+  </div>
+
+  <h2 class="section">UI bits — sticker tags &amp; buttons</h2>
+  <div class="btnrow" style="margin-bottom:18px">
+    <button class="btn primary">Book the free call</button>
+    <button class="btn butter">Text us instead</button>
+    <button class="btn secondary">Cost &amp; insurance</button>
+  </div>
+  <div class="btnrow">
+    <span class="tag butter">school stress</span><span class="tag denim">anxiety</span><span class="tag blush">family changes</span><span class="tag moss">DBT skills</span><span class="tag">ages 10+</span>
+  </div>
+</div>
+</body>
+</html>

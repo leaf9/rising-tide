@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildflower Collective — Hero Art Picker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wf-cream:#f9f6f0; --wf-mist:#eef0ee; --wf-white:#fdfcf9;
+  --wf-ink:#403830; --wf-ink-soft:#716f66; --wf-hairline:rgba(64,56,48,.14);
+  --wf-tide:#3f6491; --wf-poppy:#b0421f;
+  --wf-font-display:"Newsreader",Georgia,serif;
+  --wf-font-body:"Inter",-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;box-sizing:border-box}
+body{background:#e9e5dc;color:var(--wf-ink);font-family:var(--wf-font-body);font-weight:340;line-height:1.6}
+.bar{position:sticky;top:0;z-index:5;background:var(--wf-ink);color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;font-size:13.5px}
+.bar b{font-weight:600}
+.bar span{opacity:.75}
+.wrap{max-width:1240px;margin:0 auto;padding:36px 24px 90px}
+.option{margin-bottom:56px}
+.opt-label{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}
+.opt-label .num{font-family:var(--wf-font-display);font-size:30px;font-weight:400;color:var(--wf-poppy)}
+.opt-label h2{font-family:var(--wf-font-display);font-size:22px;font-weight:400}
+.opt-label span{font-size:13px;color:#5c574e}
+.frame{background:var(--wf-cream);border:1px solid var(--wf-hairline);box-shadow:0 14px 40px rgba(64,56,48,.10);overflow:hidden}
+/* mini Easton Light chrome */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 30px;border-bottom:1px solid var(--wf-hairline);background:var(--wf-cream)}
+.nav .wordmark{display:flex;align-items:center;gap:10px}
+.nav .wordmark img{height:36px;width:36px;border-radius:50%}
+.nav .wordmark span{font-family:var(--wf-font-display);font-size:15px;letter-spacing:.14em}
+.nav nav{display:flex;gap:22px;align-items:center;font-size:13px;color:var(--wf-ink-soft)}
+.nav .phone{color:var(--wf-ink)}
+.btn{font-family:var(--wf-font-body);font-weight:500;font-size:13.5px;letter-spacing:.02em;padding:11px 22px;border-radius:2px;border:none;cursor:pointer}
+.btn.primary{background:var(--wf-poppy);color:#fff}
+.btn.quiet{background:transparent;color:var(--wf-tide);text-decoration:underline;text-underline-offset:4px;padding:11px 4px}
+.kick{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--wf-tide)}
+h3.headline{font-family:var(--wf-font-display);font-weight:250;line-height:1.1;letter-spacing:.005em}
+p.sub{color:var(--wf-ink-soft);font-size:15.5px;max-width:52ch}
+.cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+
+/* band layout (options 1, 2, 4): copy above, art along the bottom */
+.hero-band{position:relative;background:var(--wf-cream)}
+.hero-band .copy{max-width:860px;margin:0 auto;text-align:center;padding:58px 30px 10px}
+.hero-band .copy .kick{display:block;margin-bottom:14px}
+.hero-band h3.headline{font-size:clamp(34px,4.6vw,52px)}
+.hero-band p.sub{margin:16px auto 24px}
+.hero-band .cta-row{justify-content:center;margin-bottom:8px}
+.hero-band .art{display:block;width:100%;height:auto;margin-top:-30px}
+
+/* split layout (option 3): art left, copy right on clean cream */
+.hero-split{position:relative;background:var(--wf-cream);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;min-height:430px}
+.hero-split .art{width:100%;height:100%;object-fit:cover;object-position:left bottom;display:block}
+.hero-split .copy{padding:48px 56px 48px 8px}
+.hero-split .copy .kick{display:block;margin-bottom:14px}
+.hero-split h3.headline{font-size:clamp(32px,4vw,48px)}
+.hero-split p.sub{margin:16px 0 24px}
+
+.trust{display:flex;gap:26px;justify-content:center;padding:15px;border-top:1px solid var(--wf-hairline);font-size:12px;color:var(--wf-ink-soft);background:var(--wf-white);flex-wrap:wrap}
+.trust b{color:var(--wf-ink);font-weight:600}
+.footnote{margin-top:10px;font-size:13px;color:#5c574e}
+@media(max-width:860px){
+  .nav nav{display:none}
+  .hero-split{grid-template-columns:1fr}
+  .hero-split .copy{padding:36px 30px}
+}
+</style>
+</head>
+<body>
+<div class="bar"><b>Hero art picker — reply with a number (1–4)</b><span>Wildflower Collective · «Easton Light» · candidates shown in real hero context</span></div>
+<div class="wrap">
+
+  <!-- OPTION 1 -->
+  <div class="option">
+    <div class="opt-label"><span class="num">1</span><h2>Sparse clusters</h2><span>hero-1-sparse.png · four spaced botanical groups, calmest of the four</span></div>
+    <div class="frame">
+      <div class="nav">
+        <div class="wordmark"><img src="../assets/brand/Wildflower-logo-new-CROP.png" alt=""><span>WILDFLOWER COLLECTIVE</span></div>
+        <nav><span>Therapists</span><span>Services</span><span>Fees &amp; Insurance</span><span>FAQs</span><span class="phone">(410) 555-0100</span><button class="btn primary">Request a free consult</button></nav>
+      </div>
+      <div class="hero-band">
+        <div class="copy">
+          <span class="kick">Therapy in Easton, Maryland · In-person &amp; telehealth</span>
+          <h3 class="headline">Steady ground for<br>uncertain seasons.</h3>
+          <p class="sub">Three therapists on the Eastern Shore helping pre-teens, teens, and adults through anxiety, depression, and divorce. In-network with CareFirst BCBS.</p>
+          <div class="cta-row"><button class="btn primary">Request a free consult</button><button class="btn quiet">Meet the therapists</button></div>
+        </div>
+        <img class="art" src="../assets/art/candidates/hero-1-sparse.png" alt="Sparse watercolor wildflower clusters">
+      </div>
+      <div class="trust"><span><b>CareFirst BCBS</b> in-network</span><span><b>Ages 10+</b> pre-teens · teens · adults</span><span><b>IACP</b> collaborative divorce</span><span><b>Sliding scale</b> available</span></div>
+    </div>
+  </div>
+
+  <!-- OPTION 2 -->
+  <div class="option">
+    <div class="opt-label"><span class="num">2</span><h2>Full meadow strip</h2><span>hero-2-full-strip.png · the logo's own meadow extended wide, most brand-literal</span></div>
+    <div class="frame">
+      <div class="nav">
+        <div class="wordmark"><img src="../assets/brand/Wildflower-logo-new-CROP.png" alt=""><span>WILDFLOWER COLLECTIVE</span></div>
+        <nav><span>Therapists</span><span>Services</span><span>Fees &amp; Insurance</span><span>FAQs</span><span class="phone">(410) 555-0100</span><button class="btn primary">Request a free consult</button></nav>
+      </div>
+      <div class="hero-band">
+        <div class="copy">
+          <span class="kick">Therapy in Easton, Maryland · In-person &amp; telehealth</span>
+          <h3 class="headline">Steady ground for<br>uncertain seasons.</h3>
+          <p class="sub">Three therapists on the Eastern Shore helping pre-teens, teens, and adults through anxiety, depression, and divorce. In-network with CareFirst BCBS.</p>
+          <div class="cta-row"><button class="btn primary">Request a free consult</button><button class="btn quiet">Meet the therapists</button></div>
+        </div>
+        <img class="art" src="../assets/art/candidates/hero-2-full-strip.png" alt="Full watercolor meadow strip">
+      </div>
+      <div class="trust"><span><b>CareFirst BCBS</b> in-network</span><span><b>Ages 10+</b> pre-teens · teens · adults</span><span><b>IACP</b> collaborative divorce</span><span><b>Sliding scale</b> available</span></div>
+    </div>
+  </div>
+
+  <!-- OPTION 3 -->
+  <div class="option">
+    <div class="opt-label"><span class="num">3</span><h2>Corner spray — split hero</h2><span>hero-3-corner-spray.png · art left, copy on clean cream right · my recommendation</span></div>
+    <div class="frame">
+      <div class="nav">
+        <div class="wordmark"><img src="../assets/brand/Wildflower-logo-new-CROP.png" alt=""><span>WILDFLOWER COLLECTIVE</span></div>
+        <nav><span>Therapists</span><span>Services</span><span>Fees &amp; Insurance</span><span>FAQs</span><span class="phone">(410) 555-0100</span><button class="btn primary">Request a free consult</button></nav>
+      </div>
+      <div class="hero-split">
+        <img class="art" src="../assets/art/candidates/hero-3-corner-spray.png" alt="Asymmetric watercolor corner spray">
+        <div class="copy">
+          <span class="kick">Therapy in Easton, Maryland · In-person &amp; telehealth</span>
+          <h3 class="headline">Steady ground for uncertain seasons.</h3>
+          <p class="sub">Three therapists on the Eastern Shore helping pre-teens, teens, and adults through anxiety, depression, and divorce. In-network with CareFirst BCBS.</p>
+          <div class="cta-row"><button class="btn primary">Request a free consult</button><button class="btn quiet">Meet the therapists</button></div>
+        </div>
+      </div>
+      <div class="trust"><span><b>CareFirst BCBS</b> in-network</span><span><b>Ages 10+</b> pre-teens · teens · adults</span><span><b>IACP</b> collaborative divorce</span><span><b>Sliding scale</b> available</span></div>
+    </div>
+  </div>
+
+  <!-- OPTION 4 -->
+  <div class="option">
+    <div class="opt-label"><span class="num">4</span><h2>Field guide row</h2><span>hero-4-field-guide.png · five botanical plates, most editorial / studied</span></div>
+    <div class="frame">
+      <div class="nav">
+        <div class="wordmark"><img src="../assets/brand/Wildflower-logo-new-CROP.png" alt=""><span>WILDFLOWER COLLECTIVE</span></div>
+        <nav><span>Therapists</span><span>Services</span><span>Fees &amp; Insurance</span><span>FAQs</span><span class="phone">(410) 555-0100</span><button class="btn primary">Request a free consult</button></nav>
+      </div>
+      <div class="hero-band">
+        <div class="copy">
+          <span class="kick">Therapy in Easton, Maryland · In-person &amp; telehealth</span>
+          <h3 class="headline">Steady ground for<br>uncertain seasons.</h3>
+          <p class="sub">Three therapists on the Eastern Shore helping pre-teens, teens, and adults through anxiety, depression, and divorce. In-network with CareFirst BCBS.</p>
+          <div class="cta-row"><button class="btn primary">Request a free consult</button><button class="btn quiet">Meet the therapists</button></div>
+        </div>
+        <img class="art" src="../assets/art/candidates/hero-4-field-guide.png" alt="Five watercolor botanical plates in a row">
+      </div>
+      <div class="trust"><span><b>CareFirst BCBS</b> in-network</span><span><b>Ages 10+</b> pre-teens · teens · adults</span><span><b>IACP</b> collaborative divorce</span><span><b>Sliding scale</b> available</span></div>
+    </div>
+    <p class="footnote">Headline and copy are placeholders from the style guide — the winning layout gets the full copy pass in the homepage comp.</p>
+  </div>
+
+</div>
+</body>
+</html>
