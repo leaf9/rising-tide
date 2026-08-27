@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept 3 — Sea Glass · Rising Tide Counseling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:#fbfdfd; --foam:#e4f2ee; --foam-deep:#d3ece6; --glass:#2f8b80; --pine:#003130;
+    --coral:#dd7a5f; --ink:#123734; --ink-10:rgba(0,49,48,.1); --ink-60:rgba(0,49,48,.6);
+    --sans:'Albert Sans',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--white);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.65}
+  .concept-bar{background:var(--pine);color:#e2f2ee;padding:14px 32px;font-size:13px;letter-spacing:.08em}
+  .concept-bar strong{font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-right:14px}
+  section{padding:72px 8vw}
+  .kicker{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--glass)}
+  h2.tile-h{font-weight:200;font-size:36px;color:var(--pine);margin:8px 0 32px;letter-spacing:-.01em}
+
+  .btn{display:inline-block;font-weight:600;font-size:14.5px;letter-spacing:.02em;padding:16px 30px;border-radius:999px;text-decoration:none;transition:.2s}
+  .btn-fill{background:var(--glass);color:#fff}
+  .btn-fill:hover{background:#257168;transform:translateY(-1px)}
+  .btn-ghost{color:var(--pine);border:1.5px solid var(--pine);margin-left:12px}
+
+  /* ---------- hero sketch ---------- */
+  .hero{background:linear-gradient(175deg,var(--white) 45%,var(--foam) 100%);padding:84px 8vw 96px;border-bottom:1px solid var(--ink-10)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+  .hero-logo{height:56px;margin-bottom:38px}
+  .hero h1{font-weight:200;font-size:clamp(38px,4.8vw,62px);line-height:1.08;letter-spacing:-.015em;color:var(--pine);max-width:17ch}
+  .hero h1 b{font-weight:500}
+  .hero .sub{font-size:17.5px;max-width:46ch;margin:22px 0 32px}
+  .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+  .pill{font-size:12.5px;font-weight:500;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--ink-10);color:var(--ink)}
+  .pill.hot{background:var(--foam-deep);border-color:transparent;color:var(--pine)}
+  .hero-card{position:relative;aspect-ratio:4/4.6;border-radius:22px;overflow:hidden;
+      background:linear-gradient(200deg,#bfe9e2 0%,#7fd0c4 45%,#4aa79b 100%);
+      box-shadow:0 24px 60px -24px rgba(0,49,48,.35)}
+  .hero-card .label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;
+      font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.95);line-height:2.1}
+  .standin-tag{position:absolute;left:14px;top:12px;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+      background:rgba(255,255,255,.85);color:var(--glass);padding:3px 8px;border-radius:999px;z-index:2}
+  .wavelines{position:absolute;bottom:0;left:0;right:0;opacity:.35}
+
+  /* ---------- specialty cards sketch ---------- */
+  .cards{background:var(--white);border-bottom:1px solid var(--ink-10)}
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:10px}
+  @media(max-width:900px){.card-grid{grid-template-columns:1fr}}
+  .card{background:var(--foam);border-radius:18px;padding:30px 28px;transition:.2s}
+  .card:hover{transform:translateY(-3px)}
+  .card .ic{width:40px;height:40px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .card h3{font-weight:500;font-size:19px;color:var(--pine);margin-bottom:8px}
+  .card p{font-size:14.5px}
+  .card .ic svg{width:20px;height:20px;stroke:var(--coral);fill:none;stroke-width:2;stroke-linecap:round}
+
+  /* ---------- sticky mobile CTA demo ---------- */
+  .sticky-demo{position:relative;margin-top:26px;border:1px dashed var(--ink-10);border-radius:14px;padding:14px 18px;
+      display:flex;align-items:center;justify-content:space-between;background:#fff;max-width:420px}
+  .sticky-demo p{font-size:12px;color:var(--ink-60);max-width:20ch}
+  .sticky-demo .btn{padding:12px 20px;font-size:13px}
+
+  /* ---------- style tile ---------- */
+  .swatches{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:44px}
+  .sw{width:150px}
+  .sw .chip{height:84px;border-radius:14px;border:1px solid var(--ink-10)}
+  .sw p{font-size:12px;margin-top:8px;line-height:1.5}
+  .sw p b{font-weight:600;display:block}
+  .type-row{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media(max-width:800px){.type-row{grid-template-columns:1fr}}
+  .spec h1{font-weight:200;font-size:50px;line-height:1.1;letter-spacing:-.015em;color:var(--pine)}
+  .spec h1 b{font-weight:500}
+  .spec .note{font-size:12px;color:var(--ink-60);margin-top:10px}
+  .spec .bodycopy{font-size:16.5px;max-width:46ch}
+  footer{padding:26px 8vw;font-size:12px;color:var(--ink-60);background:var(--foam)}
+</style>
+</head>
+<body>
+
+<div class="concept-bar"><strong>Concept 3 · Sea Glass</strong> The site is the waiting room: bright frosted-aqua color, one modern sans, tide-tumbled rounded cards, phone-first. Faith stated plainly in clear-eyed type.</div>
+
+<!-- ============ HERO SKETCH ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <img class="hero-logo" src="../logo.png" alt="Rising Tide Counseling Services">
+      <div class="kicker">Jada Kouba · LCMHC · LCPC · Telehealth</div>
+      <h1 style="margin-top:14px">Clinical counseling from a <b>Biblical worldview</b></h1>
+      <p class="sub">Faith-integrated therapy with a dually licensed counselor — online across Florida and Maine. Twenty years of helping people heal, from wherever you are.</p>
+      <div class="pillrow">
+        <span class="pill hot">Anxiety</span><span class="pill hot">Grief</span><span class="pill">Narcissistic abuse recovery</span><span class="pill">Adult ADHD</span><span class="pill">Couples</span><span class="pill">+ 11 more</span>
+      </div>
+      <div><a class="btn btn-fill" href="#">Request a Free Consult</a><a class="btn btn-ghost" href="#">How it works</a></div>
+    </div>
+    <div class="hero-card">
+      <span class="standin-tag">Stand-in · clear-water aerial</span>
+      <div class="label">Photo slot — sunlit turquoise water<br>or jada-kouba-photo-1.jpg<br>in rounded frame</div>
+      <svg class="wavelines" viewBox="0 0 400 60"><path d="M0,30 C50,18 90,42 140,30 C190,18 230,42 280,30 C330,18 370,40 400,30" fill="none" stroke="#fff" stroke-width="2"/><path d="M0,46 C50,34 90,58 140,46 C190,34 230,58 280,46 C330,34 370,56 400,46" fill="none" stroke="#fff" stroke-width="2"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARDS SKETCH ============ -->
+<section class="cards">
+  <div class="kicker">How I help</div>
+  <h2 class="tile-h">Care that <b style="font-weight:500">meets you</b> where you are</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21c-5-4-9-7.5-9-12a5.5 5.5 0 0 1 9-3.5A5.5 5.5 0 0 1 21 9c0 4.5-4 8-9 12z"/></svg></div>
+      <h3>Client-centered</h3><p>Anxiety, depression, relationships — an integrative, holistic plan built around your story, not a template.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></div>
+      <h3>Goal-focused</h3><p>For people motivated to learn, grow, and heal through faith-based therapy — with progress you can name.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h13v18H6a2 2 0 0 1-2-2zm0 0a2 2 0 0 1 2-2h13"/></svg></div>
+      <h3>Education-based</h3><p>Understand yourself better, so you can tackle whatever life throws at you — skills that outlast the sessions.</p>
+    </div>
+  </div>
+  <div class="sticky-demo">
+    <p>Sticky consult bar rides the bottom of every mobile screen</p>
+    <a class="btn btn-fill" href="#">Request a Free Consult</a>
+  </div>
+</section>
+
+<!-- ============ STYLE TILE ============ -->
+<section>
+  <div class="kicker">Style tile</div>
+  <h2 class="tile-h">Palette · frosted glass, one warm shell</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#fbfdfd"></div><p><b>White #FBFDFD</b>ground — clear midday air</p></div>
+    <div class="sw"><div class="chip" style="background:#e4f2ee"></div><p><b>Sea Foam #E4F2EE</b>section + card fills</p></div>
+    <div class="sw"><div class="chip" style="background:#d3ece6"></div><p><b>Foam Deep #D3ECE6</b>hot pills, hover fills</p></div>
+    <div class="sw"><div class="chip" style="background:#2f8b80"></div><p><b>Glass #2F8B80</b>working accent + filled CTA</p></div>
+    <div class="sw"><div class="chip" style="background:#003130"></div><p><b>Pine #003130</b>headlines + ink — from the logo</p></div>
+    <div class="sw"><div class="chip" style="background:#dd7a5f"></div><p><b>Shell Coral #DD7A5F</b>micro-accents only: icons, hovers</p></div>
+  </div>
+  <div class="type-row">
+    <div class="spec">
+      <h1>Bright water, <b>clear next step</b></h1>
+      <p class="note">Albert Sans 200 display, 500 for emphasis — one family, big weight contrast, sentence case</p>
+    </div>
+    <div class="spec">
+      <p class="bodycopy">One typeface does everything — display, body, UI — so the site feels like a single calm voice on every screen size. Rounded pills, tide-tumbled corners, tap targets sized for thumbs. <b style="font-weight:600">Semibold marks the action.</b></p>
+      <p class="note" style="margin-top:14px">Albert Sans 300 body · 600 UI · radius 18px cards, 999px pills</p>
+      <div style="margin-top:26px"><a class="btn btn-fill" href="#">Request a Free Consult</a><a class="btn btn-ghost" href="#">Learn more</a></div>
+      <p class="note" style="margin-top:12px">Micro-motion: 150–250ms lifts on cards and pills; nothing slower than a breath</p>
+    </div>
+  </div>
+</section>
+
+<footer>Concept proof · flat CSS stand-ins only — photography via Higgsfield in Phase 5 · Sea Glass</footer>
+</body>
+</html>

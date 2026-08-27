@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept 1 — Watermark · Rising Tide Counseling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Mulish:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --shell:#fdfcf8; --pine:#003130; --ink:#1c3a37;
+    --aqua:#8fcfc6; --sky:#aed4e4; --seaglass:#cfe8e2; --sand:#ead9bd;
+    --pine-10:rgba(0,49,48,.1); --pine-60:rgba(0,49,48,.6);
+    --display:'Cormorant Garamond',Georgia,serif; --body:'Mulish',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--shell);color:var(--ink);font-family:var(--body);font-weight:300;line-height:1.7}
+  .concept-bar{background:var(--pine);color:#e8f2ef;padding:14px 32px;font-size:13px;letter-spacing:.08em}
+  .concept-bar strong{font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-right:14px}
+  section{padding:72px 8vw}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#3d7a72}
+  h2.tile-h{font-family:var(--display);font-weight:400;font-size:34px;color:var(--pine);margin:8px 0 32px}
+
+  /* ---------- style tile ---------- */
+  .tile{border-bottom:1px solid var(--pine-10)}
+  .swatches{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:44px}
+  .sw{width:150px}
+  .sw .chip{height:84px;border-radius:4px 18px 4px 18px;border:1px solid var(--pine-10)}
+  .sw p{font-size:12px;margin-top:8px;line-height:1.5}
+  .sw p b{font-weight:700;display:block}
+  .type-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:44px}
+  @media(max-width:800px){.type-row{grid-template-columns:1fr}}
+  .spec h1{font-family:var(--display);font-weight:300;font-size:52px;line-height:1.12;color:var(--pine)}
+  .spec h1 em{font-style:italic;font-weight:400}
+  .spec .note{font-size:12px;color:var(--pine-60);margin-top:10px;letter-spacing:.04em}
+  .spec .bodycopy{font-size:16.5px;max-width:46ch}
+  .btn{display:inline-block;font-family:var(--body);font-weight:700;font-size:14px;letter-spacing:.06em;
+       padding:15px 30px;border-radius:2px 14px 2px 14px;text-decoration:none;transition:.25s}
+  .btn-fill{background:var(--pine);color:#f2faf8}
+  .btn-fill:hover{background:#0b4a46}
+  .btn-ghost{color:var(--pine);border:1px solid var(--pine);margin-left:14px}
+  .painted-note{position:relative;display:inline-block}
+  .painted-note::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-4px;height:9px;
+       background:linear-gradient(90deg,transparent,var(--aqua) 12%,var(--aqua) 88%,transparent);
+       opacity:.55;border-radius:50% 40% 60% 45%/70% 55% 65% 50%;filter:blur(.4px)}
+
+  /* ---------- watercolor wash stand-ins (SVG turbulence, no imagery yet) ---------- */
+  .wash{position:relative;overflow:hidden}
+  .wash svg{position:absolute;inset:0;width:100%;height:100%}
+
+  /* ---------- hero sketch ---------- */
+  .hero{padding:0;border-bottom:1px solid var(--pine-10)}
+  .hero-inner{position:relative;text-align:center;padding:96px 8vw 150px}
+  .hero-logo{height:64px;margin-bottom:40px}
+  .hero h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,5.4vw,68px);line-height:1.1;color:var(--pine);max-width:19ch;margin:18px auto 0}
+  .hero h1 em{font-style:italic;font-weight:400}
+  .hero .sub{font-size:17.5px;max-width:52ch;margin:26px auto 38px;color:var(--ink)}
+  .hero-wash{position:absolute;left:0;right:0;bottom:-2px;height:130px;pointer-events:none}
+  .standin-tag{position:absolute;z-index:3;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+       background:rgba(255,255,255,.82);color:#3d7a72;padding:3px 8px;border-radius:3px}
+
+  /* ---------- portrait + about sketch ---------- */
+  .about{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:center;border-bottom:1px solid var(--pine-10)}
+  @media(max-width:900px){.about{grid-template-columns:1fr}}
+  .portrait{position:relative;aspect-ratio:874/847;border-radius:46% 54% 48% 52%/52% 46% 54% 48%;
+       background:linear-gradient(160deg,#efe6d6,#e2d3ba);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .portrait span{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a7a5e;text-align:center;line-height:2}
+  .about h2{font-family:var(--display);font-weight:400;font-size:38px;color:var(--pine);line-height:1.2;margin:10px 0 18px}
+  .about p{max-width:56ch}
+  .quote{background:none;text-align:center;position:relative;border-bottom:1px solid var(--pine-10)}
+  .quote blockquote{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(24px,3vw,34px);
+       line-height:1.45;color:var(--pine);max-width:34ch;margin:0 auto}
+  .quote .attr{margin-top:18px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#3d7a72}
+  footer{padding:26px 8vw;font-size:12px;color:var(--pine-60);background:linear-gradient(180deg,var(--shell),var(--sand))}
+</style>
+</head>
+<body>
+
+<div class="concept-bar"><strong>Concept 1 · Watermark</strong> The logo's brushwork spreads: watercolor wave washes at section seams, shell-white air, deep pine ink. A counselor's hand, not a clinic's template.</div>
+
+<!-- ============ HERO SKETCH ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="../logo.png" alt="Rising Tide Counseling Services">
+    <div class="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div>
+    <h1>Clinical counseling from a <em>Biblical worldview</em></h1>
+    <p class="sub">Professional therapy that weaves clinical expertise with God's truth and grace — a safe, unhurried space to process, heal, and rise. Virtual sessions from wherever you are.</p>
+    <a class="btn btn-fill" href="#">Request a Free Consult</a>
+    <a class="btn btn-ghost" href="#">Pricing &amp; FAQs</a>
+    <div class="hero-wash wash">
+      <span class="standin-tag" style="left:16px;top:8px">Stand-in · watercolor wave band (Higgsfield, Phase 5)</span>
+      <svg preserveAspectRatio="none" viewBox="0 0 1200 130">
+        <defs>
+          <filter id="wc1" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="3" seed="7" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="42"/>
+            <feGaussianBlur stdDeviation="1.1"/>
+          </filter>
+        </defs>
+        <path d="M0,86 C220,60 420,104 640,84 C860,64 1020,96 1200,76 L1200,130 L0,130 Z" fill="#cfe8e2" opacity=".8" filter="url(#wc1)"/>
+        <path d="M0,100 C260,80 480,116 720,98 C930,82 1060,108 1200,94 L1200,130 L0,130 Z" fill="#8fcfc6" opacity=".65" filter="url(#wc1)"/>
+        <path d="M0,116 C300,102 560,126 820,112 C1010,102 1110,120 1200,110 L1200,130 L0,130 Z" fill="#aed4e4" opacity=".5" filter="url(#wc1)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT SKETCH ============ -->
+<section class="about">
+  <div class="portrait"><span>Real photo slot<br>jada-kouba-photo-1.jpg<br>soft organic mask</span></div>
+  <div>
+    <div class="kicker">About Jada</div>
+    <h2>Twenty years of walking alongside people — <em style="font-style:italic">you don't have to walk alone.</em></h2>
+    <p>I'm Jada Kouba, a dually licensed counselor (LCMHC, LCPC) serving clients in Florida and Maine. My heart is to help you not only manage your mental health, but experience real transformation through <span class="painted-note">God's truth and grace</span>.</p>
+    <p style="margin-top:14px">Clients describe me as compassionate, supportive, and committed to creating a safe space for healing — whether you're walking through grief, anxiety, or rebuilding after a difficult relationship.</p>
+  </div>
+</section>
+
+<!-- ============ SCRIPTURE / PULL-QUOTE SKETCH ============ -->
+<section class="quote wash" style="padding-top:96px;padding-bottom:96px">
+  <blockquote>"True healing begins when we give ourselves space to process, reflect, and invite God into the journey."</blockquote>
+  <div class="attr">— the heart of this practice</div>
+</section>
+
+<!-- ============ STYLE TILE ============ -->
+<section class="tile">
+  <div class="kicker">Style tile</div>
+  <h2 class="tile-h">Palette · roles, not swatches</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#fdfcf8"></div><p><b>Shell #FDFCF8</b>ground — the airy white the washes breathe on</p></div>
+    <div class="sw"><div class="chip" style="background:#003130"></div><p><b>Pine #003130</b>ink + the only filled CTA — measured from the logo</p></div>
+    <div class="sw"><div class="chip" style="background:#8fcfc6"></div><p><b>Aqua #8FCFC6</b>wash — decorative only, never under body text</p></div>
+    <div class="sw"><div class="chip" style="background:#aed4e4"></div><p><b>Sky #AED4E4</b>wash — companion tint in wave bands</p></div>
+    <div class="sw"><div class="chip" style="background:#cfe8e2"></div><p><b>Sea Glass #CFE8E2</b>palest wash + soft section tints</p></div>
+    <div class="sw"><div class="chip" style="background:#ead9bd"></div><p><b>Sand #EAD9BD</b>warm grounding band near the footer</p></div>
+  </div>
+  <div class="type-row">
+    <div class="spec">
+      <h1>Healing, <em>like the tide,</em> rises gently</h1>
+      <p class="note">Cormorant Garamond Light · display — calligraphic air that rhymes with the brush lettering</p>
+    </div>
+    <div class="spec">
+      <p class="bodycopy">Mulish handles everything spoken plainly: body copy, labels, buttons. Light weight, generous leading, warm and unfussy — the voice of someone who listens for a living. <strong style="font-weight:700">Bold only for emphasis and action.</strong></p>
+      <p class="note" style="margin-top:14px">Mulish 300/400 body · 700 UI &amp; kickers (small caps, wide tracking)</p>
+      <div style="margin-top:26px"><a class="btn btn-fill" href="#">Request a Free Consult</a><a class="btn btn-ghost" href="#">Learn more</a></div>
+      <p class="note" style="margin-top:12px">Buttons carry an asymmetric "brush-cut" radius (2px/14px) — the wash motif at UI scale</p>
+    </div>
+  </div>
+</section>
+
+<footer>Concept proof · flat CSS/SVG stand-ins only — no generated imagery until a direction is chosen (Leaf9 design-directions, Phase 3) · Watermark</footer>
+</body>
+</html>

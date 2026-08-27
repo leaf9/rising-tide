@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept 2 — First Light · Rising Tide Counseling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,300;1,7..72,400&family=Figtree:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#f7f0e4; --sand-deep:#efe4d0; --ink:#22403c; --pine:#003130;
+    --gold:#c0873c; --slate:#4e7a82; --ink-10:rgba(34,64,60,.12); --ink-60:rgba(34,64,60,.62);
+    --display:'Literata',Georgia,serif; --body:'Figtree',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--sand);color:var(--ink);font-family:var(--body);font-weight:300;line-height:1.7}
+  .concept-bar{background:var(--pine);color:#f0e9da;padding:14px 32px;font-size:13px;letter-spacing:.08em}
+  .concept-bar strong{font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-right:14px}
+  section{padding:76px 8vw}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+  h2.tile-h{font-family:var(--display);font-weight:400;font-size:34px;color:var(--ink);margin:8px 0 32px}
+
+  /* ---------- hero sketch: editorial split with full-height portrait ---------- */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;min-height:640px;padding:0;border-bottom:1px solid var(--ink-10)}
+  @media(max-width:900px){.hero{grid-template-columns:1fr}}
+  .hero-copy{padding:84px 6vw 84px 8vw;display:flex;flex-direction:column;justify-content:center}
+  .hero-logo{height:58px;align-self:flex-start;margin-bottom:44px}
+  .hero h1{font-family:var(--display);font-weight:300;font-size:clamp(38px,4.6vw,60px);line-height:1.14;color:var(--ink);max-width:18ch}
+  .hero h1 .accent{position:relative;white-space:nowrap}
+  .hero h1 .accent::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:10px;background:var(--gold);opacity:.28;border-radius:40% 55% 45% 60%/60% 45% 55% 40%}
+  .hero .sub{font-size:17.5px;max-width:46ch;margin:24px 0 36px;color:var(--ink)}
+  .btn{display:inline-block;font-weight:600;font-size:14px;letter-spacing:.05em;padding:16px 30px;border-radius:3px;text-decoration:none;transition:.25s}
+  .btn-fill{background:var(--pine);color:#f4efe3}
+  .btn-fill:hover{background:#0c4a45}
+  .btn-ghost{color:var(--pine);border:1px solid var(--pine);margin-left:12px}
+  .hero-photo{position:relative;background:
+      linear-gradient(180deg,#f4e3c0 0%,#eecf9e 34%,#d9b183 52%,#9db1ac 68%,#587d7c 100%)}
+  .hero-photo .label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;
+      font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9);line-height:2.1;
+      text-shadow:0 1px 8px rgba(60,50,30,.35)}
+  .standin-tag{position:absolute;left:14px;top:12px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      background:rgba(255,255,255,.85);color:#8a6a30;padding:3px 8px;border-radius:3px;z-index:2}
+
+  /* ---------- scripture band ---------- */
+  .verse{background:linear-gradient(180deg,#f9f3e8,#f3e9d6);text-align:center;border-bottom:1px solid var(--ink-10)}
+  .verse blockquote{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(26px,3.2vw,38px);line-height:1.5;max-width:30ch;margin:0 auto;color:var(--ink)}
+  .verse blockquote b{font-weight:400;font-style:italic;color:var(--pine)}
+  .verse .attr{margin-top:20px;font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+
+  /* ---------- ledger sketch (logistics set proudly) ---------- */
+  .ledger{display:grid;grid-template-columns:1fr 1fr;gap:8vw;border-bottom:1px solid var(--ink-10)}
+  @media(max-width:900px){.ledger{grid-template-columns:1fr}}
+  .ledger h2{font-family:var(--display);font-weight:400;font-size:36px;line-height:1.25;margin:10px 0 16px}
+  .ledger p{max-width:50ch}
+  .fee-table{border-top:1px solid var(--ink);margin-top:8px}
+  .fee-row{display:flex;justify-content:space-between;align-items:baseline;padding:20px 2px;border-bottom:1px solid var(--ink-10);gap:24px}
+  .fee-row .what{font-size:16px}
+  .fee-row .what small{display:block;font-size:12.5px;color:var(--ink-60);margin-top:3px}
+  .fee-row .amt{font-family:var(--display);font-size:30px;font-weight:400;color:var(--pine);white-space:nowrap}
+  .fee-note{font-size:13px;color:var(--ink-60);margin-top:14px;max-width:44ch}
+
+  /* ---------- style tile ---------- */
+  .swatches{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:44px}
+  .sw{width:150px}
+  .sw .chip{height:84px;border-radius:3px;border:1px solid var(--ink-10)}
+  .sw p{font-size:12px;margin-top:8px;line-height:1.5}
+  .sw p b{font-weight:700;display:block}
+  .type-row{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  @media(max-width:800px){.type-row{grid-template-columns:1fr}}
+  .spec h1{font-family:var(--display);font-weight:300;font-size:50px;line-height:1.16;color:var(--ink)}
+  .spec h1 em{font-style:italic;font-weight:400}
+  .spec .note{font-size:12px;color:var(--ink-60);margin-top:10px;letter-spacing:.04em}
+  .spec .bodycopy{font-size:16.5px;max-width:46ch}
+  footer{padding:26px 8vw;font-size:12px;color:var(--ink-60)}
+  .wave-rule{height:26px;margin:0 8vw;position:relative}
+  .wave-rule svg{width:220px;height:26px;display:block;margin:0 auto}
+</style>
+</head>
+<body>
+
+<div class="concept-bar"><strong>Concept 2 · First Light</strong> One photographic hour — dawn over the water. Her real portraits already live in this light. Literary serif gives the faith-forward H1 the confidence of a well-set book.</div>
+
+<!-- ============ HERO SKETCH ============ -->
+<section class="hero">
+  <div class="hero-copy">
+    <img class="hero-logo" src="../logo.png" alt="Rising Tide Counseling Services">
+    <div class="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div>
+    <h1 style="margin-top:16px">Clinical counseling from a <span class="accent">Biblical worldview</span></h1>
+    <p class="sub">Twenty years of clinical experience, woven with God's truth and grace. A safe, unhurried place to be heard — and to begin again. His mercies are new every morning; so is every session.</p>
+    <div><a class="btn btn-fill" href="#">Request a Free Consult</a><a class="btn btn-ghost" href="#">Pricing &amp; FAQs</a></div>
+  </div>
+  <div class="hero-photo">
+    <span class="standin-tag">Stand-in · dawn gradient</span>
+    <div class="label">Photo slot — first light over water<br>or jada-kouba-photo-2.jpg full-height<br>(same warm palette, zero regrade)</div>
+  </div>
+</section>
+
+<!-- ============ SCRIPTURE BAND ============ -->
+<section class="verse">
+  <blockquote>"True healing begins when we give ourselves space to process, reflect, and <b>invite God into the journey.</b>"</blockquote>
+  <div class="attr">The heart of this practice</div>
+</section>
+
+<!-- ============ LEDGER SKETCH ============ -->
+<section class="ledger">
+  <div>
+    <div class="kicker">Simple, transparent fees</div>
+    <h2>Self-pay, stated plainly — superbills provided for reimbursement.</h2>
+    <p>No insurance middlemen; my time goes to client care. Many clients successfully submit superbills to their plans. Payment is due at time of service.</p>
+  </div>
+  <div>
+    <div class="fee-table">
+      <div class="fee-row"><div class="what">Individual counseling<small>60-minute virtual session</small></div><div class="amt">$135</div></div>
+      <div class="fee-row"><div class="what">Couples counseling<small>60-minute virtual session</small></div><div class="amt">$165</div></div>
+      <div class="fee-row"><div class="what">First consult<small>Get acquainted, ask anything</small></div><div class="amt" style="color:var(--gold)">Free</div></div>
+    </div>
+    <p class="fee-note">Logistics set like a well-kept ledger — the category hides pricing; Jada already publishes hers. We present it proudly.</p>
+  </div>
+</section>
+
+<!-- ============ STYLE TILE ============ -->
+<section>
+  <div class="kicker">Style tile</div>
+  <h2 class="tile-h">Palette · one hour of light</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#f7f0e4"></div><p><b>Warm Sand #F7F0E4</b>ground — morning-lit, never beige-flat</p></div>
+    <div class="sw"><div class="chip" style="background:#22403c"></div><p><b>Deep Ink #22403C</b>text — pine warmed toward charcoal</p></div>
+    <div class="sw"><div class="chip" style="background:#003130"></div><p><b>Pine #003130</b>the only filled CTA — from the logo</p></div>
+    <div class="sw"><div class="chip" style="background:#c0873c"></div><p><b>Dawn Gold #C0873C</b>the one warm accent — kickers, painted underline</p></div>
+    <div class="sw"><div class="chip" style="background:#4e7a82"></div><p><b>Sea Slate #4E7A82</b>secondary UI, links, quiet details</p></div>
+    <div class="sw"><div class="chip" style="background:#efe4d0"></div><p><b>Sand Deep #EFE4D0</b>alternate section band</p></div>
+  </div>
+  <div class="type-row">
+    <div class="spec">
+      <h1>Each step brings you <em>closer to the life</em> you were created to live</h1>
+      <p class="note">Literata Light · display — literary, warm, reads like a loved book</p>
+    </div>
+    <div class="spec">
+      <p class="bodycopy">Figtree speaks the everyday parts — round, friendly, plainspoken. It keeps forms, labels, and logistics feeling human next to the serif's weight. <strong style="font-weight:600">Semibold carries the actions.</strong></p>
+      <p class="note" style="margin-top:14px">Figtree 300/400 body · 600 UI · kickers in dawn gold, wide tracking</p>
+      <div style="margin-top:26px"><a class="btn btn-fill" href="#">Request a Free Consult</a><a class="btn btn-ghost" href="#">Learn more</a></div>
+      <p class="note" style="margin-top:12px">Buttons: quiet 3px radius — the photography carries the feeling; UI stays still</p>
+    </div>
+  </div>
+</section>
+
+<div class="wave-rule">
+  <svg viewBox="0 0 220 26"><path d="M4,16 C30,6 52,22 78,14 C104,6 126,20 152,13 C174,7 196,18 216,11" fill="none" stroke="#c0873c" stroke-width="2.4" stroke-linecap="round" opacity=".7"/></svg>
+</div>
+<footer style="text-align:center">Concept proof · flat CSS stand-ins only — photography via Higgsfield in Phase 5 · watercolor confined to brand signatures (logo, this wave rule, painted underlines) · First Light</footer>
+</body>
+</html>
