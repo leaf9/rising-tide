@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rising Tide Counseling — Style Guide («Watermark» v1.0)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Mulish:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   RISING TIDE COUNSELING — «WATERMARK» TOKENS  v1.0 (Aug 27, 2026)
+   THE CONTRACT. Every downstream phase consumes these variables.
+   No rogue hex values, font stacks, radii, or timings past this file.
+   ===================================================================== */
+:root{
+  /* -- color · grounds -- */
+  --rt-shell:#fdfcf8;        /* page ground — airy white the washes breathe on */
+  --rt-shell-deep:#f6f3ea;   /* alternate section band, form fields */
+  --rt-sand:#ead9bd;         /* warm grounding — footer approach, accents of earth */
+
+  /* -- color · ink -- */
+  --rt-pine:#003130;         /* brand ink (measured from logo) — headlines, filled CTA */
+  --rt-ink:#22423e;          /* body text — pine, breathed on */
+  --rt-ink-60:rgba(34,66,62,.64);  /* captions, meta */
+  --rt-hairline:rgba(0,49,48,.13); /* rules, borders */
+
+  /* -- color · washes (DECORATIVE ONLY — never under body text) -- */
+  --rt-aqua:#8fcfc6;
+  --rt-sky:#aed4e4;
+  --rt-seaglass:#cfe8e2;     /* palest wash; also soft tint fills at ≤40% */
+
+  /* -- color · working accent + signals (AA text-safe) -- */
+  --rt-sea:#2e6159;          /* kickers, links, secondary UI — 5.9:1 on shell */
+  --rt-error:#a3492c;        /* form errors only */
+  --rt-success:#3b7451;      /* confirmations only */
+
+  /* -- type -- */
+  --rt-display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --rt-body:'Mulish',-apple-system,'Segoe UI',sans-serif;
+  --rt-d1:clamp(2.5rem,5.4vw,4.25rem);   /* hero H1 · display 300 · lh 1.1  */
+  --rt-d2:clamp(2rem,3.4vw,2.75rem);     /* section H2 · display 400 · lh 1.2 */
+  --rt-d3:clamp(1.5rem,2.2vw,1.75rem);   /* card/sub H3 · display 500 · lh 1.3 */
+  --rt-quote:clamp(1.5rem,3vw,2.125rem); /* pull quotes · display 400 italic · lh 1.45 */
+  --rt-b1:1.0625rem;   /* body 17px · Mulish 300/400 · lh 1.7 */
+  --rt-b2:.9375rem;    /* small 15px · lh 1.6 */
+  --rt-micro:.75rem;   /* kicker/meta 12px · Mulish 700 · caps · track .22em */
+
+  /* -- shape: the brush-cut. Asymmetric radius = the wash motif at UI scale -- */
+  --rt-r-btn:2px 14px 2px 14px;
+  --rt-r-card:4px 18px 4px 18px;
+  --rt-r-field:2px 10px 2px 10px;
+  --rt-r-pill:999px;
+
+  /* -- space (8px base) -- */
+  --rt-s1:.5rem; --rt-s2:1rem; --rt-s3:1.5rem; --rt-s4:2rem;
+  --rt-s5:3rem; --rt-s6:4rem; --rt-s7:6rem; --rt-s8:8rem;
+  --rt-section:clamp(4rem,9vw,7rem);   /* vertical section padding */
+  --rt-gutter:8vw;                     /* page side padding */
+  --rt-measure:56ch;                   /* max body reading width */
+
+  /* -- motion -- */
+  --rt-soak:700ms;                       /* washes: fade + blur-soften in */
+  --rt-rise:450ms;                       /* content: 12px fade-up */
+  --rt-ease:cubic-bezier(.22,.61,.36,1); /* ease-out-quart-ish, unhurried */
+  --rt-stagger:90ms;
+  --rt-micro-t:180ms;                    /* hovers, pills */
+}
+
+/* ---------- guide chrome (not part of the contract) ---------- */
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--rt-shell);color:var(--rt-ink);font-family:var(--rt-body);font-weight:300;font-size:var(--rt-b1);line-height:1.7}
+.bar{background:var(--rt-pine);color:#e8f2ef;padding:16px 32px;font-size:13px;letter-spacing:.08em;position:sticky;top:0;z-index:9}
+.bar b{font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-right:12px}
+.bar .v{float:right;color:#8fcfc6}
+main{max-width:1180px;margin:0 auto;padding:0 32px 120px}
+section.g{padding-top:var(--rt-s7);border-bottom:1px solid var(--rt-hairline);padding-bottom:var(--rt-s6)}
+.kicker{font-size:var(--rt-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--rt-sea)}
+h2.gt{font-family:var(--rt-display);font-weight:400;font-size:var(--rt-d2);color:var(--rt-pine);margin:8px 0 10px}
+.lede{max-width:66ch;color:var(--rt-ink);margin-bottom:var(--rt-s4)}
+.note{font-size:13px;color:var(--rt-ink-60);line-height:1.6}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.82em;background:var(--rt-shell-deep);padding:2px 6px;border-radius:4px;color:var(--rt-pine)}
+
+/* ---------- swatches ---------- */
+.swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:18px}
+.sw .chip{height:92px;border-radius:var(--rt-r-card);border:1px solid var(--rt-hairline)}
+.sw h4{font-size:13.5px;font-weight:700;margin:10px 0 2px;color:var(--rt-pine)}
+.sw p{font-size:12.5px;color:var(--rt-ink-60);line-height:1.55}
+.sw .tok{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--rt-sea)}
+
+/* ---------- type specimens ---------- */
+.spec{border-left:2px solid var(--rt-hairline);padding-left:28px;margin-bottom:var(--rt-s5)}
+.spec .d1{font-family:var(--rt-display);font-weight:300;font-size:var(--rt-d1);line-height:1.1;color:var(--rt-pine)}
+.spec .d1 em,.spec .d2 em{font-style:italic;font-weight:400}
+.spec .d2{font-family:var(--rt-display);font-weight:400;font-size:var(--rt-d2);line-height:1.2;color:var(--rt-pine)}
+.spec .d3{font-family:var(--rt-display);font-weight:500;font-size:var(--rt-d3);line-height:1.3;color:var(--rt-pine)}
+.spec .q{font-family:var(--rt-display);font-style:italic;font-weight:400;font-size:var(--rt-quote);line-height:1.45;color:var(--rt-pine)}
+.spec .b{max-width:var(--rt-measure)}
+.spec .meta{font-size:12px;color:var(--rt-ink-60);margin-top:10px;letter-spacing:.03em}
+
+/* ---------- components (the contract in action) ---------- */
+.btn{display:inline-block;font-family:var(--rt-body);font-weight:700;font-size:14px;letter-spacing:.06em;
+     padding:15px 30px;border-radius:var(--rt-r-btn);text-decoration:none;cursor:pointer;border:0;
+     transition:background var(--rt-micro-t) var(--rt-ease),color var(--rt-micro-t) var(--rt-ease)}
+.btn-fill{background:var(--rt-pine);color:#f2faf8}
+.btn-fill:hover{background:#0b4a46}
+.btn-ghost{color:var(--rt-pine);border:1px solid var(--rt-pine);background:transparent}
+.btn-ghost:hover{background:rgba(0,49,48,.06)}
+.pill{display:inline-block;font-size:13px;font-weight:600;padding:8px 16px;border-radius:var(--rt-r-pill);
+     background:#fff;border:1px solid var(--rt-hairline);color:var(--rt-ink);margin:0 6px 8px 0;
+     transition:transform var(--rt-micro-t) var(--rt-ease),background var(--rt-micro-t)}
+.pill:hover{transform:translateY(-2px);background:var(--rt-seaglass)}
+.pill.hot{background:var(--rt-seaglass);border-color:transparent;color:var(--rt-pine)}
+.painted{position:relative;display:inline-block}
+.painted::after{content:"";position:absolute;left:-2%;right:-2%;bottom:-3px;height:9px;
+     background:linear-gradient(90deg,transparent,var(--rt-aqua) 12%,var(--rt-aqua) 88%,transparent);
+     opacity:.55;border-radius:50% 40% 60% 45%/70% 55% 65% 50%;filter:blur(.4px)}
+.card{background:#fff;border:1px solid var(--rt-hairline);border-radius:var(--rt-r-card);padding:30px 28px;max-width:340px}
+.card.tint{background:color-mix(in srgb,var(--rt-seaglass) 38%,white);border-color:transparent}
+.card h3{font-family:var(--rt-display);font-weight:500;font-size:var(--rt-d3);color:var(--rt-pine);margin-bottom:8px}
+.card p{font-size:var(--rt-b2)}
+.fee-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:20px 2px;border-bottom:1px solid var(--rt-hairline);max-width:460px}
+.fee-row .what{font-size:16px}
+.fee-row .what small{display:block;font-size:12.5px;color:var(--rt-ink-60);margin-top:3px}
+.fee-row .amt{font-family:var(--rt-display);font-size:30px;font-weight:400;color:var(--rt-pine)}
+.field{max-width:380px;margin-bottom:14px}
+.field label{display:block;font-size:var(--rt-micro);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rt-sea);margin-bottom:7px}
+.field input{width:100%;font-family:var(--rt-body);font-size:15.5px;font-weight:300;padding:13px 16px;color:var(--rt-ink);
+     background:var(--rt-shell-deep);border:1px solid var(--rt-hairline);border-radius:var(--rt-r-field);outline:none;
+     transition:border-color var(--rt-micro-t)}
+.field input:focus{border-color:var(--rt-sea)}
+.field.err input{border-color:var(--rt-error)}
+.field .msg{font-size:12.5px;margin-top:6px}
+.field.err .msg{color:var(--rt-error)}
+.crisis{display:flex;gap:12px;align-items:flex-start;max-width:460px;background:color-mix(in srgb,var(--rt-sand) 34%,white);
+     border-radius:var(--rt-r-card);padding:16px 18px;font-size:13.5px;line-height:1.6}
+.crisis b{font-weight:700;color:var(--rt-pine)}
+.tcard{background:#fff;border:1px solid var(--rt-hairline);border-radius:var(--rt-r-card);padding:28px;max-width:400px}
+.tcard .tq{font-family:var(--rt-display);font-style:italic;font-size:19.5px;line-height:1.55;color:var(--rt-pine)}
+.tcard .ta{margin-top:14px;font-size:var(--rt-micro);font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rt-sea)}
+
+/* ---------- wash demo ---------- */
+.washband{position:relative;height:110px;overflow:hidden;border-radius:var(--rt-r-card);border:1px solid var(--rt-hairline)}
+.washband svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* ---------- do / don't ---------- */
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.dd{grid-template-columns:1fr}}
+.dd .box{border-radius:var(--rt-r-card);padding:24px 26px;font-size:14.5px;line-height:1.65}
+.dd .do{background:color-mix(in srgb,var(--rt-seaglass) 40%,white)}
+.dd .dont{background:color-mix(in srgb,#e8c8bb 34%,white)}
+.dd h4{font-size:var(--rt-micro);font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.dd .do h4{color:var(--rt-success)}
+.dd .dont h4{color:var(--rt-error)}
+.dd ul{list-style:none}
+.dd li{padding:6px 0 6px 24px;position:relative}
+.dd .do li::before{content:"✓";position:absolute;left:0;color:var(--rt-success);font-weight:700}
+.dd .dont li::before{content:"✕";position:absolute;left:0;color:var(--rt-error);font-weight:700}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+table.mo{border-collapse:collapse;font-size:14px;width:100%;max-width:640px}
+table.mo th{text-align:left;font-size:var(--rt-micro);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rt-sea);padding:10px 14px 10px 0;border-bottom:1px solid var(--rt-pine)}
+table.mo td{padding:12px 14px 12px 0;border-bottom:1px solid var(--rt-hairline);vertical-align:top}
+pre.recipe{background:var(--rt-shell-deep);border:1px solid var(--rt-hairline);border-radius:var(--rt-r-card);
+     padding:20px 22px;font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.7;color:var(--rt-ink);
+     white-space:pre-wrap;max-width:72ch;margin:10px 0 6px}
+</style>
+</head>
+<body>
+
+<div class="bar"><b>Rising Tide Counseling · Style Guide</b> «Watermark» — the token contract for every downstream page <span class="v">v1.0 · Aug 27, 2026</span></div>
+
+<main>
+
+<!-- ================= PALETTE ================= -->
+<section class="g">
+  <div class="kicker">01 · Palette</div>
+  <h2 class="gt">Colors have roles, not just values</h2>
+  <p class="lede">Three families: <strong>grounds</strong> the page lives on, <strong>ink</strong> that speaks, and <strong>washes</strong> that feel. Washes are decorative only — they may never sit under body text. Pine is the only filled-button color sitewide.</p>
+  <div class="swgrid">
+    <div class="sw"><div class="chip" style="background:var(--rt-shell)"></div><h4>Shell</h4><p class="tok">--rt-shell #FDFCF8</p><p>Page ground. The airy white every wash breathes on.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-shell-deep)"></div><h4>Shell Deep</h4><p class="tok">--rt-shell-deep #F6F3EA</p><p>Alternate section bands, form fields.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-sand)"></div><h4>Sand</h4><p class="tok">--rt-sand #EAD9BD</p><p>Warm grounding — footer approach, earthy accents, portrait backdrops.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-pine)"></div><h4>Pine</h4><p class="tok">--rt-pine #003130</p><p>Brand ink, measured from the logo. Headlines + the only filled CTA. 15.9:1 on Shell.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-ink)"></div><h4>Ink</h4><p class="tok">--rt-ink #22423E</p><p>Body text — pine, breathed on. 10.7:1 on Shell.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-sea)"></div><h4>Sea</h4><p class="tok">--rt-sea #2E6159</p><p>Working accent: kickers, links, labels, icons. 5.9:1 on Shell — AA at every size used.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-aqua)"></div><h4>Aqua wash</h4><p class="tok">--rt-aqua #8FCFC6</p><p>Primary wash + painted underlines. Decorative only.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-sky)"></div><h4>Sky wash</h4><p class="tok">--rt-sky #AED4E4</p><p>Companion wash inside wave bands. Decorative only.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-seaglass)"></div><h4>Sea Glass wash</h4><p class="tok">--rt-seaglass #CFE8E2</p><p>Palest wash; ≤40% tint as card/section fills.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-error)"></div><h4>Clay · error</h4><p class="tok">--rt-error #A3492C</p><p>Form errors only. Never decorative.</p></div>
+    <div class="sw"><div class="chip" style="background:var(--rt-success)"></div><h4>Moss · success</h4><p class="tok">--rt-success #3B7451</p><p>Confirmations only.</p></div>
+  </div>
+</section>
+
+<!-- ================= TYPE ================= -->
+<section class="g">
+  <div class="kicker">02 · Typography</div>
+  <h2 class="gt">Cormorant Garamond speaks; Mulish serves</h2>
+  <p class="lede">The display serif is light and calligraphic — it rhymes with the logo's brush lettering without imitating it. Mulish carries everything spoken plainly. Italic is the emotional register: reserve it for the phrases that carry faith and feeling.</p>
+
+  <div class="spec"><div class="d1">Healing, <em>like the tide,</em> rises gently</div><p class="meta">Display 1 · Cormorant Garamond 300 · <code>--rt-d1</code> clamp(40→68px) · lh 1.1 · hero only, one per page</p></div>
+  <div class="spec"><div class="d2">A safe place to be <em>seen and heard</em></div><p class="meta">Display 2 · Cormorant Garamond 400 · <code>--rt-d2</code> clamp(32→44px) · section headings</p></div>
+  <div class="spec"><div class="d3">Individual counseling</div><p class="meta">Display 3 · Cormorant Garamond 500 · <code>--rt-d3</code> clamp(24→28px) · cards, subheads</p></div>
+  <div class="spec"><div class="q">"True healing begins when we give ourselves space to process, reflect, and invite God into the journey."</div><p class="meta">Pull quote · Cormorant Garamond 400 italic · <code>--rt-quote</code> · max 34ch, centered, painted underline optional</p></div>
+  <div class="spec"><p class="b">Body copy is Mulish 300 at 17px with a 1.7 line height, never wider than <code>--rt-measure</code> (56ch). It is the voice of someone who listens for a living: unhurried, plain, warm. <strong style="font-weight:700">Bold is Mulish 700 — reserved for emphasis and action.</strong></p><p class="meta">Body · Mulish 300/400 · <code>--rt-b1</code> 17px · small <code>--rt-b2</code> 15px</p></div>
+  <div class="spec"><div class="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div><p class="meta">Kicker · Mulish 700 · <code>--rt-micro</code> 12px · caps, .22em tracking, Sea color</p></div>
+</section>
+
+<!-- ================= SHAPE & SPACE ================= -->
+<section class="g">
+  <div class="kicker">03 · Shape &amp; space</div>
+  <h2 class="gt">The brush-cut corner</h2>
+  <p class="lede">One shape idea everywhere: an asymmetric radius — sharp on one diagonal, soft on the other — like a brushstroke lifting off paper. Buttons <code>2/14</code>, cards <code>4/18</code>, fields <code>2/10</code>. Pills are the one exception (fully round — a Sea Glass donation). Space runs an 8px scale; sections breathe at <code>--rt-section</code> (64–112px) and body text never exceeds 56ch.</p>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+    <button class="btn btn-fill">Request a Free Consult</button>
+    <button class="btn btn-ghost">Pricing &amp; FAQs</button>
+    <span class="pill hot">Anxiety</span><span class="pill">Grief</span><span class="pill">+ 11 more</span>
+  </div>
+  <p class="note" style="margin-top:16px">"Request a Free Consult" is the only CTA phrase on the site, and Pine fill is its only dress. Ghost buttons handle every secondary action.</p>
+</section>
+
+<!-- ================= WASHES ================= -->
+<section class="g">
+  <div class="kicker">04 · Watercolor washes</div>
+  <h2 class="gt">Paint lives at the seams</h2>
+  <p class="lede">Washes are structural, not wallpaper: they run along section boundaries the way the flourish runs under "Tide." Full saturation, contained bands, generous shell air around them. Never behind body text; never full-bleed page backgrounds; never more than one band on screen at a time.</p>
+  <div class="washband">
+    <svg preserveAspectRatio="none" viewBox="0 0 1200 110">
+      <defs><filter id="wc" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="3" seed="7" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="42"/><feGaussianBlur stdDeviation="1.1"/>
+      </filter></defs>
+      <path d="M0,56 C220,30 420,74 640,54 C860,34 1020,66 1200,46 L1200,110 L0,110 Z" fill="#cfe8e2" opacity=".8" filter="url(#wc)"/>
+      <path d="M0,70 C260,50 480,86 720,68 C930,52 1060,78 1200,64 L1200,110 L0,110 Z" fill="#8fcfc6" opacity=".65" filter="url(#wc)"/>
+      <path d="M0,86 C300,72 560,96 820,82 C1010,72 1110,90 1200,80 L1200,110 L0,110 Z" fill="#aed4e4" opacity=".5" filter="url(#wc)"/>
+    </svg>
+  </div>
+  <p class="note" style="margin-top:12px">Code stand-in shown; production bands are generated watercolor (recipes in §07). The painted underline (<span class="painted">God's truth and grace</span>) marks faith phrases and key promises — at most one per section.</p>
+</section>
+
+<!-- ================= COMPONENTS ================= -->
+<section class="g">
+  <div class="kicker">05 · Components</div>
+  <h2 class="gt">The contract in action</h2>
+  <div class="two">
+    <div>
+      <div class="card tint" style="margin-bottom:20px">
+        <h3>Client-centered</h3>
+        <p>Anxiety, depression, relationships — an integrative, holistic plan built around your story, not a template.</p>
+      </div>
+      <div class="tcard" style="margin-bottom:20px">
+        <p class="tq">"Jada listened without judgment and gave me strategies that actually work."</p>
+        <p class="ta">— B.I., client</p>
+      </div>
+      <div class="fee-row"><div class="what">Individual counseling<small>60-minute virtual session</small></div><div class="amt">$135</div></div>
+      <div class="fee-row"><div class="what">Couples counseling<small>60-minute virtual session</small></div><div class="amt">$165</div></div>
+      <p class="note" style="margin-top:10px">The proud fee ledger — a First Light donation, re-set in Watermark's serif.</p>
+    </div>
+    <div>
+      <div class="field"><label>Your name</label><input value="Sarah M."></div>
+      <div class="field err"><label>Email</label><input value="sarah@"><p class="msg">Please enter a full email address.</p></div>
+      <p class="note" style="margin:2px 0 20px">Fields sit on Shell Deep; focus rings in Sea; errors in Clay with a plain-spoken message. The consult form itself is the Fillout embed — these styles cover any native fields around it.</p>
+      <div class="crisis"><div>🕊️</div><div><b>In crisis right now?</b> This form isn't monitored around the clock. If you're in danger or thinking about harming yourself, call or text <b>988</b> (Suicide &amp; Crisis Lifeline) — someone is there 24/7.</div></div>
+      <p class="note" style="margin-top:10px">The crisis note accompanies every consult/contact form, styled as care — warm sand tint, never alarm-red.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MOTION ================= -->
+<section class="g">
+  <div class="kicker">06 · Motion</div>
+  <h2 class="gt">Nothing faster than a calm breath</h2>
+  <table class="mo">
+    <tr><th>What</th><th>Behavior</th><th>Tokens</th></tr>
+    <tr><td>Wave washes</td><td>Soak in: opacity 0→1 with a blur(6px)→0 soften, on scroll into view, once</td><td><code>--rt-soak</code> 700ms · <code>--rt-ease</code></td></tr>
+    <tr><td>Content blocks</td><td>Rise: opacity + translateY(12px)→0; siblings stagger</td><td><code>--rt-rise</code> 450ms · <code>--rt-stagger</code> 90ms</td></tr>
+    <tr><td>Buttons, pills, cards</td><td>Micro only: background/lift, −2px translate max</td><td><code>--rt-micro-t</code> 180ms</td></tr>
+    <tr><td>Parallax</td><td>Hero wash band only, ±12px max</td><td>—</td></tr>
+    <tr><td><code>prefers-reduced-motion</code></td><td>Everything collapses to opacity-only, 250ms; parallax off</td><td>mandatory</td></tr>
+  </table>
+</section>
+
+<!-- ================= IMAGERY ================= -->
+<section class="g">
+  <div class="kicker">07 · Imagery program + Higgsfield recipes</div>
+  <h2 class="gt">Two kinds of images, one palette</h2>
+  <p class="lede"><strong>Real photography of Jada</strong> — seven photos in three settings (<code>assets/jada/</code>): the porch shoot (cream/tan), the palm-tree shoot (golden light), a studio headshot — presented in soft organic masks on Sand tints. <strong>The wave library Jada loves</strong> (<code>assets/waves/</code>: aerial turquoise wave, sunset shoreline footprints, heart in sand, teal sea on rocks, low-tide ripples) is used directly where a photo band is called for — graded gently toward the wash palette — and fed to Higgsfield as style reference for anything generated. <strong>Generated watercolor</strong> carries the washes. Never: generated people, moody dark seas, saturated full-bleed washes, stock clichés (lighthouses, message bottles, generic laptop shots).</p>
+  <p class="note" style="margin-bottom:6px"><strong>Recipe A — section wave band (≈3:1, hero + seams):</strong></p>
+  <pre class="recipe">Loose watercolor wave band on white paper, horizontal composition, translucent
+overlapping washes of soft aqua (#8FCFC6), pale sky blue (#AED4E4) and sea glass
+green (#CFE8E2), wet-on-wet soft edges, subtle granulation, generous untouched
+white space above, hand-painted, airy and calm, no text, no objects</pre>
+  <p class="note" style="margin-bottom:6px"><strong>Recipe B — brush accents (underlines, dividers, bullet marks):</strong></p>
+  <pre class="recipe">Single watercolor brushstroke, one confident horizontal sweep, soft aqua
+(#8FCFC6) fading at both ends, white background, isolated, hand-painted,
+slight granulation, no text</pre>
+  <p class="note" style="margin-bottom:6px"><strong>Recipe C — coastal photo look (where a photo band is needed and no library shot fits):</strong></p>
+  <pre class="recipe">Airy coastal shoreline in soft morning light, gentle foam edge of a spent wave
+on pale sand, high-key, palette limited to warm sand, soft aqua and sea glass
+green, tranquil, negative space, shot from above or low horizon, no people
+[+ style reference: assets/waves/wave-aerial-turquoise.jpg or the closest
+library shot — Jada's taste is the target]</pre>
+  <p class="note">Library first, generation second: prefer a real wave photo from <code>assets/waves/</code> before generating. All generation happens in candidate batches with wave-library images attached as references; Ben picks before anything ships. Aspect ratios reserved in comps first — imagery drops in with zero layout shift.</p>
+</section>
+
+<!-- ================= VOICE ================= -->
+<section class="g">
+  <div class="kicker">08 · Voice &amp; UX copy</div>
+  <h2 class="gt">A counselor's voice, written down</h2>
+  <div class="dd">
+    <div class="box do"><h4>Do</h4><ul>
+      <li>Speak as "I" — Jada is a person, not a practice ("I'll respond within one business day")</li>
+      <li>Lead faith-forward, plainly: "from a Biblical worldview," "God's truth and grace"</li>
+      <li>Name feelings before features: "If you're walking through grief…"</li>
+      <li>One CTA phrase everywhere: <em>Request a Free Consult</em></li>
+      <li>State logistics proudly: $135 / $165, superbills, FL &amp; ME licensure</li>
+      <li>Reassure the nervous first-timer (it's already her best FAQ material)</li>
+      <li>US spelling: counseling, personalized, canceled</li>
+    </ul></div>
+    <div class="box dont"><h4>Don't</h4><ul>
+      <li>"We" — there is no team</li>
+      <li>Clinical jargon walls ("evidence-based modalities for optimal outcomes")</li>
+      <li>Urgency or scarcity tactics — no countdowns, no "only 2 spots left"</li>
+      <li>Vague spirituality ("the universe," "energy") — her faith is specific</li>
+      <li>Multiple competing CTAs or button phrasings</li>
+      <li>Error messages that scold ("Invalid input") — say what helps instead</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ================= RULES RECAP ================= -->
+<section class="g" style="border-bottom:0">
+  <div class="kicker">09 · Standing rules</div>
+  <h2 class="gt">Non-negotiables downstream</h2>
+  <div class="dd">
+    <div class="box do"><h4>Always</h4><ul>
+      <li>Consume <code>--rt-*</code> tokens — zero rogue hex, fonts, radii, timings</li>
+      <li>Washes at seams only, one per viewport, full saturation, contained</li>
+      <li>Crisis note (988) near every contact/consult surface</li>
+      <li>Reserved aspect-ratio slots before any image exists</li>
+      <li>AA contrast minimum — washes never carry text</li>
+    </ul></div>
+    <div class="box dont"><h4>Never</h4><ul>
+      <li>Wash or wave art behind body copy</li>
+      <li>A second filled-button color</li>
+      <li>Generated people or places presented as real</li>
+      <li>Borrowed aesthetics from other Leaf9 projects</li>
+      <li>PHI collected anywhere on this site</li>
+    </ul></div>
+  </div>
+  <p class="note" style="margin-top:28px">Rising Tide Counseling · «Watermark» style guide v1.0 · Leaf9 · tokens are the contract — change them here or not at all.</p>
+</section>
+
+</main>
+</body>
+</html>

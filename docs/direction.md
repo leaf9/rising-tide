@@ -170,4 +170,11 @@ its painted scripture underlines.
 **Phase 3 gate check:** 3 coined, client-specific names ✓ · arguments tie brand × ICP ×
 convention map ✓ · divergence real (painterly-airy vs. photographic-editorial-warm vs.
 modern-clean-cool) ✓ · swap test: every argument names this logo, this dual license,
-this telehealth model, this faith positioning ✓ · **Decision: pending Ben/Jada.**
+this telehealth model, this faith positioning ✓
+
+## Decision
+
+**«Watermark» — selected by Ben, August 27, 2026.** The style guide
+(`styleguide/index.html`) is built on this direction. Donations per the synthesis: Sea
+Glass gives its pill specialty tags and sticky mobile consult CTA; First Light gives its
+proud fee-ledger presentation, re-set in Watermark's register.

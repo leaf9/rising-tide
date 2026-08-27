@@ -15,9 +15,12 @@ One CTA phrase sitewide.
   headline register. Site speaks as "I" (Jada) — solo practitioner, never "we".
 - **Intake page: dropped** from the new site (old WP intake handled elsewhere; marketing
   site only, no PHI).
-- **Imagery:** Jada's 2 real portraits (`assets/source/jada-kouba-photo-{1,2}.jpg`) +
-  generated coastal art via Higgsfield (candidate batches, Ben picks). Old site's stock
-  photos in `assets/source/` are reference-only — never reuse.
+- **Imagery:** 7 real photos of Jada (`assets/jada/` — porch, palm-tree, studio
+  settings) + the wave library Jada loves (`assets/waves/` — use directly, graded to
+  palette, or as Higgsfield style references; Ben, Aug 27: "Jada really likes those wave
+  photos") + generated watercolor via Higgsfield (candidate batches, Ben picks).
+  Library first, generation second. Other old-site stock in `assets/source/` is
+  reference-only — never reuse.
 - **Theme (given):** coastal waves — airy, clean, photography-forward, watercolor waves.
 - **Stack:** Vite + React + TypeScript + Tailwind (+ shadcn/ui) — must port cleanly to
   Lovable via GitHub for ongoing management.
@@ -30,9 +33,11 @@ One CTA phrase sitewide.
 - ✅ Phase 2 — **skipped per Ben** (client-supplied reference stands in; mini convention
   map lives inside `docs/direction.md`)
 - ✅ Phase 3 — `docs/direction.md` + `concepts/` (3 concepts; `compare.html` shows all)
-  - «Watermark» (paint carries it) · «First Light» (light carries it, ★ Leaf9 pick) ·
-    «Sea Glass» (color carries it) — **decision pending Ben/Jada**
-- ⬜ Phase 4 — `styleguide/index.html` (tokens = the contract)
+  - **«Watermark» — SELECTED by Ben, Aug 27, 2026** (paint carries it: watercolor wave
+    washes from the logo's brushwork, shell-white air, pine ink, Cormorant Garamond ×
+    Mulish). Sea Glass donates pill tags + sticky mobile CTA; First Light donates the
+    proud fee ledger.
+- ⬜ Phase 4 — `styleguide/index.html` (tokens = the contract; `--rt-*`)
 - ⬜ Phase 5 — homepage comps in `comps/` (imagery via Higgsfield only after concept pick)
 - ⬜ Phase 6 — site build in `site/` (Vite app; reads `process.env.PORT`)
 

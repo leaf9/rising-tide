@@ -63,17 +63,22 @@ obvious SEO equity to protect beyond the 6 page URLs — keep slugs, 301 anythin
   silhouette-cross sunset (2025 leftover, likely from a prior theme) — none feel like Jada.
 - No pricing on the homepage path; testimonials are plain text; mobile hierarchy is flat.
 
-## Media inventory (`assets/source/`)
+## Media inventory (`assets/source/` = full WP media library, 46 items, pulled Aug 27)
 
-- **Real photos of Jada (only two exist):** `jada-kouba-photo-1.jpg` (874×847, seated,
-  cream/tan, sheer curtains) · `jada-kouba-photo-2.jpg` (946×1219, standing, same set).
-  Warm, natural light, white/tan wardrobe — already on-theme for airy coastal.
+- **Real photos of Jada — seven, in three settings** (curated copies in `assets/jada/`):
+  porch shoot (seated square, seated wide, standing — cream/tan, sheer curtains, warm
+  daylight), palm-tree shoot (burgundy top, black top, headshot crop — golden light),
+  and a clean white-shirt studio headshot (webp).
+- **Wave/coastal library — the shots Jada loves** (curated copies in `assets/waves/`,
+  per Ben Aug 27: use directly or as Higgsfield references): aerial turquoise wave over
+  sand ★, sunset shoreline with footprints, heart drawn in sand at the foam line, teal
+  storm sea on rocks, low-tide sand ripples, golden harbor with small boats, sailboats
+  at sunset, family on beach at golden hour.
 - **Brand:** `Asset-2@3x.png` / `cropped-Asset-2@3x.png` (logo, 292×115 — low-res; also
-  `logo.png` 12,992-byte copy at repo root) · `cropped-jada-270x270.png` (favicon).
-- **Stock (old site, reference only — do not reuse):** `beach.jpg` (aerial turquoise
-  wave), `jada-on-beach.jpg` (woman walking shoreline at sunset — not actually Jada),
-  `Rising-TIde-Counseling-10..17.jpg` (stock family, laptop, straw-hat woman, New England
-  harbor, etc.), `silhouette-of-large-cross-under-orange-sky-*.jpeg`.
+  `logo.png` copy at repo root) · `cropped-jada-270x270.png` (favicon).
+- **Other stock (reference only — do not reuse):** dancing women, Bibles, cross
+  silhouettes, sun rays, window heart, laptop/email shot, unrelated families/couples,
+  palm fronds.
 
 ## Reference site (client-supplied)
 
