@@ -178,3 +178,12 @@ this telehealth model, this faith positioning ✓
 (`styleguide/index.html`) is built on this direction. Donations per the synthesis: Sea
 Glass gives its pill specialty tags and sticky mobile consult CTA; First Light gives its
 proud fee-ledger presentation, re-set in Watermark's register.
+
+## Phase 5 refinement (Ben, August 27, 2026 — hero-picker round)
+
+Watermark's paint moves from seams to details: **real Southwest Florida wave
+photography** (the library Jada loves) now carries the section seams, faded into a
+**pure-white ground** (tokens v1.1) with mask gradients so the ocean emerges from the
+page and recedes. Watercolor survives at accent scale — painted underlines, the footer
+squiggle, small marks — in the same palette the photos carry. Both accent candidates
+approved; the four wave-band candidates are archived in `assets/art/candidates/`.

@@ -1,12 +1,14 @@
 /* =====================================================================
-   RISING TIDE COUNSELING — «WATERMARK» TOKENS  v1.0 (Aug 27, 2026)
+   RISING TIDE COUNSELING — «WATERMARK» TOKENS  v1.1 (Aug 27, 2026)
+   v1.1: photographic ground — pure white page, wave photos fade into it;
+   watercolor demoted to accents (Ben's call, hero-picker round).
    THE CONTRACT. Every downstream phase consumes these variables.
    No rogue hex values, font stacks, radii, or timings past this file.
    ===================================================================== */
 :root{
   /* -- color · grounds -- */
-  --rt-shell:#fdfcf8;        /* page ground — airy white the washes breathe on */
-  --rt-shell-deep:#f6f3ea;   /* alternate section band, form fields */
+  --rt-shell:#ffffff;        /* page ground — pure white; wave photos + white-bg art fade in seamlessly */
+  --rt-shell-deep:#f4f7f5;   /* alternate section band, form fields — cool sea-tinged near-white */
   --rt-sand:#ead9bd;         /* warm grounding — footer approach, accents of earth */
 
   /* -- color · ink -- */

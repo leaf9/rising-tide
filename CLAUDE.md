@@ -38,7 +38,14 @@ One CTA phrase sitewide.
     Mulish). Sea Glass donates pill tags + sticky mobile CTA; First Light donates the
     proud fee ledger.
 - ⬜ Phase 4 — `styleguide/index.html` (tokens = the contract; `--rt-*`)
-- ⬜ Phase 5 — homepage comps in `comps/` (imagery via Higgsfield only after concept pick)
+- 🔶 Phase 5 — `comps/homepage.html` r2 built on tokens v1.1; awaiting Ben/Jada sign-off
+  - **Imagery refinement (Ben, hero-picker round, Aug 27):** section seams carry REAL
+    SW Florida wave photos faded into a pure-white page (mask gradients); watercolor
+    demoted to accent scale (footer squiggle + brush stroke in `assets/art/`, both
+    Ben-approved). Watercolor band candidates in `assets/art/candidates/` (unused).
+  - Hero = `assets/waves/wave-aerial-turquoise.jpg` · mid band = `heart-in-sand-foam.jpg`
+  - Live Fillout embed renders in the consult section; dev tweaks bar present (strip
+    before anything client-facing).
 - ⬜ Phase 6 — site build in `site/` (Vite app; reads `process.env.PORT`)
 
 ## Hard rules

@@ -64,9 +64,11 @@ header.nav{padding:22px 0}
 .hero .trust{margin:26px 0 0;font-size:13px;color:var(--rt-ink-60);letter-spacing:.04em}
 .hero .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
 .hero .trust b{color:var(--rt-ink);font-weight:600}
-.hero-band{position:relative;margin-top:clamp(3rem,6vw,4.5rem);height:clamp(90px,12vw,150px)}
-.hero-band>*{position:absolute;inset:0;width:100%;height:100%}
-.hero-band img{object-fit:cover;object-position:center 38%}
+.hero-band{position:relative;margin-top:clamp(2.5rem,5vw,4rem);height:clamp(240px,34vw,460px)}
+.hero-band img{width:100%;height:100%;object-fit:cover;object-position:center 42%;
+     filter:saturate(.88) brightness(1.03);
+     -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 26%,#000 82%,transparent 100%);
+     mask-image:linear-gradient(180deg,transparent 0%,#000 26%,#000 82%,transparent 100%)}
 
 /* ============ value cards ============ */
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
@@ -107,10 +109,11 @@ header.nav{padding:22px 0}
 .pill:hover{transform:translateY(-2px);background:var(--rt-seaglass)}
 .pill.more{background:transparent;border-style:dashed;color:var(--rt-sea)}
 
-/* ============ wave photo band ============ */
-.photoband{padding:0;position:relative;height:clamp(260px,38vw,440px);overflow:hidden}
-.photoband img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) brightness(1.04)}
-.photoband .credit{position:absolute;right:14px;bottom:10px;font-size:10.5px;letter-spacing:.08em;color:rgba(255,255,255,.75);text-transform:uppercase}
+/* ============ wave photo band — fades into the page ============ */
+.photoband{padding:0;position:relative;height:clamp(280px,40vw,480px);overflow:hidden}
+.photoband img{width:100%;height:100%;object-fit:cover;filter:saturate(.84) brightness(1.04);
+     -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 80%,transparent 100%);
+     mask-image:linear-gradient(180deg,transparent 0%,#000 20%,#000 80%,transparent 100%)}
 
 /* ============ pricing ============ */
 .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:start}
@@ -210,17 +213,9 @@ footer{background:linear-gradient(180deg,var(--rt-shell) 0%,color-mix(in srgb,va
     </div>
     <p class="trust rv" style="transition-delay:360ms"><b>20+ years</b> in mental health &nbsp;·&nbsp; <b>Virtual</b> sessions &nbsp;·&nbsp; <b>Self-pay</b>, superbills provided</p>
   </div>
-  <!-- WATERCOLOR SLOT A · hero seam band · ~12:1 full-bleed · Higgsfield Recipe A -->
+  <!-- PHOTO SLOT A · Southwest Florida wave, faded into the white page (Ben's call, Aug 27) -->
   <div class="hero-band soak" id="slot-hero-band">
-    <svg preserveAspectRatio="none" viewBox="0 0 1200 130" aria-hidden="true">
-      <defs><filter id="wc1" x="-20%" y="-20%" width="140%" height="140%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="3" seed="7" result="n"/>
-        <feDisplacementMap in="SourceGraphic" in2="n" scale="42"/><feGaussianBlur stdDeviation="1.1"/>
-      </filter></defs>
-      <path d="M0,66 C220,40 420,84 640,64 C860,44 1020,76 1200,56 L1200,130 L0,130 Z" fill="#cfe8e2" opacity=".8" filter="url(#wc1)"/>
-      <path d="M0,80 C260,60 480,96 720,78 C930,62 1060,88 1200,74 L1200,130 L0,130 Z" fill="#8fcfc6" opacity=".65" filter="url(#wc1)"/>
-      <path d="M0,96 C300,82 560,106 820,92 C1010,82 1110,100 1200,90 L1200,130 L0,130 Z" fill="#aed4e4" opacity=".5" filter="url(#wc1)"/>
-    </svg>
+    <img src="../assets/waves/wave-aerial-turquoise.jpg" alt="">
   </div>
 </section>
 
@@ -286,7 +281,7 @@ footer{background:linear-gradient(180deg,var(--rt-shell) 0%,color-mix(in srgb,va
 
 <!-- ================= WAVE PHOTO BAND · real library shot Jada loves ================= -->
 <div class="photoband soak">
-  <img src="../assets/waves/wave-aerial-turquoise.jpg" alt="">
+  <img src="../assets/waves/heart-in-sand-foam.jpg" alt="" style="object-position:center 62%">
 </div>
 
 <!-- ================= PRICING ================= -->
@@ -352,9 +347,9 @@ footer{background:linear-gradient(180deg,var(--rt-shell) 0%,color-mix(in srgb,va
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  <!-- WATERCOLOR SLOT B · footer wave rule · Higgsfield Recipe B -->
+  <!-- Watercolor footer rule · Higgsfield accent-6, Ben-approved -->
   <div class="foot-rule soak" id="slot-foot-rule">
-    <svg viewBox="0 0 220 30" aria-hidden="true"><path d="M4,18 C30,8 52,24 78,16 C104,8 126,22 152,15 C174,9 196,20 216,13" fill="none" stroke="#8fcfc6" stroke-width="2.6" stroke-linecap="round" opacity=".75"/></svg>
+    <img src="../assets/art/footer-squiggle.png" alt="" style="display:block;margin:0 auto;height:34px;width:auto;mix-blend-mode:multiply">
   </div>
   <div class="wrap">
     <div class="foot-grid">
