@@ -4,9 +4,10 @@ import { HERO_VARIANT } from '../config'
 import FacebookIcon from './FacebookIcon'
 
 const links = [
-  { to: '/about/', label: 'About' },
+  { to: '/about/', label: 'Meet Jada' },
   { to: '/services/', label: 'Services' },
   { to: '/resources/', label: 'Pricing & FAQs' },
+  { to: '/contact/', label: 'Contact' },
 ]
 
 export default function Nav() {
@@ -35,7 +36,6 @@ export default function Nav() {
           {links.map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setOpen(false)}>{l.label}</Link>
           ))}
-          <Link to="/contact/" onClick={() => setOpen(false)}>Contact</Link>
           <FacebookIcon className="fb-drawer" />
         </div>
       )}

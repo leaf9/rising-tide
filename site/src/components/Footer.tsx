@@ -15,7 +15,7 @@ export default function Footer() {
             <FacebookIcon className="fb-foot" />
           </div>
           <nav className="foot-col" aria-label="Footer">
-            <Link to="/about/">About</Link>
+            <Link to="/about/">Meet Jada</Link>
             <Link to="/services/">Services</Link>
             <Link to="/resources/">Pricing &amp; FAQs</Link>
             <Link to="/contact/">Request a Free Consult</Link>
