@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: 'What should I expect during my first counseling session?',
-    a: 'The first session is an opportunity to build rapport — exploring your background, family history, what brings you in, and your goals for therapy. The best predictor of success in counseling is a strong, collaborative relationship, so the early focus is on building trust, understanding you more deeply, and identifying the strategies that fit your goals. It can feel intimidating to open up at first — that&rsquo;s normal, and we go at your pace.',
+    a: 'The first session is an opportunity to build rapport: exploring your background, family history, what brings you in, and your goals for therapy. The best predictor of success in counseling is a strong, collaborative relationship, so the early focus is on building trust, understanding your story more deeply, and identifying the strategies that fit your goals. It can feel intimidating to open up at first. That&rsquo;s normal, and the pace is always yours.',
   },
   {
     q: 'Will the things I say in session remain private?',
@@ -16,38 +16,38 @@ const faqs = [
   },
   {
     q: 'How often will I need counseling?',
-    a: 'Session frequency is personalized — decided together, considering your symptoms, goals, and progress over time. Sessions may be more frequent at first and become less so as you progress. You&rsquo;re never obligated to commit to a specific frequency.',
+    a: 'Session frequency is personalized and decided together, considering symptoms, goals, and progress over time. Sessions may be more frequent at first and become less so as progress builds. There is never an obligation to commit to a specific frequency.',
   },
   {
     q: 'How do I know if counseling will work for me?',
-    a: 'Counseling isn&rsquo;t about a &ldquo;quick fix&rdquo; — it&rsquo;s about creating a safe space where you can explore what&rsquo;s weighing on you, gain clarity, and develop tools that actually fit your life. For many people, just having someone truly listen without judgment is the first step toward healing.',
+    a: 'Counseling isn&rsquo;t about a &ldquo;quick fix.&rdquo; It&rsquo;s about creating a safe space to explore what&rsquo;s weighing on you, gain clarity, and develop tools that actually fit your life. For many people, simply having someone truly listen without judgment is the first step toward healing.',
   },
   {
     q: 'How much does counseling cost?',
-    a: 'Individual counseling sessions are $135.00 and couples counseling sessions are $165.00. Fees are due at the time of service. You may submit your session invoice (superbill) to your insurance company for reimbursement — though I can&rsquo;t guarantee what your plan will cover.',
+    a: 'Individual counseling sessions are $135.00 and premarital counseling sessions are $165.00. Fees are due at the time of service. Session invoices (superbills) can be submitted to your insurance company for reimbursement, though coverage varies by plan and can&rsquo;t be guaranteed.',
   },
   {
     q: 'Is it normal to feel nervous about starting counseling?',
-    a: 'Yes — completely normal. Many people feel a mix of anticipation and anxiety when reaching out for help. You might wonder what to expect, whether you&rsquo;ll open up easily, or if counseling will really help. These feelings don&rsquo;t mean you&rsquo;re not ready — they&rsquo;re a sign you&rsquo;re stepping into something new and meaningful.',
+    a: 'Yes, completely normal. Many people feel a mix of anticipation and anxiety when reaching out for help. You might wonder what to expect, whether you&rsquo;ll open up easily, or if counseling will really help. These feelings don&rsquo;t mean you&rsquo;re not ready; they&rsquo;re a sign you&rsquo;re stepping into something new and meaningful.',
   },
   {
     q: 'What do I talk about in counseling?',
-    a: 'Anything that feels important to you. Some people start with a specific struggle; others just know they want life to feel better but aren&rsquo;t sure where to begin. There&rsquo;s no wrong topic in counseling. If it matters to you, it matters to me.',
+    a: 'Anything that feels important to you. Some people start with a specific struggle; others just know they want life to feel better but aren&rsquo;t sure where to begin. There&rsquo;s no wrong topic in counseling. If it matters to you, it matters here.',
   },
   {
     q: 'How should I prepare for my first session?',
-    a: 'You don&rsquo;t need to do anything special to prepare — just showing up is already a big step! If you&rsquo;d like, you can spend a little time reflecting beforehand, or bring a notebook to jot down insights and tools you find helpful along the way.',
+    a: 'Nothing special is needed to prepare; simply showing up is already a big step. If it helps, you can spend a little time reflecting beforehand, or bring a notebook to jot down insights and tools you find helpful along the way.',
   },
   {
-    q: 'Do I need to be a Christian to work with you?',
-    a: 'Absolutely not. While I offer Christian counseling for those who desire it, it is never a requirement to become a client — I value working with people from many different backgrounds. My only request is that you come with a willingness to heal, learn, and grow. My hope is that through therapy, you&rsquo;ll develop the tools and confidence you need to move forward and reach your personal goals.',
+    q: 'Do I need to be a Christian to work with Jada?',
+    a: 'Absolutely not. Christian counseling is available for those who desire it, but it is never a requirement to become a client; clients come from many different backgrounds. The only request is a willingness to heal, learn, and grow. Therapy should leave you with the tools and confidence to move forward and reach your own goals.',
   },
 ]
 
 export default function Resources() {
   usePageMeta(
-    'Pricing & FAQs — Rising Tide Counseling',
-    'Transparent counseling fees — $135 individual, $165 couples, superbills provided — and answers to common questions about starting online therapy with Jada Kouba.',
+    'Pricing & FAQs · Rising Tide Counseling',
+    'Transparent counseling fees ($135 individual, $165 premarital) with superbills provided, plus answers to common questions about starting online therapy with Jada Kouba.',
   )
   return (
     <>
@@ -63,21 +63,20 @@ export default function Resources() {
         <div className="wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(36px,6vw,90px)', alignItems: 'start' }} data-collapse>
           <div>
             <Reveal><div className="kicker">Simple, transparent fees</div></Reveal>
-            <Reveal as="h2" className="d2" delay={60}>Self-pay, stated plainly — <em>superbills provided.</em></Reveal>
+            <Reveal as="h2" className="d2" delay={60}>Self-pay, stated plainly, <em>with superbills provided.</em></Reveal>
             <Reveal as="p" className="measure">
-              I believe my time is best spent where it matters most — working directly with you. For this
-              reason, I don&rsquo;t work directly with insurance companies; the billing process takes
-              valuable time away from client care.
+              Time here is spent where it matters most: directly with clients. For that reason, Rising
+              Tide doesn&rsquo;t bill insurance companies, since the billing process takes valuable time
+              away from client care.
             </Reveal>
             <Reveal as="p" className="measure" delay={60}>
-              If you wish to use your insurance benefits, I&rsquo;m happy to provide a superbill (an
-              itemized receipt of services) that you can submit to your insurance provider for potential
-              reimbursement. Reimbursement isn&rsquo;t guaranteed and depends on your plan — but many of
-              my clients successfully receive it.
+              Clients who wish to use their insurance benefits receive a superbill, an itemized receipt
+              of services, to submit to their provider for potential reimbursement. Reimbursement
+              isn&rsquo;t guaranteed and depends on the plan, though many clients successfully receive it.
             </Reveal>
             <Reveal as="p" className="measure fine" delay={120}>
-              Payment is due at the time of service. For your convenience, you may keep a card securely
-              on file for automatic payment, or log in to your account anytime to pay your bill online.
+              Payment is due at the time of service. Clients may keep a card securely on file for
+              automatic payment, or log in to pay online anytime.
             </Reveal>
           </div>
           <Reveal soak>
@@ -87,7 +86,7 @@ export default function Resources() {
                 <div className="amt">$135</div>
               </div>
               <div className="fee-row">
-                <div className="what">Couples counseling<small>60-minute virtual session</small></div>
+                <div className="what">Premarital counseling<small>60-minute virtual session</small></div>
                 <div className="amt">$165</div>
               </div>
               <div className="fee-row">

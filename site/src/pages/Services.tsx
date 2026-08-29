@@ -12,26 +12,26 @@ const expertise = [
 const services = [
   {
     name: 'Individual counseling',
-    copy: 'Individual therapy — one-on-one counseling — is a therapeutic process in which you work directly with me to address personal challenges and emotional struggles. It provides a safe, confidential environment to explore your thoughts, feelings, behaviors, and experiences, and to build a way forward.',
+    copy: 'Individual therapy, also called one-on-one counseling, is a therapeutic process for working through personal challenges and emotional struggles. It provides a safe, confidential environment to explore thoughts, feelings, behaviors, and experiences, and to build a way forward.',
   },
   {
-    name: 'Couples counseling',
-    copy: 'Couples counseling — also known as marriage counseling or relationship therapy — helps partners improve their relationship and resolve conflict. It provides a structured, supportive environment where couples can work through their issues with the guidance of a trained therapist.',
+    name: 'Premarital counseling',
+    copy: 'Premarital counseling helps couples preparing for marriage build a strong foundation before the wedding day. Sessions make room for the conversations that matter most: communication and conflict, expectations and roles, finances, family dynamics, and a shared life of faith.',
   },
   {
     name: 'Christian counseling',
-    copy: 'Christian counseling incorporates Biblical principles into the counseling process. It provides guidance and support for emotional, mental, or spiritual challenges — grounded in Biblical truth, woven together with evidence-based clinical care.',
+    copy: 'Christian counseling incorporates Biblical principles into the counseling process. It offers guidance and support for emotional, mental, or spiritual challenges, grounded in Biblical truth and woven together with evidence-based clinical care.',
   },
   {
     name: 'Parental support counseling',
-    copy: 'Parental support counseling empowers parents with the tools they need for effective parenting — enhancing family bonds while promoting healthy child development.',
+    copy: 'Parental support counseling equips parents with the tools they need for effective parenting, strengthening family bonds while promoting healthy child development.',
   },
 ]
 
 export default function Services() {
   usePageMeta(
-    'Counseling Services — Rising Tide Counseling',
-    'Individual, couples, Christian, and parental support counseling — online across Florida and Maine. Evidence-based approaches integrated with Biblical truth and grace.',
+    'Counseling Services · Rising Tide Counseling',
+    'Individual, premarital, Christian, and parental support counseling, online across Florida and Maine. Evidence-based approaches grounded on Biblical truth and with grace.',
   )
   return (
     <>
@@ -40,7 +40,7 @@ export default function Services() {
           <Reveal><img className="squig" src="/img/squiggle.png" alt="" /></Reveal>
           <Reveal><div className="kicker">Counseling services</div></Reveal>
           <Reveal as="h1" className="d1" delay={80}>
-            Counseling that integrates evidence-based approaches with <em>Biblical truth and grace</em>
+            Counseling that integrates evidence-based approaches, grounded on <em>Biblical truth and with grace</em>
           </Reveal>
         </div>
       </section>

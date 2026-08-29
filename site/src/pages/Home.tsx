@@ -5,8 +5,8 @@ import { HERO_VARIANT } from '../config'
 
 export default function Home() {
   usePageMeta(
-    'Rising Tide Counseling — Online Christian Counseling in Florida & Maine',
-    'Clinical counseling from a Biblical worldview with Jada Kouba, LCMHC · LCPC. Online therapy for individuals and couples across Florida and Maine. Request a free consult.',
+    'Rising Tide Counseling · Online Christian Counseling in Florida & Maine',
+    'Clinical counseling from a Biblical worldview with Jada Kouba, LCMHC · LCPC. Online individual, premarital, and Christian counseling across Florida and Maine. Request a free consult.',
   )
   return (
     <>
@@ -17,16 +17,16 @@ export default function Home() {
         </div>
         <div className="wrap hero-solo">
           <div className="hero-copy">
-            <Reveal><div className="kicker">Jada Kouba · LCMHC · LCPC — Online across Florida &amp; Maine</div></Reveal>
+            <Reveal><div className="kicker">Jada Kouba · LCMHC · LCPC · Online across Florida &amp; Maine</div></Reveal>
             <Reveal as="h1" className="d1" delay={90}>
               <span style={{ display: 'inline-block', maxWidth: '26ch' }}>
                 Clinical counseling from a <em>Biblical worldview</em>
               </span>
             </Reveal>
             <Reveal as="p" className="sub" delay={180}>
-              Looking for a faith-based counselor to help you navigate life&rsquo;s challenges? I offer
-              professional therapy that weaves clinical expertise with God&rsquo;s truth and grace — a
-              safe, unhurried space to process, heal, and rise.
+              Faith-based counseling for people navigating life&rsquo;s hardest seasons. Professional
+              therapy that weaves clinical expertise with God&rsquo;s truth and grace, in a safe,
+              unhurried space to process, heal, and rise.
             </Reveal>
             <Reveal delay={270}>
               <div className="cta-row">
@@ -53,7 +53,7 @@ export default function Home() {
           </Reveal>
           <div className="meet-copy">
             <Reveal><div className="kicker">Meet Jada</div></Reveal>
-            <Reveal as="h2" className="d2">Twenty years of walking alongside people — <em>you don&rsquo;t have to walk alone.</em></Reveal>
+            <Reveal as="h2" className="d2">Twenty years of walking alongside people, <em>so no one walks alone.</em></Reveal>
             <Reveal as="p" className="measure">
               I&rsquo;m Jada Kouba, a dually licensed counselor (LCMHC, LCPC) serving clients in Florida
               and Maine. My heart is to help you not only manage your mental health, but experience real
@@ -61,7 +61,7 @@ export default function Home() {
             </Reveal>
             <Reveal as="p" className="measure" delay={80}>
               Clients describe me as compassionate, supportive, and committed to creating a safe space
-              for healing — whether you&rsquo;re walking through grief, wrestling with anxiety, or
+              for healing, whether that means walking through grief, wrestling with anxiety, or
               rebuilding after a difficult relationship.
             </Reveal>
             <Reveal delay={160}>
@@ -87,30 +87,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ HOW I HELP ============ */}
+      {/* ============ HOW COUNSELING WORKS ============ */}
       <section>
         <div className="wrap">
-          <Reveal><div className="kicker">How I help</div></Reveal>
-          <Reveal as="h2" className="d2" delay={60}>Every client is unique — <em>so is the plan we build.</em></Reveal>
+          <Reveal><div className="kicker">How counseling works</div></Reveal>
+          <Reveal as="h2" className="d2" delay={60}>Every client is unique, <em>and so is the path forward.</em></Reveal>
           <Reveal as="p" className="measure" delay={120}>
-            I take an integrative, holistic approach: together we&rsquo;ll define your goals for healing
-            and growth, then create a plan that works for your life.
+            An integrative, holistic approach means therapy is shaped around each client&rsquo;s goals
+            for healing and growth, then built into a plan that fits a real life.
           </Reveal>
           <div className="cards3">
             <Reveal className="vcard">
               <img className="mark" src="/img/squiggle.png" alt="" />
               <h3 className="d3">Client-centered</h3>
-              <p>Anxiety, depression, relational struggles — we start with your story, not a template, and shape therapy around it.</p>
+              <p>Anxiety, depression, relational struggles: therapy begins with each client&rsquo;s story, not a template.</p>
             </Reveal>
             <Reveal className="vcard" delay={90}>
               <img className="mark" src="/img/squiggle.png" alt="" />
               <h3 className="d3">Goal-focused</h3>
-              <p>For people motivated to learn, grow, and heal through faith-based therapy — with progress you can actually name.</p>
+              <p>For people motivated to learn, grow, and heal through faith-based therapy, with progress they can actually name.</p>
             </Reveal>
             <Reveal className="vcard" delay={180}>
               <img className="mark" src="/img/squiggle.png" alt="" />
               <h3 className="d3">Education-based</h3>
-              <p>Understand yourself more deeply, so you can tackle whatever life throws at you — skills that outlast our sessions.</p>
+              <p>Clients learn to understand themselves more deeply, building skills that outlast the sessions themselves.</p>
             </Reveal>
           </div>
         </div>
@@ -120,11 +120,11 @@ export default function Home() {
       <section className="coolband coolband-fade">
         <div className="wrap">
           <Reveal><div className="kicker">Counseling services</div></Reveal>
-          <Reveal as="h2" className="d2" delay={60}>Evidence-based approaches, woven with <em>Biblical truth and grace</em></Reveal>
+          <Reveal as="h2" className="d2" delay={60}>Evidence-based approaches, grounded on <em>Biblical truth and with grace</em></Reveal>
           <div className="svc-grid">
-            <Reveal className="svc"><h3 className="d3">Individual counseling</h3><p>One-on-one therapy in a safe, confidential space — exploring your thoughts, feelings, and experiences, and building a way forward.</p></Reveal>
-            <Reveal className="svc" delay={80}><h3 className="d3">Couples counseling</h3><p>A structured, supportive place for partners to work through conflict, rebuild trust, and grow closer.</p></Reveal>
-            <Reveal className="svc" delay={160}><h3 className="d3">Christian counseling &amp; discipleship</h3><p>Therapy grounded in Biblical truth — bringing faith and clinical care together.</p></Reveal>
+            <Reveal className="svc"><h3 className="d3">Individual counseling</h3><p>One-on-one therapy in a safe, confidential space for exploring thoughts, feelings, and experiences, and building a way forward.</p></Reveal>
+            <Reveal className="svc" delay={80}><h3 className="d3">Premarital counseling</h3><p>For couples preparing to marry: building a strong foundation in communication, expectations, and shared faith.</p></Reveal>
+            <Reveal className="svc" delay={160}><h3 className="d3">Christian counseling &amp; discipleship</h3><p>Therapy grounded in Biblical truth, bringing faith and clinical care together.</p></Reveal>
             <Reveal className="svc" delay={240}><h3 className="d3">Parental support</h3><p>Practical tools and steady guidance for the hardest job there is.</p></Reveal>
           </div>
           <Reveal delay={120}>

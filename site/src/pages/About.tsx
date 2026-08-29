@@ -11,8 +11,8 @@ const struggles = [
 
 export default function About() {
   usePageMeta(
-    'About Jada Kouba, LCMHC · LCPC — Rising Tide Counseling',
-    'Meet Jada Kouba — dually licensed counselor with 20 years in mental health and 15 years in private practice, offering online Christian counseling in Florida and Maine.',
+    'About Jada Kouba, LCMHC · LCPC · Rising Tide Counseling',
+    'Meet Jada Kouba, a dually licensed counselor with 20 years in mental health and 15 years in private practice, offering online Christian counseling in Florida and Maine.',
   )
   return (
     <>
@@ -30,7 +30,7 @@ export default function About() {
             <Reveal><h2 className="d2">Hello, my name is Jada</h2></Reveal>
             <Reveal as="p" className="measure">
               I am a licensed clinical counselor, and I have worked in the mental health field for 20
-              years — for the past 15, I&rsquo;ve had the privilege of running my own private practice.
+              years; for the past 15, I&rsquo;ve had the privilege of running my own private practice.
               I&rsquo;ve walked alongside individuals and families as they&rsquo;ve faced challenges such
               as anxiety, depression, grief, abuse, family issues, and relationship struggles.
             </Reveal>
@@ -50,8 +50,8 @@ export default function About() {
             <Reveal as="p" className="measure" delay={180}>
               Because life is busy, I offer flexible online sessions so you can focus on your mental
               health without the added stress of commuting. My heart is to make therapy feel like a safe,
-              supportive space — a place where your mind, body, and spirit can be nurtured and renewed.
-              I&rsquo;ve had the privilege of seeing clients experience real transformation — growing
+              supportive space, a place where mind, body, and spirit can be nurtured and renewed.
+              I&rsquo;ve had the privilege of seeing clients experience real transformation: growing
               personally, finding peace, and stepping into life with a renewed sense of hope.
             </Reveal>
             <Reveal delay={240}>
@@ -91,14 +91,14 @@ export default function About() {
             <Reveal as="h2" className="d2" delay={60}>Integrative, never one-size-fits-all</Reveal>
             <Reveal as="p">
               In addition to my Christian worldview, I practice as an integrative and holistic therapist.
-              Rather than taking a &ldquo;one-size-fits-all&rdquo; approach, I draw from several methods —
+              Rather than taking a &ldquo;one-size-fits-all&rdquo; approach, I draw from several methods,
               including Psychodynamic Therapy, Mindfulness-Based Cognitive Behavioral Therapy, and
               Dialectical Behavior Therapy.
             </Reveal>
             <Reveal as="p" delay={60}>
               I spend time getting to know each client and their unique story, then tailor therapy to
               meet those specific needs. My goal is to support lasting healing and transformation in a
-              way that honors the whole person — mind, body, and spirit.
+              way that honors the whole person: mind, body, and spirit.
             </Reveal>
           </div>
         </div>
@@ -106,8 +106,8 @@ export default function About() {
 
       <section>
         <div className="wrap">
-          <Reveal><div className="kicker">Who I work with</div></Reveal>
-          <Reveal as="h2" className="d2" delay={60}>I work with clients who are experiencing…</Reveal>
+          <Reveal><div className="kicker">Who counseling helps</div></Reveal>
+          <Reveal as="h2" className="d2" delay={60}>Clients come to counseling for…</Reveal>
           <Reveal delay={120}>
             <div style={{ marginTop: 10, maxWidth: 760 }}>
               {struggles.map((s) => (

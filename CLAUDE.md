@@ -12,7 +12,16 @@ One CTA phrase sitewide.
 ## Decisions (Ben, Aug 27, 2026)
 
 - **Faith-forward lead:** "Clinical Counseling from a Biblical Worldview" stays the
-  headline register. Site speaks as "I" (Jada) — solo practitioner, never "we".
+  headline register. Never "we" (solo practitioner).
+- **Voice, revised Aug 29, 2026 (supersedes the original "speaks as I" call):**
+  marketing copy is **third person and client-centered** — the subject of a sentence is
+  the client or the work, never Jada. No "I offer / I take / my approach". First person
+  survives ONLY in genuinely personal voice: the About bio, Core Principles /
+  Therapeutic Techniques, the Meet Jada teaser, and client testimonials.
+- **No em dashes** anywhere in copy. Use commas, colons, semicolons, periods, or
+  parentheses. Exceptions: signature lines (`— Jada Kouba, LCMHC · LCPC`, `— M.C.`)
+  and number ranges. Page-title separators use `·`, not an em dash.
+- **Services (Jada, Aug 29):** no couples counseling. Premarital counseling replaces it.
 - **Intake page: dropped** from the new site (old WP intake handled elsewhere; marketing
   site only, no PHI).
 - **Imagery:** 7 real photos of Jada (`assets/jada/` — porch, palm-tree, studio

@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { Reveal } from '../lib'
 
 export default function CtaBand({
-  heading = <>Reach out today — <em>when you&rsquo;re ready, I&rsquo;m here.</em></>,
-  copy = 'Tell me a little about what’s going on and what you’re looking for. I’ll respond personally, and we’ll talk through whether we’re the right fit for the work ahead.',
+  heading = <>Healing begins with <em>one conversation.</em></>,
+  copy = 'Share a little about what’s going on and what you’re looking for. Every message gets a personal reply, and the consult is a chance to see whether it’s the right fit for the work ahead.',
 }: {
   heading?: React.ReactNode
   copy?: string
