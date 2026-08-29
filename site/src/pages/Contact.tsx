@@ -4,7 +4,7 @@ import FilloutEmbed from '../components/FilloutEmbed'
 export default function Contact() {
   usePageMeta(
     'Contact · Rising Tide Counseling',
-    'Request a free consult with Jada Kouba, LCMHC · LCPC. Online Christian counseling across Florida and Maine.',
+    'Request a free consult with Jada Kouba, LCMHC · LCPC. Online Christian counseling, licensed in Florida and Maine.',
   )
   return (
     <>

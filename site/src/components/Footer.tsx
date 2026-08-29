@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <img className="foot-logo" src="/img/logo.png" alt="Rising Tide Counseling Services" />
-            <p>Online Christian counseling with Jada Kouba, LCMHC · LCPC. Serving Florida and Maine.</p>
+            <p>Online Christian counseling with Jada Kouba, LCMHC · LCPC. Licensed in Florida and Maine.</p>
             <FacebookIcon className="fb-foot" />
           </div>
           <nav className="foot-col" aria-label="Footer">

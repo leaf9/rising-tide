@@ -31,7 +31,7 @@ const services = [
 export default function Services() {
   usePageMeta(
     'Counseling Services · Rising Tide Counseling',
-    'Individual, premarital, Christian, and parental support counseling, online across Florida and Maine. Evidence-based approaches grounded on Biblical truth and with grace.',
+    'Individual, premarital, Christian, and parental support counseling, licensed in Florida and Maine. Evidence-based approaches grounded on Biblical truth and with grace.',
   )
   return (
     <>

@@ -6,7 +6,7 @@ import { HERO_VARIANT } from '../config'
 export default function Home() {
   usePageMeta(
     'Rising Tide Counseling · Online Christian Counseling in Florida & Maine',
-    'Clinical counseling from a Biblical worldview with Jada Kouba, LCMHC · LCPC. Online individual, premarital, and Christian counseling across Florida and Maine. Request a free consult.',
+    'Clinical counseling from a Biblical worldview with Jada Kouba, LCMHC · LCPC. Online individual, premarital, and Christian counseling, licensed in Florida and Maine. Request a free consult.',
   )
   return (
     <>
@@ -17,7 +17,7 @@ export default function Home() {
         </div>
         <div className="wrap hero-solo">
           <div className="hero-copy">
-            <Reveal><div className="kicker">Jada Kouba · LCMHC · LCPC · Online across Florida &amp; Maine</div></Reveal>
+            <Reveal><div className="kicker">Jada Kouba · LCMHC · LCPC · Licensed in Florida &amp; Maine</div></Reveal>
             <Reveal as="h1" className="d1" delay={90}>
               <span style={{ display: 'inline-block', maxWidth: '26ch' }}>
                 Clinical counseling from a <em>Biblical worldview</em>
