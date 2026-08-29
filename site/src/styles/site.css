@@ -167,9 +167,11 @@ p+p{margin-top:14px}
 .tintband{background:linear-gradient(180deg,var(--rt-shell),color-mix(in srgb,var(--rt-seaglass) 30%,var(--rt-shell)) 55%,var(--rt-shell))}
 .sandband{background:linear-gradient(180deg,var(--rt-shell),color-mix(in srgb,var(--rt-sand) 30%,var(--rt-shell)))}
 .coolband{background:color-mix(in srgb,var(--rt-shell-deep) 72%,white)}
+/* soft on both ends: white at the seams, tint through the middle */
 .coolband-fade{background:linear-gradient(180deg,
-     color-mix(in srgb,var(--rt-shell-deep) 72%,white) 0%,
-     color-mix(in srgb,var(--rt-shell-deep) 72%,white) 58%,
+     var(--rt-shell) 0%,
+     color-mix(in srgb,var(--rt-shell-deep) 72%,white) 18%,
+     color-mix(in srgb,var(--rt-shell-deep) 72%,white) 64%,
      var(--rt-shell) 100%)}
 
 /* watercolor-backed section (Ben: mix watercolor into alternating sections) */

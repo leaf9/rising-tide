@@ -45,7 +45,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============ MEET JADA — bigger, overlapping the hero seam ============ */}
+      {/* ============ SERVICES OVERVIEW ============ */}
+      <section className="coolband coolband-fade">
+        <div className="wrap">
+          <Reveal><div className="kicker">Counseling services</div></Reveal>
+          <Reveal as="h2" className="d2" delay={60}>Evidence-based approaches, grounded on <em>Biblical truth and with grace</em></Reveal>
+          <div className="svc-grid">
+            <Reveal className="svc"><h3 className="d3">Individual counseling</h3><p>One-on-one therapy in a safe, confidential space for exploring thoughts, feelings, and experiences, and building a way forward.</p></Reveal>
+            <Reveal className="svc" delay={80}><h3 className="d3">Premarital counseling</h3><p>For couples preparing to marry: building a strong foundation in communication, expectations, and shared faith.</p></Reveal>
+            <Reveal className="svc" delay={160}><h3 className="d3">Christian counseling &amp; discipleship</h3><p>Therapy grounded in Biblical truth, bringing faith and clinical care together.</p></Reveal>
+            <Reveal className="svc" delay={240}><h3 className="d3">Parental support</h3><p>Practical tools and steady guidance for the hardest job there is.</p></Reveal>
+          </div>
+          <Reveal delay={120}>
+            <div style={{ marginTop: 34 }}>
+              <Link className="pill" to="/services/">Anxiety</Link>
+              <Link className="pill" to="/services/">Depression</Link>
+              <Link className="pill" to="/services/">Grief &amp; loss</Link>
+              <Link className="pill" to="/services/">Narcissistic abuse recovery</Link>
+              <Link className="pill" to="/services/">Adult ADHD</Link>
+              <Link className="pill" to="/services/">Self-esteem</Link>
+              <Link className="pill more" to="/services/">All 16 areas of expertise →</Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============ MEET JADA ============ */}
       <section className="meet">
         <div className="wrap meet-grid" data-collapse>
           <Reveal soak className="meet-photo">
@@ -113,31 +138,6 @@ export default function Home() {
               <p>Clients learn to understand themselves more deeply, building skills that outlast the sessions themselves.</p>
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* ============ SERVICES OVERVIEW ============ */}
-      <section className="coolband coolband-fade">
-        <div className="wrap">
-          <Reveal><div className="kicker">Counseling services</div></Reveal>
-          <Reveal as="h2" className="d2" delay={60}>Evidence-based approaches, grounded on <em>Biblical truth and with grace</em></Reveal>
-          <div className="svc-grid">
-            <Reveal className="svc"><h3 className="d3">Individual counseling</h3><p>One-on-one therapy in a safe, confidential space for exploring thoughts, feelings, and experiences, and building a way forward.</p></Reveal>
-            <Reveal className="svc" delay={80}><h3 className="d3">Premarital counseling</h3><p>For couples preparing to marry: building a strong foundation in communication, expectations, and shared faith.</p></Reveal>
-            <Reveal className="svc" delay={160}><h3 className="d3">Christian counseling &amp; discipleship</h3><p>Therapy grounded in Biblical truth, bringing faith and clinical care together.</p></Reveal>
-            <Reveal className="svc" delay={240}><h3 className="d3">Parental support</h3><p>Practical tools and steady guidance for the hardest job there is.</p></Reveal>
-          </div>
-          <Reveal delay={120}>
-            <div style={{ marginTop: 34 }}>
-              <Link className="pill" to="/services/">Anxiety</Link>
-              <Link className="pill" to="/services/">Depression</Link>
-              <Link className="pill" to="/services/">Grief &amp; loss</Link>
-              <Link className="pill" to="/services/">Narcissistic abuse recovery</Link>
-              <Link className="pill" to="/services/">Adult ADHD</Link>
-              <Link className="pill" to="/services/">Self-esteem</Link>
-              <Link className="pill more" to="/services/">All 16 areas of expertise →</Link>
-            </div>
-          </Reveal>
         </div>
       </section>
 
