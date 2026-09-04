@@ -88,7 +88,11 @@ One CTA phrase sitewide.
   `cfaa9374-082a-4494-95bd-0626f3b1742c`, linked from repo root (`.netlify/` gitignored).
   Draft rounds: `npx -y netlify-cli deploy --build` (free, noindex — verify 200 before
   sharing; SSO gate already cleared). Production (`--prod`, 15 credits) only at launch.
-  No GitHub repo yet (Ben must confirm repo name/visibility — target `leaf9/rising-tide`).
+  **GitHub:** `leaf9/rising-tide` — **private** (Ben, Sept 4, 2026), default branch
+  `main`. Kept private deliberately: `example site/` holds another Leaf9 client's
+  confidential material (Wildflower Collective proposal PDF, staff headshots,
+  strategy docs) and is in history from commit 1. **Do not flip this repo public**
+  without first purging `example site/` from history.
 - Crisis note (988) near every contact/consult form. No PHI in any form.
 - **Voice (Jada, Aug 27, 2026): never devalue.** No "the first conversation is free" /
   "no obligation, no pressure" hooks — she is a sought-after therapist; closing copy
