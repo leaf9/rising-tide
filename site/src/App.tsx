@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom'
-import Nav from './components/Nav'
-import Footer from './components/Footer'
-import { ScrollToTop } from './lib'
-import Home from './pages/Home'
-import About from './pages/About'
-import Services from './pages/Services'
-import Resources from './pages/Resources'
-import Contact from './pages/Contact'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+import { ScrollToTop } from '@/components/ScrollToTop'
+import Home from '@/pages/Home'
+import About from '@/pages/About'
+import Services from '@/pages/Services'
+import Resources from '@/pages/Resources'
+import Contact from '@/pages/Contact'
 
 export default function App() {
   return (

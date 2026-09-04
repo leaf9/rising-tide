@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import FacebookIcon from './FacebookIcon'
+import FacebookIcon from '@/components/FacebookIcon'
 
 export default function Footer() {
   return (

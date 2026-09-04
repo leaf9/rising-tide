@@ -1,4 +1,4 @@
-import { FACEBOOK_URL } from '../config'
+import { FACEBOOK_URL } from '@/config'
 
 export default function FacebookIcon({ className = '' }: { className?: string }) {
   return (

@@ -1,6 +1,31 @@
 @import "tailwindcss";
 
 /* =====================================================================
+   Tailwind theme bridge. Mirrors the --rt-* contract into Tailwind's
+   namespace so utilities like bg-shell / text-pine / font-display work.
+   Edit values in the :root block below; keep these two in sync.
+   ===================================================================== */
+@theme {
+  --color-shell: #ffffff;
+  --color-shell-deep: #f4f7f5;
+  --color-sand: #ead9bd;
+  --color-pine: #003130;
+  --color-ink: #22423e;
+  --color-aqua: #8fcfc6;
+  --color-sky: #aed4e4;
+  --color-seaglass: #cfe8e2;
+  --color-cta: #8fcfc6;
+  --color-cta-deep: #79c0b6;
+  --color-sea: #2e6159;
+
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Mulish', -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-brush: 2px 14px 2px 14px;
+  --radius-brush-card: 4px 18px 4px 18px;
+}
+
+/* =====================================================================
    RISING TIDE COUNSELING — «WATERMARK» TOKENS  v1.2
    Build copy of styleguide/tokens.css — keep the two files in sync.
    ===================================================================== */

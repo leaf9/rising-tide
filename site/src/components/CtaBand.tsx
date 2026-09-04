@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Reveal } from '../lib'
+import { Reveal } from '@/components/Reveal'
 
 export default function CtaBand({
   heading = <>Healing begins with <em>one conversation.</em></>,

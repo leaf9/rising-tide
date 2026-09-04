@@ -1,5 +1,6 @@
-import { Reveal, usePageMeta } from '../lib'
-import CtaBand from '../components/CtaBand'
+import { Reveal } from '@/components/Reveal'
+import { usePageMeta } from '@/hooks/usePageMeta'
+import CtaBand from '@/components/CtaBand'
 
 const expertise = [
   'Anxiety', 'Depression', 'Stress management and coping', 'ADHD/ADD', 'Grief and loss',

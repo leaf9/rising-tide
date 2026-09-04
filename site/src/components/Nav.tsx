@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { HERO_VARIANT } from '../config'
-import FacebookIcon from './FacebookIcon'
+import { HERO_VARIANT } from '@/config'
+import FacebookIcon from '@/components/FacebookIcon'
 
 const links = [
   { to: '/about/', label: 'Meet Jada' },

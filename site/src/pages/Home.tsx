@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Reveal, usePageMeta } from '../lib'
-import CtaBand from '../components/CtaBand'
-import { HERO_VARIANT } from '../config'
+import { Reveal } from '@/components/Reveal'
+import { usePageMeta } from '@/hooks/usePageMeta'
+import CtaBand from '@/components/CtaBand'
+import { HERO_VARIANT } from '@/config'
 
 export default function Home() {
   usePageMeta(

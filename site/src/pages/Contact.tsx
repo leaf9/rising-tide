@@ -1,5 +1,6 @@
-import { Reveal, usePageMeta } from '../lib'
-import FilloutEmbed from '../components/FilloutEmbed'
+import { Reveal } from '@/components/Reveal'
+import { usePageMeta } from '@/hooks/usePageMeta'
+import FilloutEmbed from '@/components/FilloutEmbed'
 
 export default function Contact() {
   usePageMeta(

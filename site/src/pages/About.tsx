@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Reveal, usePageMeta } from '../lib'
-import CtaBand from '../components/CtaBand'
+import { Reveal } from '@/components/Reveal'
+import { usePageMeta } from '@/hooks/usePageMeta'
+import CtaBand from '@/components/CtaBand'
 
 const struggles = [
   'Anxiety and worry', 'Stress', 'Sadness or depression', 'Emotional dysregulation',
